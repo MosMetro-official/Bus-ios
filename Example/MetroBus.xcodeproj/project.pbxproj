@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		954263A1284F660900604D48 /* Bus in Frameworks */ = {isa = PBXBuildFile; productRef = 954263A0284F660900604D48 /* Bus */; };
+		954DCF04284E43E8004F5B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DCF03284E43E8004F5B54 /* AppDelegate.swift */; };
+		954DCF06284E43E8004F5B54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DCF05284E43E8004F5B54 /* SceneDelegate.swift */; };
+		954DCF0D284E43EA004F5B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954DCF0C284E43EA004F5B54 /* Assets.xcassets */; };
+		954DCF10284E43EA004F5B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DCF0E284E43EA004F5B54 /* LaunchScreen.storyboard */; };
+		9587929328521AB2008B837F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587929228521AB2008B837F /* AuthViewController.swift */; };
+		9587929528521DAA008B837F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587929428521DAA008B837F /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		954DCF00284E43E8004F5B54 /* MetroBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		954DCF03284E43E8004F5B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		954DCF05284E43E8004F5B54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		954DCF0C284E43EA004F5B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		954DCF0F284E43EA004F5B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		954DCF11284E43EA004F5B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954DCF18284E4422004F5B54 /* Bus */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Bus; path = ..; sourceTree = "<group>"; };
+		9562E0242851130000DC67F0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9587929228521AB2008B837F /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		9587929428521DAA008B837F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		954DCEFD284E43E8004F5B54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954263A1284F660900604D48 /* Bus in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		954DCEF7284E43E8004F5B54 = {
+			isa = PBXGroup;
+			children = (
+				954DCF17284E4422004F5B54 /* Packages */,
+				954DCF02284E43E8004F5B54 /* MetroBus */,
+				954DCF01284E43E8004F5B54 /* Products */,
+				954DCF19284E442B004F5B54 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		954DCF01284E43E8004F5B54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				954DCF00284E43E8004F5B54 /* MetroBus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		954DCF02284E43E8004F5B54 /* MetroBus */ = {
+			isa = PBXGroup;
+			children = (
+				9587929128521AA4008B837F /* AuthScreen */,
+				954DCF03284E43E8004F5B54 /* AppDelegate.swift */,
+				954DCF05284E43E8004F5B54 /* SceneDelegate.swift */,
+				9587929428521DAA008B837F /* ViewController.swift */,
+				954DCF0C284E43EA004F5B54 /* Assets.xcassets */,
+				954DCF0E284E43EA004F5B54 /* LaunchScreen.storyboard */,
+				954DCF11284E43EA004F5B54 /* Info.plist */,
+			);
+			path = MetroBus;
+			sourceTree = "<group>";
+		};
+		954DCF17284E4422004F5B54 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				954DCF18284E4422004F5B54 /* Bus */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		954DCF19284E442B004F5B54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9587929128521AA4008B837F /* AuthScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9587929228521AB2008B837F /* AuthViewController.swift */,
+			);
+			path = AuthScreen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		954DCEFF284E43E8004F5B54 /* MetroBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 954DCF14284E43EA004F5B54 /* Build configuration list for PBXNativeTarget "MetroBus" */;
+			buildPhases = (
+				954DCEFC284E43E8004F5B54 /* Sources */,
+				954DCEFD284E43E8004F5B54 /* Frameworks */,
+				954DCEFE284E43E8004F5B54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetroBus;
+			packageProductDependencies = (
+				954263A0284F660900604D48 /* Bus */,
+			);
+			productName = MetroBus;
+			productReference = 954DCF00284E43E8004F5B54 /* MetroBus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		954DCEF8284E43E8004F5B54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					954DCEFF284E43E8004F5B54 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 954DCEFB284E43E8004F5B54 /* Build configuration list for PBXProject "MetroBus" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+			);
+			mainGroup = 954DCEF7284E43E8004F5B54;
+			packageReferences = (
+				95088E05284E888500758A7C /* XCRemoteSwiftPackageReference "CoreTableView" */,
+				95088E0B284E895100758A7C /* XCRemoteSwiftPackageReference "MMCoreNetwork" */,
+				95088E0E284E8AFC00758A7C /* XCRemoteSwiftPackageReference "Localize-Swift" */,
+				95088E13284E900800758A7C /* XCRemoteSwiftPackageReference "FloatingPanel" */,
+				95088E18284E914800758A7C /* XCRemoteSwiftPackageReference "fuse-swift" */,
+				95088E1D284E924200758A7C /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				95174C7E284E93ED00014735 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				9542639A284F434B00604D48 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				9542639F284F65D700604D48 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
+			);
+			productRefGroup = 954DCF01284E43E8004F5B54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				954DCEFF284E43E8004F5B54 /* MetroBus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		954DCEFE284E43E8004F5B54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954DCF10284E43EA004F5B54 /* LaunchScreen.storyboard in Resources */,
+				954DCF0D284E43EA004F5B54 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		954DCEFC284E43E8004F5B54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9587929328521AB2008B837F /* AuthViewController.swift in Sources */,
+				954DCF04284E43E8004F5B54 /* AppDelegate.swift in Sources */,
+				9587929528521DAA008B837F /* ViewController.swift in Sources */,
+				954DCF06284E43E8004F5B54 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		954DCF0E284E43EA004F5B54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				954DCF0F284E43EA004F5B54 /* Base */,
+				9562E0242851130000DC67F0 /* ru */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		954DCF12284E43EA004F5B54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		954DCF13284E43EA004F5B54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		954DCF15284E43EA004F5B54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZR67SB886;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MetroBus/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = v.platonov.MetroBus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		954DCF16284E43EA004F5B54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZR67SB886;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MetroBus/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = v.platonov.MetroBus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		954DCEFB284E43E8004F5B54 /* Build configuration list for PBXProject "MetroBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954DCF12284E43EA004F5B54 /* Debug */,
+				954DCF13284E43EA004F5B54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		954DCF14284E43EA004F5B54 /* Build configuration list for PBXNativeTarget "MetroBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954DCF15284E43EA004F5B54 /* Debug */,
+				954DCF16284E43EA004F5B54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95088E05284E888500758A7C /* XCRemoteSwiftPackageReference "CoreTableView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MosMetro-official/CoreTableView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+		95088E0B284E895100758A7C /* XCRemoteSwiftPackageReference "MMCoreNetwork" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MosMetro-official/MMCoreNetwork";
+			requirement = {
+				branch = callbacks;
+				kind = branch;
+			};
+		};
+		95088E0E284E8AFC00758A7C /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Localize-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+		95088E13284E900800758A7C /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scenee/FloatingPanel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		95088E18284E914800758A7C /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krisk/fuse-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		95088E1D284E924200758A7C /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		95174C7E284E93ED00014735 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 3.19.0;
+			};
+		};
+		9542639A284F434B00604D48 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		9542639F284F65D700604D48 /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		954263A0284F660900604D48 /* Bus */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Bus;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 954DCEF8284E43E8004F5B54 /* Project object */;
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultCellSubtitleCell" rowHeight="72" id="KGk-i7-Jjw" customClass="DefaultCellSubtitleCell" customModule="Bus">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0O-XD-hco">
+                        <rect key="frame" x="16" y="12" width="288" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="6hb-GH-jjJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="17"/>
+                        <color key="textColor" name="text"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPU-Sa-ejh">
+                        <rect key="frame" x="16" y="38" width="288" height="22"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="15"/>
+                        <color key="textColor" name="grey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yck-pv-NE2">
+                        <rect key="frame" x="16" y="71" width="304" height="1"/>
+                        <color key="backgroundColor" name="Separator"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="egY-cY-ZSc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="GPU-Sa-ejh" secondAttribute="bottom" constant="12" id="5IX-cK-t15"/>
+                    <constraint firstItem="GPU-Sa-ejh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5oe-Xr-Imi"/>
+                    <constraint firstItem="y0O-XD-hco" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="F8k-OU-chd"/>
+                    <constraint firstAttribute="trailing" secondItem="GPU-Sa-ejh" secondAttribute="trailing" constant="16" id="TrP-0O-RdI"/>
+                    <constraint firstAttribute="trailing" secondItem="Yck-pv-NE2" secondAttribute="trailing" id="WpC-t5-SJK"/>
+                    <constraint firstItem="Yck-pv-NE2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="auM-7l-XRS"/>
+                    <constraint firstAttribute="bottom" secondItem="Yck-pv-NE2" secondAttribute="bottom" id="ebg-KN-x3k"/>
+                    <constraint firstItem="y0O-XD-hco" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="lIE-5R-Ymk"/>
+                    <constraint firstAttribute="trailing" secondItem="y0O-XD-hco" secondAttribute="trailing" constant="16" id="xWu-rE-huu"/>
+                    <constraint firstItem="GPU-Sa-ejh" firstAttribute="top" secondItem="y0O-XD-hco" secondAttribute="bottom" constant="4" id="z1N-U5-b3y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="dividerView" destination="Yck-pv-NE2" id="Khw-19-CDB"/>
+                <outlet property="mainTitleLabel" destination="y0O-XD-hco" id="GkA-g6-sUc"/>
+                <outlet property="subtTitleLabel" destination="GPU-Sa-ejh" id="cSD-2j-7mi"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Separator">
+            <color red="0.87099999189376831" green="0.87099999189376831" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

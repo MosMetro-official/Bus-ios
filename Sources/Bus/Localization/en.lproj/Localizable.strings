@@ -1,0 +1,110 @@
+/*
+  Localazible.strings
+  MetroTest
+  
+  Created by Сеня Римиханов on 29.02.2020.
+  Copyright © 2020 Гусейн Римиханов. All rights reserved.
+*/
+
+"RageTextView" = "Write down what we can do better and what you didn't like";
+"Not selected" = "Not selected";
+
+// MARK: - Билеты на автобусы
+"main_bus_price_for_one" = "Price for 1 ticket";
+"main_bus_price_ticket" = "Ticket price";
+"main_bus_price_comission" = "Withheld";
+"main_bus_price_refunded" = "Refunded";
+"main_bus_refund_success" = "Refund compeleted succesfully";
+"main_bus_refund_info" = "Refund information";
+"main_bus_refund_details" = "Refund details";
+"main_bus_time" = "Travel time";
+"main_bus_facilities" = "Facilities";
+"main_bus_driver" = "Carrier";
+"main_bus_passengers" = "Passengers";
+"main_bus_method" = "Payment method";
+"main_bus_price_total" = "TOTAL";
+"main_bus_trip_details" = "Trip details";
+"main_bus_all_stops" = "Stops on the route";
+"main_bus_seats_free" = "%@ vacant";
+"main_bus_seats_total" = "Total %@";
+"main_bus_loading_race" = "Loading race data";
+"main_bus_please_wait" = "Please wait";
+"errors_data_parsing_error" = "Error reading data";
+"main_bus_sending_order" = "Booking your place";
+"main_bus_comfirming_order" = "Confirming your payment";
+"main_bus_passenger" = "Passenger";
+"main_bus_return_ticket" = "Refund ticket";
+"main_bus_load" = "Download";
+"main_bus_place" = "Place";
+"main_bus_loading_order_data" = "Loading booking data";
+"main_bus_payment_status" = "Payment status";
+"main_bus_book_status" = "Booking status";
+"main_bus_payment_date" = "Payment date";
+"main_bus_reserve_code" = "Booking code";
+"main_bus_total_price_1" = "Total price";
+"main_bus_ticket_save_path" = "Ticket route quitance";
+"main_bus_history_loading" = "Loading bookings";
+"main_bus_history" = "My bookings";
+"main_bus_order_details" = "Order details";
+"main_bus_ticket" = "Ticket";
+"main_bus_seats_free1" = "Free seats";
+"main_bus_order" = "Order";
+"main_bus_need_to_pay" = "Booking confirmed, but waiting for payment";
+"main_bus_ticket_need_to_pay" = "Your seat booked, but you need to pay";
+"main_bus_error_empty" = "Oh, seems like there are no races on this date";
+"main_bus_error_empty_desc" = "Try a different date or place of departure";
+"main_bus_refunding" = "Refunding ticket";
+"main_bus_initial_title" = "Quick way to find bus tickets to any destination in Russia and CIS";
+"main_bus_initial_subtitle" = "Select departure and arrival points, travel date\nAfter that we will show you the best variants 😎";
+"main_bus_refund_doc" = "Refund document";
+"main_bus_citizenship" = "Select citizenship";
+"main_bus_add_passenger" = "Add passenger";
+"lk_buses" = "Regional bus tickets";
+"lk_bus_buy" = "Buy ticket";
+"main_bus_race_find" = "Search tickets";
+"main_bus_refund_alert_title" = "Ticket refund";
+"main_bus_refund_alert_desc" = "Are you sure? You may be charged a refund fee";
+"main_bus_refund_alert" = "Refund";
+"main_bus_select_date" = "Select date";
+"main_bus_today" = "Today";
+"main_bus_tomorrow" = "Tomorrow";
+"main_bus_auth_title" = "Last step";
+"main_bus_auth_desc" = "You need to be logged in to buy tickets and view your orders history";
+"choose_from" = "Choose from";
+"choose_where_to" = "Choose where to";
+"select_a_date" = "Select a date";
+// Passenger screen
+"main_bus_ticket_type" = "Ticket type";
+"main_bus_name" = "Name";
+"main_bus_name_placeholder" = "John";
+"main_bus_last_name" = "Last name";
+"main_bus_last_name_placeholder" = "Johnson";
+"main_bus_middle_name" = "Middle name (if exists)";
+"main_bus_middle_name_placeholder" = "Ivanovich";
+"main_bus_personal_data" = "Personal";
+"main_bus_birthday" = "Birthday";
+"main_bus_phone" = "Phone";
+"main_bus_gender" = "Gender";
+"main_bus_series" = "Document series";
+"main_bus_number" = "Document number";
+"main_bus_docs" = "Documents";
+"main_bus_gender_male" = "Male";
+"main_bus_gender_female" = "Female";
+// Bus booking status
+"main_bus_book_status_created" = "Waiting for payment";
+"main_bus_book_status_booked" = "Booked";
+"main_bus_book_status_error" = "Error";
+"main_bus_book_status_fully_returned" = "Fully returned";
+"main_bus_book_status_partially_returned" = "Partially returned";
+"main_bus_book_status_cancelled" = "Cancelled";
+"main_bus_book_status_partially_cancelled" = "Partially cancelled";
+
+// Bus payment status
+"main_bus_payment_status_registered" = "Created";
+"main_bus_payment_status_sum_taken" = "Money hold";
+"main_bus_payment_status_success" = "Paid";
+"main_bus_payment_status_cancelled" = "Cancelled";
+"main_bus_payment_status_returned" = "Returned";
+"main_bus_payment_status_declined" = "Declined";
+
+"NewsPapers" = "Newspaper kiosk";

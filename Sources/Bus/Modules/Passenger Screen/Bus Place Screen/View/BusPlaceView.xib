@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BusPlaceView" customModule="Bus">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите место" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnW-r6-Ek5">
+                    <rect key="frame" x="32" y="76" width="350" height="26"/>
+                    <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="22"/>
+                    <color key="textColor" name="TextPrimary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Схема может не совпадать с реальной" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay7-0h-Ppe">
+                    <rect key="frame" x="32" y="110" width="350" height="17.5"/>
+                    <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="15"/>
+                    <color key="textColor" name="TextSecondary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-mO-FWV" customClass="BaseCollectionView" customModule="Bus">
+                    <rect key="frame" x="0.0" y="151.5" width="414" height="710.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sGN-9s-HSo">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="card_background"/>
+            <constraints>
+                <constraint firstItem="ZnW-r6-Ek5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="BQ6-W3-7Qg"/>
+                <constraint firstItem="Ay7-0h-Ppe" firstAttribute="top" secondItem="ZnW-r6-Ek5" secondAttribute="bottom" constant="8" id="GVg-Yw-OAj"/>
+                <constraint firstItem="PdO-mO-FWV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HEB-dM-J5J"/>
+                <constraint firstItem="Ay7-0h-Ppe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="No4-46-nTd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZnW-r6-Ek5" secondAttribute="trailing" constant="32" id="Rqc-jI-Gmw"/>
+                <constraint firstItem="PdO-mO-FWV" firstAttribute="top" secondItem="Ay7-0h-Ppe" secondAttribute="bottom" constant="24" id="Xte-Kq-n4H"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="PdO-mO-FWV" secondAttribute="bottom" id="eJH-mz-WR0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PdO-mO-FWV" secondAttribute="trailing" id="eWh-Q7-C9H"/>
+                <constraint firstItem="ZnW-r6-Ek5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="f98-QN-spz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ay7-0h-Ppe" secondAttribute="trailing" constant="32" id="rV1-fg-4aY"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="PdO-mO-FWV" id="iDV-XX-wV6"/>
+                <outlet property="subtitleLabel" destination="Ay7-0h-Ppe" id="R5v-JL-mEv"/>
+                <outlet property="titleLabel" destination="ZnW-r6-Ek5" id="YQF-GY-bs8"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TextPrimary">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextSecondary">
+            <color red="0.59215686274509804" green="0.59999999999999998" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="card_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

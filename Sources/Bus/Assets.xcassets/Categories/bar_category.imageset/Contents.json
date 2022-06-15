@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bar_category.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

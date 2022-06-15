@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="119" id="KGk-i7-Jjw" customClass="NeedToPayCell" customModule="Bus">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXx-mU-mlG">
+                        <rect key="frame" x="16" y="8" width="288" height="49.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGC-OL-3gc">
+                                <rect key="frame" x="192" y="16" width="84" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="4I3-Q5-MZ5"/>
+                                    <constraint firstAttribute="height" constant="34" id="JRi-7M-dzH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Оплатить">
+                                    <color key="titleColor" name="Warning"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Pay"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG5-Au-ioi">
+                                <rect key="frame" x="16" y="16" width="168" height="17.5"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                                <color key="textColor" name="Warning"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.49411764705882355" blue="0.14117647058823529" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DGC-OL-3gc" secondAttribute="trailing" constant="12" id="2aV-ze-O4V"/>
+                            <constraint firstAttribute="bottom" secondItem="EG5-Au-ioi" secondAttribute="bottom" constant="16" id="5MK-pr-bsE"/>
+                            <constraint firstItem="EG5-Au-ioi" firstAttribute="top" secondItem="bXx-mU-mlG" secondAttribute="top" constant="16" id="MJH-3v-FLc"/>
+                            <constraint firstAttribute="bottom" secondItem="DGC-OL-3gc" secondAttribute="bottom" constant="16" id="PcL-uE-pXd"/>
+                            <constraint firstItem="EG5-Au-ioi" firstAttribute="leading" secondItem="bXx-mU-mlG" secondAttribute="leading" constant="16" id="ZzK-gC-bax"/>
+                            <constraint firstItem="DGC-OL-3gc" firstAttribute="leading" secondItem="EG5-Au-ioi" secondAttribute="trailing" constant="8" id="idV-8j-mmd"/>
+                            <constraint firstItem="DGC-OL-3gc" firstAttribute="top" secondItem="bXx-mU-mlG" secondAttribute="top" constant="16" id="pdO-5R-HzC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="bXx-mU-mlG" secondAttribute="bottom" constant="8" id="Ax4-Yc-dGe"/>
+                    <constraint firstAttribute="trailing" secondItem="bXx-mU-mlG" secondAttribute="trailing" constant="16" id="FoZ-SZ-24U"/>
+                    <constraint firstItem="bXx-mU-mlG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="jVy-LM-OSm"/>
+                    <constraint firstItem="bXx-mU-mlG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xYF-xs-k6u"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="backView" destination="bXx-mU-mlG" id="i37-61-66w"/>
+                <outlet property="mainTitleLabel" destination="EG5-Au-ioi" id="Mhn-AQ-Y3T"/>
+                <outlet property="payButton" destination="DGC-OL-3gc" id="Mjv-lv-c3x"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="161.04910714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Warning">
+            <color red="0.93725490196078431" green="0.49411764705882355" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

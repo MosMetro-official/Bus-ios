@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TicketDetailsView" customModule="Bus">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wMg-6A-Uhp" customClass="OldBaseTableView" customModule="Bus">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" name="BaseIOS"/>
+                </tableView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpV-4c-uFN">
+                    <rect key="frame" x="0.0" y="895" width="414" height="1"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8QL-Cr-sKp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iO-BG-RfN" customClass="MKButton" customModule="Bus">
+                                <rect key="frame" x="108" y="12" width="290" height="44"/>
+                                <color key="backgroundColor" name="ButtonSecondary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LaC-uU-nIP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" name="InvertedTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Pay"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handlePay:" destination="iN0-l3-epB" eventType="touchUpInside" id="fnI-Tp-0eT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sag-J7-AeW">
+                                <rect key="frame" x="16" y="16" width="82" height="0.0"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="11"/>
+                                <color key="textColor" name="TextSecondary"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="main_bus_price_total"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAV-1h-2Ze">
+                                <rect key="frame" x="16" y="22" width="388" height="17.5"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="15"/>
+                                <color key="textColor" name="TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WAV-1h-2Ze" secondAttribute="trailing" constant="10" id="24k-T3-wK8"/>
+                            <constraint firstItem="WAV-1h-2Ze" firstAttribute="leading" secondItem="8QL-Cr-sKp" secondAttribute="leading" constant="16" id="8gC-lc-eSJ"/>
+                            <constraint firstItem="Sag-J7-AeW" firstAttribute="leading" secondItem="8QL-Cr-sKp" secondAttribute="leading" constant="16" id="KUK-F5-cYo"/>
+                            <constraint firstItem="Sag-J7-AeW" firstAttribute="top" secondItem="8QL-Cr-sKp" secondAttribute="top" constant="16" id="UWr-FV-9Dp"/>
+                            <constraint firstAttribute="trailing" secondItem="6iO-BG-RfN" secondAttribute="trailing" constant="16" id="Uhu-2R-IR5"/>
+                            <constraint firstItem="6iO-BG-RfN" firstAttribute="top" secondItem="8QL-Cr-sKp" secondAttribute="top" constant="12" id="nXp-Gy-gMX"/>
+                            <constraint firstItem="WAV-1h-2Ze" firstAttribute="top" secondItem="Sag-J7-AeW" secondAttribute="bottom" constant="6" id="pgX-Lh-dmW"/>
+                            <constraint firstItem="6iO-BG-RfN" firstAttribute="leading" secondItem="Sag-J7-AeW" secondAttribute="trailing" constant="10" id="qqD-Hg-Ca3"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstItem="6iO-BG-RfN" firstAttribute="width" secondItem="lpV-4c-uFN" secondAttribute="width" multiplier="0.7" id="UFw-vV-FZD"/>
+                        <constraint firstAttribute="height" constant="1" id="hQL-lH-MNu"/>
+                    </constraints>
+                    <blurEffect style="systemMaterial"/>
+                </visualEffectView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="BaseIOS"/>
+            <constraints>
+                <constraint firstItem="lpV-4c-uFN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NkZ-as-KtE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lpV-4c-uFN" secondAttribute="trailing" id="Sq5-pB-BeL"/>
+                <constraint firstAttribute="bottom" secondItem="lpV-4c-uFN" secondAttribute="bottom" id="THv-Dj-Lc8"/>
+                <constraint firstItem="wMg-6A-Uhp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UB3-Mv-OEY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wMg-6A-Uhp" secondAttribute="trailing" id="WKG-kK-W9j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wMg-6A-Uhp" secondAttribute="bottom" id="gF8-se-QOv"/>
+                <constraint firstItem="wMg-6A-Uhp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mnV-97-em7"/>
+            </constraints>
+            <connections>
+                <outlet property="effectView" destination="lpV-4c-uFN" id="2VY-ap-xFx"/>
+                <outlet property="effectViewHeightAnchor" destination="hQL-lH-MNu" id="I3x-LE-6vU"/>
+                <outlet property="payButton" destination="6iO-BG-RfN" id="dWM-Wi-cHl"/>
+                <outlet property="priceLabel" destination="WAV-1h-2Ze" id="IYW-kv-rHy"/>
+                <outlet property="tableView" destination="wMg-6A-Uhp" id="qsf-Qu-R8B"/>
+                <outlet property="totalPriceLabel" destination="Sag-J7-AeW" id="EgP-XG-9Te"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="6iO-BG-RfN">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="BaseIOS">
+            <color red="0.94117647058823528" green="0.94509803921568625" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonSecondary">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InvertedTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextPrimary">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextSecondary">
+            <color red="0.59215686274509804" green="0.59999999999999998" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

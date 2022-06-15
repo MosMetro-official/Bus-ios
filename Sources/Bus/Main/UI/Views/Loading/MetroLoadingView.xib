@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="MetroLoadingView" customModule="Bus">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqY-ge-m11">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dIj-Ck-YmG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNT-UJ-SA0">
+                                <rect key="frame" x="32" y="374.5" width="350" height="147.5"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eN2-Oy-Vxy">
+                                        <rect key="frame" x="149" y="0.0" width="52" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="16j-sT-Eaf"/>
+                                            <constraint firstAttribute="width" constant="52" id="pPQ-Gz-Bcn"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9G-x7-wWG">
+                                        <rect key="frame" x="0.0" y="130" width="350" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                                        <color key="textColor" name="TextSecondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0r-vu-lUO">
+                                        <rect key="frame" x="0.0" y="96" width="350" height="26"/>
+                                        <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="22"/>
+                                        <color key="textColor" name="TextPrimary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="I9G-x7-wWG" secondAttribute="bottom" id="1jz-tH-a6R"/>
+                                    <constraint firstAttribute="trailing" secondItem="I9G-x7-wWG" secondAttribute="trailing" id="5Vf-xl-OVg"/>
+                                    <constraint firstItem="I9G-x7-wWG" firstAttribute="top" secondItem="y0r-vu-lUO" secondAttribute="bottom" constant="8" id="5ac-aW-jKh"/>
+                                    <constraint firstItem="I9G-x7-wWG" firstAttribute="leading" secondItem="rNT-UJ-SA0" secondAttribute="leading" id="IZY-R7-2X0"/>
+                                    <constraint firstItem="eN2-Oy-Vxy" firstAttribute="centerX" secondItem="rNT-UJ-SA0" secondAttribute="centerX" id="JZb-cE-vjg"/>
+                                    <constraint firstAttribute="trailing" secondItem="y0r-vu-lUO" secondAttribute="trailing" id="JxX-hj-GYP"/>
+                                    <constraint firstItem="y0r-vu-lUO" firstAttribute="leading" secondItem="rNT-UJ-SA0" secondAttribute="leading" id="Q2U-C0-afg"/>
+                                    <constraint firstItem="y0r-vu-lUO" firstAttribute="top" secondItem="eN2-Oy-Vxy" secondAttribute="bottom" constant="44" id="bng-dZ-qDv"/>
+                                    <constraint firstItem="eN2-Oy-Vxy" firstAttribute="top" secondItem="rNT-UJ-SA0" secondAttribute="top" id="m9j-lC-xqQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="rNT-UJ-SA0" firstAttribute="leading" secondItem="dIj-Ck-YmG" secondAttribute="leading" constant="32" id="21b-EV-jvn"/>
+                            <constraint firstItem="rNT-UJ-SA0" firstAttribute="centerY" secondItem="dIj-Ck-YmG" secondAttribute="centerY" id="fTu-Dp-1CT"/>
+                            <constraint firstAttribute="trailing" secondItem="rNT-UJ-SA0" secondAttribute="trailing" constant="32" id="pFb-L8-9Ym"/>
+                            <constraint firstItem="rNT-UJ-SA0" firstAttribute="centerX" secondItem="dIj-Ck-YmG" secondAttribute="centerX" id="qWm-aN-USG"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iqY-ge-m11" secondAttribute="bottom" id="IeO-nL-KCa"/>
+                <constraint firstItem="iqY-ge-m11" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mhe-Lq-AGo"/>
+                <constraint firstAttribute="trailing" secondItem="iqY-ge-m11" secondAttribute="trailing" id="Uae-5R-Kw6"/>
+                <constraint firstItem="iqY-ge-m11" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="opl-65-fHx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activityIndicator" destination="eN2-Oy-Vxy" id="WLr-Cc-gnd"/>
+                <outlet property="blurView" destination="iqY-ge-m11" id="hjG-FO-8g0"/>
+                <outlet property="loadingLabel" destination="y0r-vu-lUO" id="SNY-XY-wRJ"/>
+                <outlet property="subtitleLabel" destination="I9G-x7-wWG" id="jNP-Jt-a2i"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="85.714285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TextPrimary">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextSecondary">
+            <color red="0.59215686274509804" green="0.59999999999999998" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

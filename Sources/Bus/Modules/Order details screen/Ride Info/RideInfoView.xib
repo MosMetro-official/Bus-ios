@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RideInfoView" customModule="Bus">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1rn-Tq-Dk2">
+                    <rect key="frame" x="0.0" y="44" width="407" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUC-Il-Lre">
+                            <rect key="frame" x="0.0" y="0.0" width="407" height="58"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Перед поездкой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1v-6c-rjZ">
+                                    <rect key="frame" x="16" y="24" width="375" height="18"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="22"/>
+                                    <color key="textColor" name="TextPrimary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="58" id="RoP-3a-cnU"/>
+                                <constraint firstItem="G1v-6c-rjZ" firstAttribute="leading" secondItem="FUC-Il-Lre" secondAttribute="leading" constant="16" id="Xqd-BJ-LwJ"/>
+                                <constraint firstAttribute="trailing" secondItem="G1v-6c-rjZ" secondAttribute="trailing" constant="16" id="ce5-DS-8uy"/>
+                                <constraint firstItem="G1v-6c-rjZ" firstAttribute="top" secondItem="FUC-Il-Lre" secondAttribute="top" constant="24" id="lCx-Ag-v0r"/>
+                                <constraint firstAttribute="bottom" secondItem="G1v-6c-rjZ" secondAttribute="bottom" constant="16" id="vw6-9D-Jko"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRB-Vl-wyg">
+                            <rect key="frame" x="0.0" y="58" width="407" height="499"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Помимо ручной клади есть багаж" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktp-wB-k9b">
+                                    <rect key="frame" x="16" y="24" width="375" height="417"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                                    <color key="textColor" name="textSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bus_baggage" translatesAutoresizingMaskIntoConstraints="NO" id="Ilp-jD-dMN">
+                                    <rect key="frame" x="16" y="464" width="29" height="29"/>
+                                    <color key="tintColor" name="ButtonSecondary"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="29" id="Een-vQ-qic"/>
+                                        <constraint firstAttribute="height" constant="29" id="cHI-iz-KKG"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Получите багажную бирку в кассе автовокзала" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEe-8Y-St4">
+                                    <rect key="frame" x="61" y="457" width="330" height="17"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="17"/>
+                                    <color key="textColor" name="TextPrimary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Стоимость услуги – 44 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esg-q8-tGn">
+                                    <rect key="frame" x="61" y="478" width="330" height="13"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                                    <color key="textColor" name="textSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Ilp-jD-dMN" firstAttribute="top" secondItem="Ktp-wB-k9b" secondAttribute="bottom" constant="23" id="2au-Rz-snw"/>
+                                <constraint firstItem="Ktp-wB-k9b" firstAttribute="leading" secondItem="WRB-Vl-wyg" secondAttribute="leading" constant="16" id="L19-Nn-OCC"/>
+                                <constraint firstItem="Ilp-jD-dMN" firstAttribute="leading" secondItem="WRB-Vl-wyg" secondAttribute="leading" constant="16" id="NwA-o1-GBj"/>
+                                <constraint firstItem="Ktp-wB-k9b" firstAttribute="top" secondItem="WRB-Vl-wyg" secondAttribute="top" constant="24" id="Skj-Ng-p1d"/>
+                                <constraint firstItem="tEe-8Y-St4" firstAttribute="top" secondItem="Ktp-wB-k9b" secondAttribute="bottom" constant="16" id="TR3-iD-SHe"/>
+                                <constraint firstItem="tEe-8Y-St4" firstAttribute="leading" secondItem="Ilp-jD-dMN" secondAttribute="trailing" constant="16" id="duI-9n-wDt"/>
+                                <constraint firstAttribute="trailing" secondItem="tEe-8Y-St4" secondAttribute="trailing" constant="16" id="eAQ-Ia-jFC"/>
+                                <constraint firstAttribute="bottom" secondItem="esg-q8-tGn" secondAttribute="bottom" constant="16" id="efw-Gb-g0M"/>
+                                <constraint firstAttribute="trailing" secondItem="Ktp-wB-k9b" secondAttribute="trailing" constant="16" id="gft-sT-1Hr"/>
+                                <constraint firstItem="esg-q8-tGn" firstAttribute="top" secondItem="tEe-8Y-St4" secondAttribute="bottom" constant="4" id="rRJ-6S-djP"/>
+                                <constraint firstAttribute="trailing" secondItem="esg-q8-tGn" secondAttribute="trailing" constant="16" id="vgh-KM-K9D"/>
+                                <constraint firstItem="esg-q8-tGn" firstAttribute="leading" secondItem="Ilp-jD-dMN" secondAttribute="trailing" constant="16" id="wN5-1M-lFE"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVU-hp-OpQ">
+                            <rect key="frame" x="0.0" y="557" width="407" height="32"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vd3-7h-ZNo">
+                                    <rect key="frame" x="0.0" y="8" width="407" height="1"/>
+                                    <color key="backgroundColor" name="Separator"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="ZWW-Ia-ohf"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" name="navigationBar"/>
+                            <constraints>
+                                <constraint firstItem="Vd3-7h-ZNo" firstAttribute="top" secondItem="wVU-hp-OpQ" secondAttribute="top" constant="8" id="5Zl-vs-yvX"/>
+                                <constraint firstAttribute="height" constant="32" id="A6x-lw-dkB"/>
+                                <constraint firstItem="Vd3-7h-ZNo" firstAttribute="leading" secondItem="wVU-hp-OpQ" secondAttribute="leading" id="BkL-hV-ZHN"/>
+                                <constraint firstAttribute="trailing" secondItem="Vd3-7h-ZNo" secondAttribute="trailing" id="GIl-iQ-mCd"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AW1-Ic-E7V">
+                            <rect key="frame" x="0.0" y="589" width="407" height="113"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Нужен дубликат билета?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ga-zg-fUy">
+                                    <rect key="frame" x="16" y="24" width="375" height="15"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                                    <color key="textColor" name="textSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bus_ticket_ico" translatesAutoresizingMaskIntoConstraints="NO" id="WtM-6v-L4l">
+                                    <rect key="frame" x="16" y="62" width="29" height="29"/>
+                                    <color key="tintColor" name="ButtonSecondary"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="29" id="Ru9-kY-lDy"/>
+                                        <constraint firstAttribute="height" constant="29" id="Vwa-Pc-yEG"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Обратитесь в кассу автовокзала" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGh-gp-GTV">
+                                    <rect key="frame" x="61" y="55" width="330" height="17"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="17"/>
+                                    <color key="textColor" name="TextPrimary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Стоимость услуги – 35 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aX8-Pg-Z1Q">
+                                    <rect key="frame" x="61" y="76" width="330" height="13"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                                    <color key="textColor" name="textSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="aX8-Pg-Z1Q" firstAttribute="top" secondItem="IGh-gp-GTV" secondAttribute="bottom" constant="4" id="06l-1h-tRj"/>
+                                <constraint firstAttribute="bottom" secondItem="aX8-Pg-Z1Q" secondAttribute="bottom" constant="16" id="0dD-TN-UnK"/>
+                                <constraint firstItem="8ga-zg-fUy" firstAttribute="leading" secondItem="AW1-Ic-E7V" secondAttribute="leading" constant="16" id="3Yj-pU-Lg0"/>
+                                <constraint firstItem="8ga-zg-fUy" firstAttribute="top" secondItem="AW1-Ic-E7V" secondAttribute="top" constant="24" id="God-Ng-fpx"/>
+                                <constraint firstItem="IGh-gp-GTV" firstAttribute="leading" secondItem="WtM-6v-L4l" secondAttribute="trailing" constant="16" id="Nah-Fo-Uv1"/>
+                                <constraint firstAttribute="trailing" secondItem="IGh-gp-GTV" secondAttribute="trailing" constant="16" id="Yma-Ip-xLg"/>
+                                <constraint firstAttribute="trailing" secondItem="8ga-zg-fUy" secondAttribute="trailing" constant="16" id="hHn-o8-E2m"/>
+                                <constraint firstItem="IGh-gp-GTV" firstAttribute="top" secondItem="8ga-zg-fUy" secondAttribute="bottom" constant="16" id="koi-mK-T1S"/>
+                                <constraint firstItem="WtM-6v-L4l" firstAttribute="top" secondItem="8ga-zg-fUy" secondAttribute="bottom" constant="23" id="lTY-eP-A7a"/>
+                                <constraint firstItem="aX8-Pg-Z1Q" firstAttribute="leading" secondItem="WtM-6v-L4l" secondAttribute="trailing" constant="16" id="n4Y-rw-PD2"/>
+                                <constraint firstItem="WtM-6v-L4l" firstAttribute="leading" secondItem="AW1-Ic-E7V" secondAttribute="leading" constant="16" id="o6S-DY-dkw"/>
+                                <constraint firstAttribute="trailing" secondItem="aX8-Pg-Z1Q" secondAttribute="trailing" constant="16" id="smd-RC-HRT"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyy-7V-jCb">
+                            <rect key="frame" x="0.0" y="702" width="407" height="32"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-up-l09">
+                                    <rect key="frame" x="0.0" y="8" width="407" height="1"/>
+                                    <color key="backgroundColor" name="Separator"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="7Od-GX-4na"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" name="navigationBar"/>
+                            <constraints>
+                                <constraint firstItem="VJ0-up-l09" firstAttribute="top" secondItem="oyy-7V-jCb" secondAttribute="top" constant="8" id="ABN-Xu-735"/>
+                                <constraint firstAttribute="trailing" secondItem="VJ0-up-l09" secondAttribute="trailing" id="EGb-XA-POq"/>
+                                <constraint firstAttribute="height" constant="32" id="Hz7-eU-URO"/>
+                                <constraint firstItem="VJ0-up-l09" firstAttribute="leading" secondItem="oyy-7V-jCb" secondAttribute="leading" id="VGb-p2-9o8"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cC1-uk-9s8">
+                            <rect key="frame" x="0.0" y="734" width="407" height="84"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vO-Qg-Ffj">
+                                    <rect key="frame" x="16" y="8" width="375" height="44"/>
+                                    <color key="backgroundColor" name="ButtonSecondary"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="gik-ZN-UMd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" name="InvertedTextColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Close"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="handleClose:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vck-L9-mco"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="4vO-Qg-Ffj" firstAttribute="top" secondItem="cC1-uk-9s8" secondAttribute="top" constant="8" id="GK1-Ou-YPd"/>
+                                <constraint firstAttribute="trailing" secondItem="4vO-Qg-Ffj" secondAttribute="trailing" constant="16" id="TZn-cs-vbE"/>
+                                <constraint firstAttribute="bottom" secondItem="4vO-Qg-Ffj" secondAttribute="bottom" constant="32" id="i38-4v-Iky"/>
+                                <constraint firstItem="4vO-Qg-Ffj" firstAttribute="leading" secondItem="cC1-uk-9s8" secondAttribute="leading" constant="16" id="ktJ-SE-Pbr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="base"/>
+            <constraints>
+                <constraint firstItem="1rn-Tq-Dk2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BAQ-ea-I2h"/>
+                <constraint firstItem="1rn-Tq-Dk2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="BzN-Ab-kxe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1rn-Tq-Dk2" secondAttribute="trailing" constant="7" id="Fn5-cY-Ugt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1rn-Tq-Dk2" secondAttribute="bottom" id="qnV-Yd-tha"/>
+            </constraints>
+            <connections>
+                <outlet property="closeButton" destination="4vO-Qg-Ffj" id="t9x-h8-2ur"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bus_baggage" width="24" height="24"/>
+        <image name="bus_ticket_ico" width="24" height="24"/>
+        <namedColor name="ButtonSecondary">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InvertedTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Separator">
+            <color red="0.87099999189376831" green="0.87099999189376831" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextPrimary">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="base">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="navigationBar">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textSecondary">
+            <color red="0.45490196078431372" green="0.4823529411764706" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

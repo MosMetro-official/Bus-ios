@@ -30,7 +30,9 @@ class PDFDocView: UIView {
     }
     
     @IBOutlet private weak var pdfView: PDFView!
+    
     @IBOutlet private var closeButton: UIButton!
+    
     @IBOutlet private weak var saveButton: UIButton!
     
     @IBAction func handleSave(_ sender: UIButton) {
@@ -48,6 +50,7 @@ class PDFDocView: UIView {
 }
 
 extension PDFDocView {
+    
     private func setup() {
         pdfView.autoScales = true
         saveButton.roundCorners(.all, radius: 8)

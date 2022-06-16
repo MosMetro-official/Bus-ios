@@ -12,27 +12,30 @@ import ViewAnimator
 class TicketDetailsView: UIView {
     
     @IBOutlet private var tableView: OldBaseTableView!
+    
     @IBOutlet private var effectView: UIVisualEffectView!
+    
     @IBOutlet private var priceLabel: UILabel!
+    
     @IBOutlet private var payButton: MKButton!
+    
     @IBOutlet var effectViewHeightAnchor: NSLayoutConstraint!
+    
     @IBOutlet weak var totalPriceLabel: UILabel!
     
     private var unauthorizedView: BottomModalView?
     
     lazy var titleStackView: UIStackView = {
-        // title label
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.text = "Title"
         titleLabel.font = UIFont(name: "MoscowSans-Bold", size: 17)
         titleLabel.textColor = .textPrimary
-        // subtitleLabel
         let subtitleLabel = UILabel()
         subtitleLabel.textAlignment = .center
         subtitleLabel.text = "main_bus_trip_details".localized(in: .module)
         subtitleLabel.font = UIFont(name: "MoscowSans-Bold", size: 11)
-        subtitleLabel.textColor = .grey
+        subtitleLabel.textColor = .textSecondary
         let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
         stackView.axis = .vertical
         return stackView
@@ -184,6 +187,7 @@ extension TicketDetailsView {
 }
 
 extension UIResponder {
+    
     public var parentViewController: UIViewController? {
         return next as? UIViewController ?? next?.parentViewController
     }

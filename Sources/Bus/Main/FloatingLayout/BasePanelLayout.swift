@@ -6,8 +6,8 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import FloatingPanel
 import UIKit
+import FloatingPanel
 
 /// Enum of state positions BasePanelController
 ///
@@ -30,8 +30,6 @@ public enum TypeDevices {
     case allModels
 }
 
-// MARK: - Devices fabrica
-/// This structure contains a method that returns an array of mobile device names
 public struct DevicesFabrica {
     
     /**
@@ -64,15 +62,12 @@ public struct DevicesFabrica {
     private init() {}
 }
 
-// MARK: - BasePanelLayout
-/// An interface for generating layout information for a panel
 class BasePanelLayout: NSObject, FloatingPanelLayout {
     
-    //MARK: - Properties
-    let position     : FloatingPanelPosition = .bottom
+    var anchors : [FloatingPanelState : FloatingPanelLayoutAnchoring] = [:]
+    let position : FloatingPanelPosition = .bottom
     var initialState : FloatingPanelState
-    var anchors      : [FloatingPanelState : FloatingPanelLayoutAnchoring] = [:]
-    
+
     /// Initialization with setting the starting position and case of states for panel acnhors
     /// - Parameters:
     ///   - state:    the initial state when a panel is presented

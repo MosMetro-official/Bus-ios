@@ -9,6 +9,7 @@
 import UIKit
 
 final class LKDevice {
+    
     public var model: String {
         get { return deviceModel() }
     }
@@ -46,12 +47,14 @@ final class LKDevice {
 }
 
 extension LKDevice {
+    
     fileprivate func deviceAppVersion() -> String? {
-        guard let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String,
-              let build = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String else {
+        guard
+            let build = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String,
+            let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+        else {
             return nil
         }
-        
         return "\(version) (\(build))"
     }
     

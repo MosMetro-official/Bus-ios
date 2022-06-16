@@ -42,6 +42,7 @@ public class Bus {
 }
 
 extension UIFont {
+    
     /// Method for register fonts from package
     open class func registerFont(bundle: Bundle, fontName: String, fontExtension: String) -> Bool {
         guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension) else {

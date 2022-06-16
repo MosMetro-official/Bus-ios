@@ -9,7 +9,6 @@
 import Foundation
 
 @propertyWrapper
-
 struct AppData<T> {
     
     private let key: String

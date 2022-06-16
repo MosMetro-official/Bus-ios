@@ -9,9 +9,6 @@
 import UIKit
 
 final class LKPresentationFadeController: UIPresentationController {
-    override var frameOfPresentedViewInContainerView: CGRect {
-        return self.frameForPresentedController()
-    }
     
     func frameForPresentedController() -> CGRect {
         guard let containerFrame = self.containerView?.frame else {
@@ -20,13 +17,17 @@ final class LKPresentationFadeController: UIPresentationController {
         return containerFrame
     }
     
+    override func containerViewDidLayoutSubviews() {
+        super.containerViewDidLayoutSubviews()
+        presentedView?.frame = frameOfPresentedViewInContainerView
+    }
+    
     override func presentationTransitionWillBegin() {
         super.presentationTransitionWillBegin()
         containerView?.addSubview(presentedView!)
     }
     
-    override func containerViewDidLayoutSubviews() {
-        super.containerViewDidLayoutSubviews()
-        presentedView?.frame = frameOfPresentedViewInContainerView
+    override var frameOfPresentedViewInContainerView: CGRect {
+        return self.frameForPresentedController()
     }
 }

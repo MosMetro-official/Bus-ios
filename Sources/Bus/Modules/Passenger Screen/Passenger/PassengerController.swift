@@ -6,16 +6,16 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import FloatingPanel
 import CoreML
-import MMCoreNetwork
 import CoreAudio
+import FloatingPanel
+import MMCoreNetwork
 
 class PassengerController: BaseController {
     
     let mainView = PassengerView.loadFromNib()
+    
     private var needToLoadPassengers = true
     
     var model: BusPaymentModel? {
@@ -90,17 +90,19 @@ extension PassengerController {
         let nextEndImage = UIImage.getAssetImage(name: "Done1")
         let nextImage = UIImage.getAssetImage(name: "submit")
         
-        return .init(id: index,
-                     desc: desc,
-                     text: text,
-                     placeholder: placeholder,
-                     onTextEnter: onTextEnter,
-                     keyboardType: keyboardType,
-                     onNext: onNext,
-                     onBack: onBack,
-                     nextImage: isLast ? nextEndImage : nextImage,
-                     backImageEnabled: !isFirst,
-                     validation: validation)
+        return .init(
+            id: index,
+            desc: desc,
+            text: text,
+            placeholder: placeholder,
+            onTextEnter: onTextEnter,
+            keyboardType: keyboardType,
+            onNext: onNext,
+            onBack: onBack,
+            nextImage: isLast ? nextEndImage : nextImage,
+            backImageEnabled: !isFirst,
+            validation: validation
+        )
     }
     
     private func passengerFieldExists(for index: Int) -> Bool {

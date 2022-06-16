@@ -33,7 +33,7 @@ extension FloatingPanelController {
         shadow.spread = 8
         appearance.shadows = [shadow]
         appearance.cornerRadius = 16.0
-        appearance.backgroundColor = .MKBase
+        appearance.backgroundColor = .baseIOS
         return appearance
     }
 }

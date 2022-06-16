@@ -10,13 +10,18 @@ import Foundation
 import MMCoreNetwork
 
 struct OrderBookingResponse {
-    let internalOrderID: Int
-    let sberbankOrderID: String
-    let gdsID: Int
-    let url: String
+    let internalOrderID : Int
+    let sberbankOrderID : String
+    let gdsID : Int
+    let url : String
     
     static func map(data: JSON) -> OrderBookingResponse? {
-        if let internalID = data["internalId"].int, let sberbankOrderID = data["sberbankOrderId"].string, let gdsID = data["gdsOrderId"].int, let url = data["formUrl"].string {
+        if
+            let internalID = data["internalId"].int,
+            let sberbankOrderID = data["sberbankOrderId"].string,
+            let gdsID = data["gdsOrderId"].int,
+            let url = data["formUrl"].string
+        {
             return .init(internalOrderID: internalID, sberbankOrderID: sberbankOrderID, gdsID: gdsID, url: url)
         }
         return nil
@@ -31,15 +36,20 @@ final class OrderProcessingService {
     
     var order: OrderBookingResponse?
     
+    public func clear() {
+        self.order = nil
+    }
+    
+    @objc
+    private func paymentSuccess() {
+        self.onPaymentSuccess?()
+    }
+    
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(paymentSuccess), name: .busPaymentSuccess, object: nil)
     }
     
-    @objc private func paymentSuccess() {
-        self.onPaymentSuccess?()
-    }
-    
-    public func clear() {
-        self.order = nil
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .busPaymentSuccess, object: nil)
     }
 }

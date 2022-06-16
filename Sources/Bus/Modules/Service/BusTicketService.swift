@@ -6,17 +6,17 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
-import MMCoreNetwork
-import SwiftDate
 import Fuse
 import PDFKit
+import SwiftDate
+import Foundation
+import MMCoreNetwork
 
-struct BusRegion: Fuseable {
-    let id: Int
-    let name: String
-    let type: String
-    let code: String
+struct BusRegion : Fuseable {
+    let id : Int
+    let name : String
+    let type : String
+    let code : String
     
     var properties: [FuseProperty] {
         return [
@@ -26,51 +26,60 @@ struct BusRegion: Fuseable {
     
     static func map(data: JSON) -> BusRegion? {
         if let id = data["id"].int {
-            return BusRegion(id: id,
-                           name: data["name"].stringValue.lowercased().capitalizingFirstLetter(),
-                             type: data["type"].stringValue,
-                    code: data["code"].stringValue)
+            return BusRegion(
+                id: id,
+                name: data["name"].stringValue.lowercased().capitalizingFirstLetter(),
+                type: data["type"].stringValue,
+                code: data["code"].stringValue
+            )
         }
         return nil
     }
 }
 
 struct Destination: Fuseable {
-    let id: Int
-    let name: String
-    let region: String
-    let details: String?
-    let adress: String?
-    let mapPoint: MapPoint?
-    let okato: String
-    let place: Bool
+    let id : Int
+    let name : String
+    let region : String
+    let details : String?
+    let adress : String?
+    let mapPoint : MapPoint?
+    let okato : String
+    let place : Bool
     
     var properties: [FuseProperty] {
-           return [
+        return [
             FuseProperty(name: name)
-           ]
-       }
+        ]
+    }
     
     static func map(data: JSON) -> Destination? {
         if let id = data["id"].int {
             var mapPoint: MapPoint?
-            if let latitude = data["latitude"].double, let longitude = data["longitude"].double {
+            if
+                let latitude = data["latitude"].double,
+                let longitude = data["longitude"].double
+            {
                 mapPoint = MapPoint(latitude: latitude, longitude: longitude)
             }
-            return Destination(id: id,
-                               name: data["name"].stringValue,
-                               region: data["region"].stringValue,
-                               details: data["details"].string,
-                               adress: data["adress"].string,
-                               mapPoint: mapPoint,
-                               okato: data["okato"].stringValue,
-                               place: data["place"].boolValue)
+            return Destination(
+                id: id,
+                name: data["name"].stringValue,
+                region: data["region"].stringValue,
+                details: data["details"].string,
+                adress: data["adress"].string,
+                mapPoint: mapPoint,
+                okato: data["okato"].stringValue,
+                place: data["place"].boolValue
+            )
         }
         return nil
     }
 }
 
 final class BusTicketService {
+    
+    var onPaymentSuccess : (() -> ())?
     
     @AppData(key: "buses.available", defaultValue: false)
     static var isBusesAvailable: Bool
@@ -100,11 +109,8 @@ final class BusTicketService {
             self.onPaymentSuccess?()
         }
     }
-    
-    var onPaymentSuccess: (() -> ())?
 }
 
-// MARK: – Regions, finding places
 extension BusTicketService {
     
     func regions(countryID: Int, callback: @escaping (Result<[BusRegion],FutureNetworkError>) -> Void ) {
@@ -126,7 +132,6 @@ extension BusTicketService {
                 callback(.failure(error))
                 return
             }
-            
         })
     }
     
@@ -175,7 +180,6 @@ extension BusTicketService {
     }
 }
 
-// MARK: Races
 extension BusTicketService {
     
     func findRaces(from: Destination, to: Destination, onDate: Date, callback: @escaping (Result<[Race],FutureNetworkError>) -> Void) {
@@ -238,8 +242,8 @@ extension BusTicketService {
     }
 }
 
-// MARK: Payment
 extension BusTicketService {
+    
     func initPayment(body: [String: Any], callback: @escaping (Result<OrderBookingResponse,FutureNetworkError>) -> ()) {
         let network = FutureNetworkService()
         let reqBody = Request.Body(parameters: nil, body: body)
@@ -273,7 +277,7 @@ extension BusTicketService {
                 if let busOrder = BusOrder.map(data: json["data"]) {
                     callback(.success(busOrder))
                     OrderProcessingService.shared.clear()
-//                    AnalyticsService.reportEvent(with: "newmetro.cabinet.mybustickets.orders.paymentSuccess")
+                    //                    AnalyticsService.reportEvent(with: "newmetro.cabinet.mybustickets.orders.paymentSuccess")
                     return
                 }
                 callback(.failure(.jsonParsingError()))
@@ -286,11 +290,9 @@ extension BusTicketService {
     }
 }
 
-// MARK: Orders
 extension BusTicketService {
     
-// file:///var/mobile/Containers/Data/Application/57D4A653-6AB2-4E89-833F-F46597B4B262/Documents/2f691779ba06dea1205019f51abc5f91cd1df8b7.pdf
-    
+    // file:///var/mobile/Containers/Data/Application/57D4A653-6AB2-4E89-833F-F46597B4B262/Documents/2f691779ba06dea1205019f51abc5f91cd1df8b7.pdf
     private func documentExist(path: String) -> URL? {
         let fileManager = FileManager.default
         do {
@@ -323,7 +325,6 @@ extension BusTicketService {
     func loadDocument(ticket: BusOrder.OrderTicket, callback: @escaping (Result<URL,FutureNetworkError> ) -> Void) {
         if let filePath = documentExist(path: ticket.docPath()) {
             callback(.success(filePath))
-            print("🤩 FILE EXISTS")
             return
         } else {
             let network = FutureNetworkService()

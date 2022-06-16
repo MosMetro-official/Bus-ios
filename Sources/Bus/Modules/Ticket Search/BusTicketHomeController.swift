@@ -6,19 +6,17 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
+import UIKit
 import SwiftDate
 import ViewAnimator
-import SwiftDate
-import UIKit
 import Localize_Swift
-
 
 class BusTicketHomeController: BaseController {
     
     private let mainView = BusTicketHomeView.loadFromNib()
     
     private let service = BusTicketService()
-        
+    
     private var model: TicketSearchModel? {
         didSet {
             if let from = model?.from?.from, let to = model?.to?.to, let date = model?.date {
@@ -41,8 +39,7 @@ class BusTicketHomeController: BaseController {
     
     public var isHidingNavigation = false
     
-//https://devapp.mosmetro.ru/services/busticketsales/gds/v1/races/5107/128463/2021-12-0
-    
+    //https://devapp.mosmetro.ru/services/busticketsales/gds/v1/races/5107/128463/2021-12-0
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CURRENT LANGUAGE 🔥🔥🔥 \(Localize.currentLanguage())")
@@ -67,11 +64,10 @@ class BusTicketHomeController: BaseController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
-    
 }
 
 extension BusTicketHomeController {
@@ -109,13 +105,11 @@ extension BusTicketHomeController {
 //            self?.model?.date = date
 //        }
         
-        datePicker.pin(on: self.view, { view, parent in
-            [
-                view.topAnchor.constraint(equalTo: parent.safeAreaLayoutGuide.topAnchor, constant: 20),
-                view.centerXAnchor.constraint(equalTo: parent.centerXAnchor),
-                view.widthAnchor.constraint(equalTo: parent.widthAnchor, multiplier: 0.9)
-            ]
-        })
+        datePicker.pin(on: self.view) {[
+            $0.topAnchor.constraint(equalTo: $1.safeAreaLayoutGuide.topAnchor, constant: 20),
+            $0.centerXAnchor.constraint(equalTo: $1.centerXAnchor),
+            $0.widthAnchor.constraint(equalTo: $1.widthAnchor, multiplier: 0.9)
+        ]}
     }
     
     private func showSearchController(direction: Direction) {
@@ -142,14 +136,14 @@ extension BusTicketHomeController {
         }
         self.present(controller, animated: true, completion: nil)
         //controller.direction = direction
-//        controller.onStationSelect = { [weak self] station in
-//            guard let self = self else { return }
-//            self.setStation(direction, station)
-//        }
+        //        controller.onStationSelect = { [weak self] station in
+        //            guard let self = self else { return }
+        //            self.setStation(direction, station)
+        //        }
     }
     
     private func showDetails(race: Race) {
-//        AnalyticsService.reportEvent(with: "newmetro.city.buybustickets.tap.race")
+        //        AnalyticsService.reportEvent(with: "newmetro.city.buybustickets.tap.race")
         DispatchQueue.main.async {
             let controller = TicketDetailsController()
             controller.raceUID = race.id
@@ -200,21 +194,23 @@ extension BusTicketHomeController {
                         if let strDuration = Utils.getTotalTimeString(from: race.duration) {
                             duration = strDuration
                         }
-                        return .init(carrier: race.carrier.name,
-                                     price: "\(race.price)₽",
-                                     seats: freeSeats,
-                                     fromDate: race.dispatchDate.toFormat("dd MMM"),
-                                     fromTime: race.dispatchDate.toFormat("HH:mm"),
-                                     from: race.dispatchStationName,
-                                     fromDetailed: race.dispatchStationName,
-                                     toDate: race.arrivalDate.toFormat("dd MMM"),
-                                     toTime: race.arrivalDate.toFormat("HH:mm"),
-                                     to:  race.arrivalStationName,
-                                     toDetailed: race.arrivalStationName,
-                                     duration: duration,
-                                     onSelect: { [weak self] in
-                            self?.showDetails(race: race)
-                        })
+                        return .init(
+                            carrier: race.carrier.name,
+                            price: "\(race.price)₽",
+                            seats: freeSeats,
+                            fromDate: race.dispatchDate.toFormat("dd MMM"),
+                            fromTime: race.dispatchDate.toFormat("HH:mm"),
+                            from: race.dispatchStationName,
+                            fromDetailed: race.dispatchStationName,
+                            toDate: race.arrivalDate.toFormat("dd MMM"),
+                            toTime: race.arrivalDate.toFormat("HH:mm"),
+                            to:  race.arrivalStationName,
+                            toDetailed: race.arrivalStationName,
+                            duration: duration,
+                            onSelect: { [weak self] in
+                                self?.showDetails(race: race)
+                            }
+                        )
                     }
                     elements.append(contentsOf: searchItems.map { Element(content: $0) })
                 }

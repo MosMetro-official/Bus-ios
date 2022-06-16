@@ -76,9 +76,13 @@ class PassengerView: UIView {
     }
     
     @IBOutlet weak var saveButton: MKButton!
+    
     @IBOutlet weak var buttonsEffectView: UIVisualEffectView!
+    
     @IBOutlet weak var addButton: UIButton!
+    
     @IBOutlet var tableView: OldBaseTableView!
+    
     @IBOutlet weak var buttonsEffectViewHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
@@ -120,20 +124,16 @@ extension PassengerView {
     
     private func render() {
         DispatchQueue.main.async {
-            if #available(iOS 13.0, *) {
                 let items: [UIAction] = self.viewState.menuItems.map { menuItem in
                     return UIAction(title: menuItem.title, image: menuItem.image, handler: { _ in
                         menuItem.onSelect()
                     })
                 }
-                let menu = UIMenu(title: "Passengers", image: nil, identifier: nil, options: [], children: items)
+            let menu = UIMenu(title: "Passengers".localized(in: .module), image: nil, identifier: nil, options: [], children: items)
                 if #available(iOS 14.0, *) {
                     self.addButton.menu = menu
                     self.addButton.showsMenuAsPrimaryAction = true
                 }
-            } else {
-                // Fallback on earlier versions
-            }
             self.saveButton.isEnabled = self.viewState.onSave == nil ? false : true
             self.tableView.shouldInterrupt = true
             self.tableView.viewStateInput = self.viewState.items

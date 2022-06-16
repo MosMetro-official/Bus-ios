@@ -9,6 +9,7 @@
 import UIKit
 
 final class LKFadeDismissAnimator: NSObject {
+    
     let duration: TimeInterval = 0.25
     
     private func animator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
@@ -28,13 +29,14 @@ final class LKFadeDismissAnimator: NSObject {
 }
 
 extension LKFadeDismissAnimator: UIViewControllerAnimatedTransitioning {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return duration
-    }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let animator = self.animator(using: transitionContext)
         animator.startAnimation()
+    }
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return duration
     }
     
     func interruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {

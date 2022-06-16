@@ -108,3 +108,6 @@
 "main_bus_payment_status_declined" = "Declined";
 
 "NewsPapers" = "Newspaper kiosk";
+
+"log_in" = "Log in";
+"Loading..." = "Loading...";

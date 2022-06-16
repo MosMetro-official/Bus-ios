@@ -9,11 +9,12 @@
 import UIKit
 import SDWebImage
 
-protocol _OnboardinImageCell: OldCellData {
-    var imageURL: String { get set }
+protocol _OnboardinImageCell : OldCellData {
+    var imageURL : String { get set }
 }
 
 extension _OnboardinImageCell {
+    
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         tableView.register(OnboardinImageCell.nib, forCellReuseIdentifier: OnboardinImageCell.identifire)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OnboardinImageCell.identifire, for: indexPath) as? OnboardinImageCell else { return .init() }
@@ -23,10 +24,10 @@ extension _OnboardinImageCell {
 }
 
 class OnboardinImageCell: UITableViewCell {
-
-    @IBOutlet var mainImageView: UIImageView!
     
-    @IBOutlet private var imageViewHeigthAnchor: NSLayoutConstraint!
+    @IBOutlet public var mainImageView : UIImageView!
+    
+    @IBOutlet private var imageViewHeigthAnchor : NSLayoutConstraint!
     
     private var imageURL: String? {
         didSet {
@@ -42,15 +43,8 @@ class OnboardinImageCell: UITableViewCell {
         imageViewHeigthAnchor.constant = UIScreen.main.bounds.width * 1.2
         self.layoutIfNeeded()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configure(data: _OnboardinImageCell) {
         self.imageURL = data.imageURL
     }
-    
 }

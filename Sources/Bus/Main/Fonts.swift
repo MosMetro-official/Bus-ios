@@ -8,7 +8,6 @@
 
 import UIKit
 
-// MARK: Fonts
 extension UIFont {
     
     @available(*, deprecated, message: "Use 'Headline_1' font")

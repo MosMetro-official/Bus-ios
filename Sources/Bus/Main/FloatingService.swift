@@ -10,6 +10,7 @@ import FloatingPanel
 import UIKit
 
 struct FloatingService {
+    
     /// Initialization BasePanelController with setting the starting position and case of states for panel acnhors
     /// - Parameters:
     ///   - contentVC: view controller responsible for the content portion of a panel

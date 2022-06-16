@@ -9,15 +9,16 @@
 import UIKit
 
 protocol _BaseFooterView {
-    var text: String { get set }
-    var attributedText: NSAttributedString? { get set }
-    var isInsetGrouped: Bool { get }
+    var text : String { get set }
+    var attributedText : NSAttributedString? { get set }
+    var isInsetGrouped : Bool { get }
 }
 
 class BaseFooterView: UITableViewHeaderFooterView {
 
-    @IBOutlet weak var leftLabelAnchor: NSLayoutConstraint!
-    @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var leftLabelAnchor : NSLayoutConstraint!
+    
+    @IBOutlet weak var mainTitle : UILabel!
     
     public func configure(_ data: _BaseFooterView) {
         if let attributedText = data.attributedText {

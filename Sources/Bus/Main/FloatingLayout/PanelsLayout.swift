@@ -7,10 +7,9 @@
 //
 //
 
-import FloatingPanel
 import UIKit
+import FloatingPanel
 
-//MARK: - Guide
 class GuideFloatingLayout: FloatingPanelLayout {
 
     var initialState: FloatingPanelState    = .half
@@ -30,7 +29,6 @@ class GuideFloatingLayout: FloatingPanelLayout {
     }
 }
 
-//MARK: - Menu
 class MenuFloatingLayout: FloatingPanelLayout {
 
     var initialState: FloatingPanelState    = {
@@ -41,7 +39,7 @@ class MenuFloatingLayout: FloatingPanelLayout {
             return .half
         }
     } ()
-    var position    : FloatingPanelPosition = .bottom
+    var position : FloatingPanelPosition = .bottom
 
     var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         switch UIDevice.modelName {

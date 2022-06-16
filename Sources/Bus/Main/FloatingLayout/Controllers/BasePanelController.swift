@@ -6,10 +6,9 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import FloatingPanel
 import UIKit
+import FloatingPanel
 
-/// A custom container (super class is FloatingPanelController) ViewController to display a panel to present contents in parallel as a user wants.
 class BasePanelController : FloatingPanelController {
     
     ///  Initialization with setting the starting position and case of states for panel acnhors
@@ -31,7 +30,6 @@ class BasePanelController : FloatingPanelController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // TODO: - Surface Background Color
     private func setupSurface() {
         surfaceView.backgroundColor = .clear
         surfaceView.appearance      = FloatingPanelController.metroAppereance()

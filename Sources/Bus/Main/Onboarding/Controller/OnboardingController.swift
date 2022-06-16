@@ -6,14 +6,14 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class OnboardingController: BaseController {
+class OnboardingController : BaseController {
     
     let onboardingView = OnboardingView.loadFromNib()
     
-    @objc var onboardingName = "" {
+    @objc
+    var onboardingName = "" {
         didSet {
             load()
         }
@@ -40,17 +40,11 @@ class OnboardingController: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = false
-        
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
-    
 }
 
 extension OnboardingController {
+    
     private func load() {
         self.onboardingView.viewState = .loading
         OnboardingModel.loadOnboarding(name: onboardingName, callback: { result in
@@ -64,10 +58,6 @@ extension OnboardingController {
                 }
             }
         })
-    }
-    
-    private func setup() {
-        
     }
     
     private func makeState() {
@@ -91,9 +81,6 @@ extension OnboardingController {
             DispatchQueue.main.async {
                 self.onboardingView.viewState = .loaded(state)
             }
-           
         }
-        
     }
-  
 }

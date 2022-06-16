@@ -8,8 +8,8 @@
 
 import UIKit
 
-//https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80
-class OnboardingView: UIView {
+// https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80
+class OnboardingView : UIView {
     
     enum ViewState {
         case loading
@@ -17,25 +17,22 @@ class OnboardingView: UIView {
         case error(MetroAlertView.ViewState)
         
         struct Loaded {
-            let collectionState: OldState
-            let onContinue: (() -> ())?
+            let collectionState : OldState
+            let onContinue : (() -> ())?
         }
         
         struct ContentCell: _OnboardingCollectionCell {
-            var items: OldState
+            var items : OldState
         }
         
         struct Image: _OnboardinImageCell {
-            var imageURL: String
+            var imageURL : String
         }
         
         struct Text: _OnboardingTextTableCell {
-            var title: String
-            
-            var mainText: NSAttributedString
-            
+            var title : String
+            var mainText : NSAttributedString
         }
-        
     }
     
     var viewState: ViewState = .loading {
@@ -60,7 +57,6 @@ class OnboardingView: UIView {
             loadedState.onContinue?()
         }
     }
-    
 }
 
 extension OnboardingView {
@@ -80,7 +76,6 @@ extension OnboardingView {
                 self.removeLoading { [weak self] in
                     self?.showMetroAlert(with: err)
                 }
-                
             }
         }
     }
@@ -104,14 +99,11 @@ extension OnboardingView {
                 }
             }
         }
-        
         collectionView.onScroll = { [weak self] scrollView in
             guard let self = self else { return }
-            //  swiftlint:disable force_cast
             for cell: OnboardingCollectionCell in self.collectionView.visibleCells as! [OnboardingCollectionCell] {
                 cell.parallaxTheImageViewScrollOffset(offsetPoint: self.collectionView.contentOffset)
             }
-            //  swiftlint:enable force_cast
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             if let flowLayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -121,7 +113,5 @@ extension OnboardingView {
                 flowLayout.sectionInset = .zero
             }
         })
-        
     }
-    
 }

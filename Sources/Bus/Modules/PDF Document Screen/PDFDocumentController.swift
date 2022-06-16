@@ -6,7 +6,7 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import PDFKit
 
 class PDFDocumentController: BaseController {
@@ -56,6 +56,7 @@ class PDFDocumentController: BaseController {
 }
 
 extension PDFDocumentController {
+    
     private func makeState() {
         if let filePath = self.filePath {
             let onSave: () -> () = { [weak self] in

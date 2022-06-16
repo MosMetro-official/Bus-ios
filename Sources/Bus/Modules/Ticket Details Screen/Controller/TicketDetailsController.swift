@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import SafariServices
 import SwiftDate
-import Localize_Swift
 import ViewAnimator
+import SafariServices
+import Localize_Swift
 
 class TicketDetailsController: BaseController {
     
@@ -39,7 +39,6 @@ class TicketDetailsController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NotificationCenter.default.addObserver(self, selector: #selector(handleAuth), name: NSNotification.Name(nAuthSuccess), object: nil)
         self.mainView.viewState = .initial
         busTicketService.setupPaymentObserver()
         busTicketService.onPaymentSuccess = { [weak self] in
@@ -51,7 +50,8 @@ class TicketDetailsController: BaseController {
 
 extension TicketDetailsController {
     
-    @objc private func handleAuth() {
+    @objc
+    private func handleAuth() {
         self.mainView.viewState.unauthorized = nil
         startPayment()
     }
@@ -174,10 +174,12 @@ extension TicketDetailsController {
             items.append(contentsOf: [freeSeatsAttr,timeOnTheWay,carrier])
             items.append(contentsOf: tickets)
         }
-        let header = TicketDetailsView.ViewState.Header(title: "Detailed info".localized(in: .module),
-                                                        style: .medium,
-                                                        backgroundColor: .clear,
-                                                        isInsetGrouped: false)
+        let header = TicketDetailsView.ViewState.Header(
+            title: "Detailed info".localized(in: .module),
+            style: .medium,
+            backgroundColor: .clear,
+            isInsetGrouped: false
+        )
         let sec = SectionState(header: header, footer: nil)
         return OldState(model: sec, elements: items.map { Element(content: $0) })
     }
@@ -203,21 +205,28 @@ extension TicketDetailsController {
             let endPointSubtitle = model.raceSummary.race.arrivalDate.toFormat("d MMMM HH:mm", locale: locale)
             let endPoint = TicketDetailsView.ViewState.EndPoint(title: model.raceSummary.race.arrivalStationName, subtitle: endPointSubtitle)
             let elements = [startPoint,select1,select2,endPoint].enumerated().map { Element(content: $0.element) }
-            let header = TicketDetailsView.ViewState.Header(title: "Route details".localized(in: .module),
-                                                            style: .medium,
-                                                            backgroundColor: .clear,
-                                                            isInsetGrouped: false)
+            let header = TicketDetailsView.ViewState.Header(
+                title: "Route details".localized(in: .module),
+                style: .medium,
+                backgroundColor: .clear,
+                isInsetGrouped: false
+            )
             let mainSection = SectionState(header: header, footer: nil)
             let state = OldState(model: mainSection, elements: elements)
             let onPay: () -> () = { [weak self] in
                 self?.startPayment()
             }
-            self.mainView.viewState = .init(title: model.raceSummary.race.raceTitle,
-                                            subtitle: startPointSubtitle,
-                                            price: "\(model.totalPrice) ₽",
-                                            onPay: self.canPay() ? onPay : nil,
-                                            tableItems: [self.createAttributesSection(),state],
-                                            dataState: .loaded)
+            self.mainView.viewState = .init(
+                title: model.raceSummary.race.raceTitle,
+                subtitle: startPointSubtitle,
+                price: "\(model.totalPrice) ₽",
+                onPay: self.canPay() ? onPay : nil,
+                tableItems: [
+                    self.createAttributesSection(),
+                    state
+                ],
+                dataState: .loaded
+            )
         }
     }
 }

@@ -6,23 +6,18 @@
 //  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import SafariServices
-import MessageUI
-import Localize_Swift
-import FloatingPanel
 import StoreKit
+import MessageUI
+import FloatingPanel
+import SafariServices
+import Localize_Swift
 
-//FOR TableView Animation
-let animationDuration = 0.3
 let delay = 0.01
 
-class BaseController: UIViewController {
-    
-    var alertView               : AlertView?
-    var rageController          : RagePanelVC!
-    var floatingPanelController : FloatingPanelController!
+let animationDuration = 0.3
+
+class BaseController : UIViewController {
     
     var onLanguageChange: (() -> ())?
     
@@ -40,31 +35,22 @@ class BaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
-        self.view.backgroundColor = UIColor.MKBase
+        self.view.backgroundColor = UIColor.baseIOS
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtton
-        handlingCurrentLaunch()
     }
     
     @objc
     func setText() {
         onLanguageChange?()
     }
-}
-
-extension BaseController {
-    public func openDeeplink() {
-        if let url = URL(string: "mosmetrohologram") {
-            UIApplication.shared.open(url, options: .init())
-        }
-    }
     
     func setTransparentNavBar() {
-           self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-           self.navigationController?.navigationBar.shadowImage   = UIImage()
-           self.navigationController?.navigationBar.isTranslucent = true
-           self.navigationController?.view.backgroundColor        = .clear
-       }
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    }
     
     @discardableResult
     public func openWeb(link: String) -> SFSafariViewController? {
@@ -78,13 +64,12 @@ extension BaseController {
     class func safariController(_ link: String) -> SFSafariViewController? {
         guard let url = URL(string: link) else { return nil }
         let safariVC = SFSafariViewController(url: url)
-        safariVC.preferredBarTintColor = .MKBase
-        safariVC.preferredControlTintColor = .mainColor
+        safariVC.preferredBarTintColor = .baseIOS
+        safariVC.preferredControlTintColor = .main
         return safariVC
     }
     
     public func openMailController(_ message: MailMessage) {
-
 //        if MFMailComposeViewController.canSendMail() {
 //            let mailController = LKPTechSupport.mailCompose(nil)
 //            mailController.mailComposeDelegate = self
@@ -100,9 +85,9 @@ extension BaseController {
     }
 }
 
-extension BaseController: MFMailComposeViewControllerDelegate {
+extension BaseController : MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-           controller.dismiss(animated: true)
+        controller.dismiss(animated: true)
     }
 }

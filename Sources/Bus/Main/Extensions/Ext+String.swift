@@ -8,10 +8,8 @@
 
 import UIKit
 
-// MARK: - String
 extension String {
     
-    // MARK: - HTML
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return NSAttributedString() }
         do {
@@ -25,17 +23,16 @@ extension String {
         return htmlToAttributedString?.string ?? ""
     }
     
-    // MARK: - Capitalize Firsst letter
     /**
-        Method capitalized first letter in a string
-    */
+     Method capitalized first letter in a string
+     */
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }
-
+    
     /**
-        Method capitalized first letter in a string
-    */
+     Method capitalized first letter in a string
+     */
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
@@ -49,9 +46,8 @@ extension String {
     }
 }
 
-// MARK: - Attributed string
 extension NSMutableAttributedString {
-    //MARK: - Font Face
+    
     /**
      Method for
      */
@@ -62,10 +58,10 @@ extension NSMutableAttributedString {
                 let newFont = UIFont(descriptor: newFontDescriptor, size: font.pointSize)
                 removeAttribute(.font, range: range)
                 addAttribute(.font, value: newFont, range: range)
-                                if let color = color {
-                                    removeAttribute(.foregroundColor, range: range)
-                                    addAttribute(.foregroundColor, value: color, range: range)
-                                }
+                if let color = color {
+                    removeAttribute(.foregroundColor, range: range)
+                    addAttribute(.foregroundColor, value: color, range: range)
+                }
             }
         }
         endEditing()

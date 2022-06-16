@@ -8,10 +8,8 @@
 
 import UIKit
 
-// MARK: - Int
 extension Int {
-
-    // MARK: - Convert to string
+    
     /**
      Func converted int to string with specific style
      */
@@ -26,24 +24,17 @@ extension Int {
 }
 
 extension TimeInterval  {
-
-        func stringFromTimeInterval() -> String {
-
-            let time = NSInteger(self)
-
-            let ms = Int((self.truncatingRemainder(dividingBy: 1)) * 1000)
-            let seconds = time % 60
-            let minutes = (time / 60) % 60
-
-            return String(format: "%0.2d:%0.2d",minutes,seconds)
-
-        }
+    
+    func stringFromTimeInterval() -> String {
+        let time = NSInteger(self)
+        let seconds = time % 60
+        let minutes = (time / 60) % 60
+        return String(format: "%0.2d:%0.2d",minutes,seconds)
     }
+}
 
-// MARK: - Double
 extension Double {
     
-    // MARK: - Round to Decimal
     func roundToDecimal(_ fractionDigits: Int) -> Double {
         let multiplier = pow(10, Double(fractionDigits))
         return Darwin.round(self * multiplier) / multiplier

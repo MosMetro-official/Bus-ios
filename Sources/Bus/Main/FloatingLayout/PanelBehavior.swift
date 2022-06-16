@@ -9,7 +9,6 @@
 import UIKit
 import FloatingPanel
 
-//MARK: - Details
 class DetailsPanelBehavior: FloatingPanelBehavior {
     
     var removalVelocity: CGFloat {

@@ -9,6 +9,7 @@
 import UIKit
 
 typealias TextEnterData = (text: String, textField: UITextField)
+
 typealias TextValidationData = (text: String, textField: UITextField, replacementString: String)
 
 class InputView: UIView {
@@ -24,6 +25,7 @@ class InputView: UIView {
     @IBOutlet var submitButton: UIButton!
     
     @IBOutlet var backButton: MKButton!
+    
     @IBOutlet var floatingHeightAnchor: NSLayoutConstraint!
     
     private var bottomSafeArea: CGFloat = 0
@@ -72,9 +74,7 @@ extension InputView {
     
     private func render() {
         DispatchQueue.main.async {
-            
             self.backButton.isEnabled = self.viewState.backImageEnabled
-            
             self.submitButton.setImage(self.viewState.nextImage, for: .normal)
             self.descLabel.text = self.viewState.desc
             self.textField.text = self.viewState.text
@@ -82,19 +82,21 @@ extension InputView {
             self.textField.keyboardType = self.viewState.keyboardType
             self.textField.reloadInputViews()
         }
-        
     }
     
-    @objc private func handleOutsideTap() {
+    @objc
+    private func handleOutsideTap() {
         self.textField.resignFirstResponder()
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
+    @objc
+    func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
         viewState.onTextEnter((text: text, textField: textField))
     }
     
-    @objc func keyboardNotification(notification: NSNotification) {
+    @objc
+    func keyboardNotification(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
         var isShowing = true
         guard let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
@@ -119,7 +121,6 @@ extension InputView {
             if completed {
                 self?.removeFromSuperview()
             }
-            
         }
         
         UIView.animate(
@@ -136,7 +137,6 @@ extension InputView {
     }
     
     private func setup() {
-        //self.submitButton.transform = self.submitButton.transform.rotated(by: CGFloat(Double.pi / 2))
         self.backgroundBlurView.alpha = 0
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
@@ -154,14 +154,12 @@ extension InputView {
             self.bottomSafeArea = self.safeAreaInsets.bottom
             self.layoutIfNeeded()
             self.textField.becomeFirstResponder()
-            
         })
-        
     }
-    
 }
 
 extension InputView: UITextFieldDelegate {
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let validation = self.viewState.validation, let text = textField.text {
             return validation((text: text, textField: textField, replacementString: string))
@@ -177,23 +175,18 @@ extension UIView {
             let propertyAnimator = UIViewPropertyAnimator(duration: 0.25, dampingRatio: 0.3) {
                 currentView.descLabel.textColor = .metroRed
                 currentView.descLabel.text = error
-                    
+                
                 currentView.floatingView.transform = CGAffineTransform(translationX: 20, y: 0)
-                }
-
-                propertyAnimator.addAnimations({
-                    currentView.floatingView.transform = CGAffineTransform(translationX: 0, y: 0)
-                }, delayFactor: 0.2)
-
-                propertyAnimator.addCompletion { (_) in
-                    currentView.descLabel.textColor = .textSecondary
-                    currentView.descLabel.text = currentView.viewState.desc
-                }
-
-                propertyAnimator.startAnimation()
-            
+            }
+            propertyAnimator.addAnimations({
+                currentView.floatingView.transform = CGAffineTransform(translationX: 0, y: 0)
+            }, delayFactor: 0.2)
+            propertyAnimator.addCompletion { (_) in
+                currentView.descLabel.textColor = .textSecondary
+                currentView.descLabel.text = currentView.viewState.desc
+            }
+            propertyAnimator.startAnimation()
         }
-        
     }
     
     func showInput(with state: InputView.ViewState) {
@@ -204,16 +197,14 @@ extension UIView {
             inputView.tag = 1337
             self.addSubview(inputView)
             inputView.pin(on: self) {[
-                $0.leftAnchor     .constraint(equalTo: $1.leftAnchor),
-                $0.rightAnchor    .constraint(equalTo: $1.rightAnchor),
-                $0.bottomAnchor   .constraint(equalTo: $1.bottomAnchor),
+                $0.leftAnchor.constraint(equalTo: $1.leftAnchor),
+                $0.rightAnchor.constraint(equalTo: $1.rightAnchor),
+                $0.bottomAnchor.constraint(equalTo: $1.bottomAnchor),
                 $0.topAnchor.constraint(equalTo: $1.topAnchor)
             ]}
             
             inputView.viewState = state
-            
         }
-        
     }
     
     func hideInput() {
@@ -221,5 +212,4 @@ extension UIView {
             currentView.textField.resignFirstResponder()
         }
     }
-    
 }

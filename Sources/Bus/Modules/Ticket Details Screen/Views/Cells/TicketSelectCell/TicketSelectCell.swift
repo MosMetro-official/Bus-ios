@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol _TicketSelectCell: OldCellData {
+protocol _TicketSelectCell : OldCellData {
     var image: UIImage { get set }
     var title: String { get set }
     var subtitle: String { get set }
@@ -17,6 +17,7 @@ protocol _TicketSelectCell: OldCellData {
 }
 
 extension _TicketSelectCell {
+    
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TicketSelectCell.identifire, for: indexPath) as? TicketSelectCell else { return .init() }
         cell.configure(data: self)
@@ -24,14 +25,17 @@ extension _TicketSelectCell {
     }
 }
 
-class TicketSelectCell: UITableViewCell {
-
-    @IBOutlet var leftImageView: UIImageView!
-    @IBOutlet var mainTitleLabel: UILabel!
-    @IBOutlet var changeButton: UIButton!
-    @IBOutlet var subtitleLabel: UILabel!
+class TicketSelectCell : UITableViewCell {
     
     private var onSelect: (() -> ())?
+    
+    @IBOutlet var leftImageView: UIImageView!
+    
+    @IBOutlet var mainTitleLabel: UILabel!
+    
+    @IBOutlet var changeButton: UIButton!
+    
+    @IBOutlet var subtitleLabel: UILabel!
     
     @IBOutlet private var buttonWidthAnchor: NSLayoutConstraint!
     
@@ -55,5 +59,4 @@ class TicketSelectCell: UITableViewCell {
         self.buttonWidthAnchor.constant = buttonTextSize + 16
         self.layoutIfNeeded()
     }
-    
 }

@@ -9,12 +9,13 @@
 import UIKit
 
 protocol _TicketAttributeCell: OldCellData {
-    var image: UIImage { get }
-    var name: String { get }
-    var value: String { get }
+    var image : UIImage { get }
+    var name : String { get }
+    var value : String { get }
 }
 
 extension _TicketAttributeCell {
+    
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         tableView.register(TicketAttributeCell.nib, forCellReuseIdentifier: TicketAttributeCell.identifire)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TicketAttributeCell.identifire, for: indexPath) as? TicketAttributeCell else { return .init() }
@@ -23,17 +24,15 @@ extension _TicketAttributeCell {
     }
 }
 
-class TicketAttributeCell: UITableViewCell {
+class TicketAttributeCell : UITableViewCell {
     
     @IBOutlet private var attributeImage: UIImageView!
-    @IBOutlet private var nameLabel: UILabel!
-    @IBOutlet private var valueLabel: UILabel!
-    @IBOutlet weak var attributedView: UIView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet private var nameLabel: UILabel!
+    
+    @IBOutlet private var valueLabel: UILabel!
+    
+    @IBOutlet weak var attributedView: UIView!
     
     func configure(data: _TicketAttributeCell) {
         self.attributedView.layer.cornerRadius = self.attributedView.frame.height / 2

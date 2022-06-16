@@ -107,3 +107,14 @@
 "main_bus_payment_status_cancelled" = "Отменено";
 "main_bus_payment_status_returned" = "Возврат средств";
 "main_bus_payment_status_declined" = "Отклонен";
+
+"log_in" = "Войти";
+"Loading..." = "Загружаем...";
+"Change" = "Изменить";
+"Pay" = "Оплатить";
+"Payment method" = "Метод оплаты";
+"Bank card" = "Банковской картой";
+"Detailed info" = "Детальная информация";
+"Route details" = "Информация о маршруте";
+"Done1" = "Готово";
+"Passengers" = "Пассажиры";

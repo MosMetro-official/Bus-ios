@@ -10,7 +10,6 @@ import Foundation
 extension DateComponents: Comparable {
     
     public static func < (lhs: DateComponents, rhs: DateComponents) -> Bool {
-        
         if let lhsDate = Date(components: lhs, region: nil), let rhsDate = Date(components: rhs, region: nil) {
             let comp = lhsDate.compare(rhsDate)
             switch comp {

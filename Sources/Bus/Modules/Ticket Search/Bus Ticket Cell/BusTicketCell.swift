@@ -9,21 +9,22 @@
 import UIKit
 
 protocol _BusTicketCell: OldCellData {
-    var price: String { get set }
-    var seats: String { get set }
-    var carrier: String { get set }
-    var fromDate: String { get set }
-    var fromTime: String { get set }
-    var from: String { get set }
-    var fromDetailed: String { get set }
-    var toDate: String { get set }
-    var toTime: String { get set }
-    var to: String { get set }
-    var toDetailed: String { get set }
-    var duration: String { get set }
+    var price : String { get set }
+    var seats : String { get set }
+    var carrier : String { get set }
+    var fromDate : String { get set }
+    var fromTime : String { get set }
+    var from : String { get set }
+    var fromDetailed : String { get set }
+    var toDate : String { get set }
+    var toTime : String { get set }
+    var to : String { get set }
+    var toDetailed : String { get set }
+    var duration : String { get set }
 }
 
 extension _BusTicketCell {
+    
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BusTicketCell.identifire, for: indexPath) as? BusTicketCell else { return .init() }
         cell.configure(data: self)
@@ -44,6 +45,7 @@ class BusTicketCell: UITableViewCell {
     @IBOutlet private weak var fromDateLabel: UILabel!
     @IBOutlet private weak var fromLabel: UILabel!
     @IBOutlet private weak var fromDescLabel: UILabel!
+    
     /// duration
     @IBOutlet private weak var durationLabel: UILabel!
     

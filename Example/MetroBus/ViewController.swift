@@ -5,8 +5,8 @@
 //  Created by Слава Платонов on 09.06.2022.
 //
 
-import UIKit
 import Bus
+import UIKit
 
 class ViewController: UIViewController {
     
@@ -33,14 +33,12 @@ class ViewController: UIViewController {
     
     private func setup() {
         view.addSubview(showBusFlowButton)
-        NSLayoutConstraint.activate(
-            [
-                showBusFlowButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                showBusFlowButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                showBusFlowButton.widthAnchor.constraint(equalToConstant: 200),
-                showBusFlowButton.heightAnchor.constraint(equalToConstant: 50)
-            ]
-        )
+        NSLayoutConstraint.activate([
+            showBusFlowButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            showBusFlowButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            showBusFlowButton.widthAnchor.constraint(equalToConstant: 200),
+            showBusFlowButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     
     @objc private func showBusFlow() {

@@ -20,12 +20,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-jU-7wC">
-                    <rect key="frame" x="352" y="254" width="46" height="27"/>
+                    <rect key="frame" x="351" y="254" width="47" height="27"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="27" id="Yap-jl-ULA"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
-                    <state key="normal" title="Button">
+                    <state key="normal" title="Готово">
                         <color key="titleColor" name="main"/>
                     </state>
                     <userDefinedRuntimeAttributes>

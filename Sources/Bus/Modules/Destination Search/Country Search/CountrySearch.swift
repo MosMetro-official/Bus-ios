@@ -6,10 +6,10 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import UIKit
 import Fuse
+import UIKit
 
-class CountrySearchController: BaseSearchController {
+class CountrySearchController : BaseSearchController {
     
     var countries = [Country]() {
         didSet {

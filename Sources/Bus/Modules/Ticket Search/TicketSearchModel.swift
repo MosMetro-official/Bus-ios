@@ -32,5 +32,4 @@ struct TicketSearchModel {
     var from: DepartureSearchModel?
     var to: ArrivalSearchModel?
     var date: Date?
-    
 }

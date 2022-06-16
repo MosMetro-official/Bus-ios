@@ -9,11 +9,12 @@
 import UIKit
 
 protocol _OnboardingTextTableCell: OldCellData {
-    var title: String { get }
-    var mainText: NSAttributedString { get }
+    var title : String { get }
+    var mainText : NSAttributedString { get }
 }
 
 extension _OnboardingTextTableCell {
+    
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         tableView.register(OnboardingTextTableCell.nib, forCellReuseIdentifier: OnboardingTextTableCell.identifire)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OnboardingTextTableCell.identifire, for: indexPath) as? OnboardingTextTableCell else { return .init() }
@@ -24,19 +25,14 @@ extension _OnboardingTextTableCell {
 
 class OnboardingTextTableCell: UITableViewCell {
 
-    @IBOutlet private var textView: UITextView!
-    @IBOutlet private var mainTitleLabel: UILabel!
+    @IBOutlet private var textView : UITextView!
+    
+    @IBOutlet private var mainTitleLabel : UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         textView.textContainerInset = UIEdgeInsets.zero
         textView.textContainer.lineFragmentPadding = 0
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configure(data: _OnboardingTextTableCell) {
@@ -44,5 +40,4 @@ class OnboardingTextTableCell: UITableViewCell {
         self.textView.attributedText = data.mainText
         self.layoutSubviews()
     }
-    
 }

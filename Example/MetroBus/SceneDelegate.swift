@@ -5,14 +5,16 @@
 //  Created by Слава Платонов on 06.06.2022.
 //
 
-import UIKit
 import Bus
+import UIKit
+import Localize_Swift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        Localize.setCurrentLanguage("ru")
         guard let windowScene = (scene as? UIWindowScene) else { return }
         Bus.shared.authDelegate = self
         let viewController = ViewController()

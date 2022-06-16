@@ -8,7 +8,6 @@
 
 import UIKit
 
-// MARK: Fonts
 extension UIFont {
     
     static var Headline_1: UIFont {

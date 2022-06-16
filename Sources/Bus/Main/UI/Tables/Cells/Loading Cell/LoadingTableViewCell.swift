@@ -24,7 +24,8 @@ extension _Loading {
 class LoadingTableViewCell: UITableViewCell {
         
     @IBOutlet weak private var loadingSpinner : UIActivityIndicatorView!
-    @IBOutlet weak private var loadingLabel   : UILabel!
+    
+    @IBOutlet weak private var loadingLabel : UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

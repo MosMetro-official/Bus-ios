@@ -22,15 +22,11 @@ extension _TicketArrivalCell {
     }
 }
 
-class TicketArrivalCell: UITableViewCell {
+class TicketArrivalCell : UITableViewCell {
 
     @IBOutlet private var subtitleLabel: UILabel!
-    @IBOutlet private var mainTitleLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet private var mainTitleLabel: UILabel!
     
     func configure(data: _TicketArrivalCell) {
         self.mainTitleLabel.text = data.title

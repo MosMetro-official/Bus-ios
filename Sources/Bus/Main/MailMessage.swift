@@ -9,7 +9,7 @@
 import Foundation
 
 struct MailMessage {
-    let to   : String
+    let to : String
     let title: String
     let body : String
 }

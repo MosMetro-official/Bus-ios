@@ -6,10 +6,9 @@
 //  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
+import Fuse
 import UIKit
 import ViewAnimator
-import Fuse
 import Localize_Swift
 
 class BusDestinationSearchController: BaseSearchController {
@@ -18,18 +17,16 @@ class BusDestinationSearchController: BaseSearchController {
     
     var isSearching = false
     
-    var departureModel: DepartureSearchModel? {
+    var departureModel : DepartureSearchModel? {
         didSet {
             if !isSearching {
                 self.loadDeparture(regionID: nil)
             }
-            
         }
     }
     
     var arrivalModel: ArrivalSearchModel? {
         didSet {
-            
             if !isSearching {
                 if let from = arrivalModel?.from {
                     self.mainView.tableView.showLoading()
@@ -188,7 +185,7 @@ extension BusDestinationSearchController {
     }
     
     private func makeState() {
-        let onTextChange: (String) -> Void = { text in
+        let onTextChange : (String) -> Void = { text in
             if text.isEmpty {
                 self.isSearching = false
                 self.makeState()

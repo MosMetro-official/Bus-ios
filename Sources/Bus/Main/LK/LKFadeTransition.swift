@@ -9,16 +9,6 @@
 import UIKit
 
 final class LKFadeTransition: NSObject, UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let presentationController = LKPresentationFadeController(presentedViewController: presented,
-                                                                        presenting: presenting ?? source)
-        return presentationController
-    }
-    
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return LKFadePresentAnimator()
-    }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return LKFadeDismissAnimator()
@@ -26,5 +16,16 @@ final class LKFadeTransition: NSObject, UIViewControllerTransitioningDelegate {
     
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return nil
+    }
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let presentationController = LKPresentationFadeController(
+            presentedViewController: presented,
+            presenting: presenting ?? source)
+        return presentationController
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return LKFadePresentAnimator()
     }
 }

@@ -11,7 +11,7 @@ import CoreTableView
 
 typealias CollectionData = (collectionView: UICollectionView, layout: UICollectionViewLayout, indexPath: IndexPath)
 
-class BaseCollectionView: UICollectionView {
+class BaseCollectionView : UICollectionView {
     
     public var onSize: ((CollectionData) -> CGSize)?
     public var onPageChange: ((Int) -> ())?

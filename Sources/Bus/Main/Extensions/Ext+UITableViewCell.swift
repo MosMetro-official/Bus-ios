@@ -19,6 +19,7 @@ extension UITableViewCell {
 }
 
 extension UICollectionViewCell {
+    
     static var nib  : UINib {
         return UINib(nibName: identifire, bundle: .module)
     }
@@ -29,6 +30,7 @@ extension UICollectionViewCell {
 }
 
 extension UITableViewHeaderFooterView {
+    
     static var nib  : UINib {
         return UINib(nibName: identifire, bundle: .module)
     }

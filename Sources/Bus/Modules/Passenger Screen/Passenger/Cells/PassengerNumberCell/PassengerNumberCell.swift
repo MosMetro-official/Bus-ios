@@ -11,10 +11,10 @@ import UIKit
 protocol _PassengerNumberCell: OldCellData {
     var title: String { get }
     var onRemove: (() -> ())? { get }
-    
 }
 
 extension _PassengerNumberCell {
+    
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         tableView.register(PassengerNumberCell.nib, forCellReuseIdentifier: PassengerNumberCell.identifire)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PassengerNumberCell.identifire, for: indexPath) as? PassengerNumberCell else { return .init() }
@@ -23,18 +23,14 @@ extension _PassengerNumberCell {
     }
 }
 
-class PassengerNumberCell: UITableViewCell {
+class PassengerNumberCell : UITableViewCell {
     
-    @IBOutlet var removeButton: UIButton!
-    @IBOutlet var mainTitleLabel: UILabel!
+    private var onRemove : (() -> ())?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-  
-    }
+    @IBOutlet var removeButton : UIButton!
     
-    private var onRemove: (() -> ())?
-
+    @IBOutlet var mainTitleLabel : UILabel!
+    
     @IBAction func handleRemove(_ sender: UIButton) {
         onRemove?()
     }

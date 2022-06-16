@@ -101,7 +101,6 @@ class BusTicketHomeView: UIView {
     @IBAction func handleDateTap(_ sender: UITapGestureRecognizer) {
         viewState.date.onSelect()
     }
-    
 }
 
 extension BusTicketHomeView {

@@ -22,7 +22,8 @@ extension _GenderTableCell {
     }
 }
 
-class GenderTableCell: UITableViewCell {
+class GenderTableCell : UITableViewCell {
+    
     @IBOutlet var segmentControl: UISegmentedControl!
     
     override func awakeFromNib() {

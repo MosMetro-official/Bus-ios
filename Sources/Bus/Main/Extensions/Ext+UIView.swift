@@ -29,24 +29,22 @@ enum Corners {
 }
 
 extension UIView {
-    // MARK: - Load From Nib
+    
     /**
      Load the view from a nib file called with the name of the class;
-      - note: The first object of the nib file **must** be of the matching class
-      - parameters:
-        - none
+     - note: The first object of the nib file **must** be of the matching class
+     - parameters:
+     - none
      */
     static func loadFromNib() -> Self {
-//        let bundle = Bundle(for: self)
         let nib = UINib(nibName: String(describing: self), bundle: .module)
         return nib.instantiate(withOwner: nil, options: nil).first as! Self
     }
     
-    // MARK: - Constraints
     /**
      Method **adds** a view to the superView, seted translatesAutoresizingMaskIntoConstraints to **false** and activates constrates
      - parameters:
-        - on: View on which view schould be fixed
+     - on: View on which view schould be fixed
      */
     func pin(on superview: UIView, _ callback: EdgeClosure) {
         superview.addSubview(self)
@@ -56,27 +54,26 @@ extension UIView {
         }
     }
     
-    // MARK: - Round Cornerns
     /**
      Sets the cornerRadius for selected corners from **Corners** enum
      - parameters:
-        - corners:
-            * all
-            * top
-            * bottom
-            * topLeft
-            * topRight
-            * bottomLeft
-            * bottomRight
-            * allButTopLeft
-            * allButTopRight
-            * allButBottomLeft
-            * allButBottomRight
-            * left
-            * right
-            * topLeftBottomRight
-            * topRightBottomLeft
-        - radius: The **CGFloat** value to be set
+     - corners:
+     * all
+     * top
+     * bottom
+     * topLeft
+     * topRight
+     * bottomLeft
+     * bottomRight
+     * allButTopLeft
+     * allButTopRight
+     * allButBottomLeft
+     * allButBottomRight
+     * left
+     * right
+     * topLeftBottomRight
+     * topRightBottomLeft
+     - radius: The **CGFloat** value to be set
      */
     func roundCorners(_ corners: Corners, radius: CGFloat) {
         var cornerMasks = [CACornerMask]()
@@ -115,11 +112,7 @@ extension UIView {
         
         clipsToBounds = true
         layer.cornerRadius = radius
-        if #available(iOS 11.0, *) {
-            layer.maskedCorners = CACornerMask(cornerMasks)
-        } else {
-            // Fallback on earlier versions
-        }
+        layer.maskedCorners = CACornerMask(cornerMasks)
         layer.cornerCurve = .continuous
     }
     

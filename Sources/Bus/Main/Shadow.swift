@@ -8,7 +8,6 @@
 
 import UIKit
 
-// MARK: – CoreImage shadow
 public struct Shadow {
     let offset : CGSize
     let blur   : CGFloat

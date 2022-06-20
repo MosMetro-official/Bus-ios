@@ -34,6 +34,7 @@ class OnboardingController : BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        load()
         self.onboardingView.viewState = .loading
     }
     
@@ -47,7 +48,7 @@ extension OnboardingController {
     
     private func load() {
         self.onboardingView.viewState = .loading
-        OnboardingModel.loadOnboarding(name: onboardingName, callback: { result in
+        OnboardingModel.loadOnboarding(name: "onboarding_ios_buses", callback: { result in
             switch result {
             case .success(let boardings):
                 self.model = boardings

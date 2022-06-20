@@ -36,8 +36,18 @@ public class Bus {
         return UINavigationController(rootViewController: BusTicketHomeController())
     }
     
+    public func showHistory() -> UIViewController {
+        let controller = OrderHistoryController()
+        return controller
+    }
+    
+    public func showOnboarding() -> UIViewController {
+        let controller = OnboardingController()
+        return controller
+    }
+    
     private func setInitialLanguage(_ language: Language) {
-        Localize.setCurrentLanguage(language.rawValue)
+        Localize.setCurrentLanguage("ru")
     }
 }
 

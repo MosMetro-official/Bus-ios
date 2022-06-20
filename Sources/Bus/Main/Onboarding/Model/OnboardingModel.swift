@@ -44,11 +44,14 @@ extension OnboardingModel {
     
     // http://app-bucket.mosmetro.ru/onboarding_ios_buses/TESTONBOARDING.json
     static func loadOnboarding(name: String, callback: @escaping (Result<[OnboardingModel],FutureNetworkError>) -> Void) {
+        print("🤡🤡🤡🤡🤡")
         let net = FutureNetworkService()
-        let req = Request(httpMethod: .GET, httpProtocol: .HTTPS, contentType: .json, endpoint: .empty, body: nil, baseURL: "app-bucket.mosmetro.ru", lastComponent: "/\(name)/onboarding.json")
+        let req = Request(httpMethod: .GET, httpProtocol: .HTTPS, contentType: .json, endpoint: .empty, body: nil, baseURL: "main-app-bucket.hb.bizmrg.com", lastComponent: "/\(name)/onboarding.json")
         net.request(req) { result in
+            print("🤡🤡🤡🤡🤡")
             switch result {
             case .success(let response):
+                print("🤡🤡🤡🤡🤡")
                 let json = JSON(response.data)
                 if let arr = json["data"].array {
                     let boarding = arr.compactMap { OnboardingModel.map(data: $0) }
@@ -56,6 +59,7 @@ extension OnboardingModel {
                     return
                 }
             case .failure(let err):
+                print("🤡🤡🤡🤡🤡")
                 callback(.failure(err))
                 return
             }

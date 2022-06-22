@@ -1,5 +1,5 @@
 //
-//  OnboardingView.swift
+//  B_OnboardingView.swift
 //  MosmetroNew
 //
 //  Created by Гусейн on 21.12.2021.
@@ -9,7 +9,7 @@
 import UIKit
 
 // https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80
-class OnboardingView : UIView {
+class B_OnboardingView : UIView {
     
     enum ViewState {
         case loading
@@ -21,15 +21,15 @@ class OnboardingView : UIView {
             let onContinue : (() -> ())?
         }
         
-        struct ContentCell: _OnboardingCollectionCell {
+        struct ContentCell: _B_OnboardingCollectionCell {
             var items : OldState
         }
         
-        struct Image: _OnboardinImageCell {
+        struct Image: _B_OnboardinImageCell {
             var imageURL : String
         }
         
-        struct Text: _OnboardingTextTableCell {
+        struct Text: _B_OnboardingTextTableCell {
             var title : String
             var mainText : NSAttributedString
         }
@@ -59,7 +59,7 @@ class OnboardingView : UIView {
     }
 }
 
-extension OnboardingView {
+extension B_OnboardingView {
     
     private func render() {
         DispatchQueue.main.async {
@@ -101,7 +101,7 @@ extension OnboardingView {
         }
         collectionView.onScroll = { [weak self] scrollView in
             guard let self = self else { return }
-            for cell: OnboardingCollectionCell in self.collectionView.visibleCells as! [OnboardingCollectionCell] {
+            for cell: B_OnboardingCollectionCell in self.collectionView.visibleCells as! [B_OnboardingCollectionCell] {
                 cell.parallaxTheImageViewScrollOffset(offsetPoint: self.collectionView.contentOffset)
             }
         }

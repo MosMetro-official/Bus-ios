@@ -1,5 +1,5 @@
 //
-//  OnboardinImageCell.swift
+//  B_OnboardinImageCell.swift
 //  MosmetroNew
 //
 //  Created by Гусейн on 21.12.2021.
@@ -9,21 +9,21 @@
 import UIKit
 import SDWebImage
 
-protocol _OnboardinImageCell : OldCellData {
+protocol _B_OnboardinImageCell : OldCellData {
     var imageURL : String { get set }
 }
 
-extension _OnboardinImageCell {
+extension _B_OnboardinImageCell {
     
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(OnboardinImageCell.nib, forCellReuseIdentifier: OnboardinImageCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: OnboardinImageCell.identifire, for: indexPath) as? OnboardinImageCell else { return .init() }
+        tableView.register(B_OnboardinImageCell.nib, forCellReuseIdentifier: B_OnboardinImageCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_OnboardinImageCell.identifire, for: indexPath) as? B_OnboardinImageCell else { return .init() }
         cell.configure(data: self)
         return cell
     }
 }
 
-class OnboardinImageCell: UITableViewCell {
+class B_OnboardinImageCell : UITableViewCell {
     
     @IBOutlet public var mainImageView : UIImageView!
     
@@ -44,7 +44,7 @@ class OnboardinImageCell: UITableViewCell {
         self.layoutIfNeeded()
     }
     
-    func configure(data: _OnboardinImageCell) {
+    func configure(data: _B_OnboardinImageCell) {
         self.imageURL = data.imageURL
     }
 }

@@ -1,5 +1,5 @@
 //
-//  OnboardingTextTableCell.swift
+//  B_OnboardingTextTableCell.swift
 //  MosmetroNew
 //
 //  Created by Гусейн on 21.12.2021.
@@ -8,22 +8,22 @@
 
 import UIKit
 
-protocol _OnboardingTextTableCell: OldCellData {
+protocol _B_OnboardingTextTableCell: OldCellData {
     var title : String { get }
     var mainText : NSAttributedString { get }
 }
 
-extension _OnboardingTextTableCell {
+extension _B_OnboardingTextTableCell {
     
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(OnboardingTextTableCell.nib, forCellReuseIdentifier: OnboardingTextTableCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: OnboardingTextTableCell.identifire, for: indexPath) as? OnboardingTextTableCell else { return .init() }
+        tableView.register(B_OnboardingTextTableCell.nib, forCellReuseIdentifier: B_OnboardingTextTableCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_OnboardingTextTableCell.identifire, for: indexPath) as? B_OnboardingTextTableCell else { return .init() }
         cell.configure(data: self)
         return cell
     }
 }
 
-class OnboardingTextTableCell: UITableViewCell {
+class B_OnboardingTextTableCell : UITableViewCell {
 
     @IBOutlet private var textView : UITextView!
     
@@ -35,7 +35,7 @@ class OnboardingTextTableCell: UITableViewCell {
         textView.textContainer.lineFragmentPadding = 0
     }
     
-    func configure(data: _OnboardingTextTableCell) {
+    func configure(data: _B_OnboardingTextTableCell) {
         self.mainTitleLabel.text = data.title
         self.textView.attributedText = data.mainText
         self.layoutSubviews()

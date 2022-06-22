@@ -1,5 +1,5 @@
 //
-//  DefaultSelectionCell.swift
+//  B_DefaultSelectionCell.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 07.12.2021.
@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-protocol _DefaultSelectionCell: OldCellData {
+protocol _B_DefaultSelectionCell: OldCellData {
     var title: String { get set }
     var leftImage: UIImage? { get }
     var leftImageURL: String? { get }
@@ -19,19 +19,19 @@ protocol _DefaultSelectionCell: OldCellData {
     var backgroundColor: UIColor { get }
 }
 
-extension _DefaultSelectionCell {
+extension _B_DefaultSelectionCell {
     
     var selectedTintColor: UIColor { return .main }
     
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(DefaultSelectionCell.nib, forCellReuseIdentifier: DefaultSelectionCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DefaultSelectionCell.identifire, for: indexPath) as? DefaultSelectionCell else { return .init() }
+        tableView.register(B_DefaultSelectionCell.nib, forCellReuseIdentifier: B_DefaultSelectionCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_DefaultSelectionCell.identifire, for: indexPath) as? B_DefaultSelectionCell else { return .init() }
         cell.configure(data: self)
         return cell
     }
 }
 
-class DefaultSelectionCell: UITableViewCell {
+class B_DefaultSelectionCell : UITableViewCell {
     
     @IBOutlet var dividerToSuperViewAnchor: NSLayoutConstraint!
     @IBOutlet var dividerToImageViewAnchor: NSLayoutConstraint!
@@ -61,7 +61,7 @@ class DefaultSelectionCell: UITableViewCell {
         }
     }
     
-    func configure(data: _DefaultSelectionCell) {
+    func configure(data: _B_DefaultSelectionCell) {
         self.mainTitleLabel.text = data.title
         if let image = data.leftImage {
             self.leftImageView.image = image

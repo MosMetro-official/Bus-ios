@@ -39,9 +39,9 @@ class TicketDetailCell: UITableViewCell {
     @IBOutlet private var ticketView: UIView!
     
     @IBOutlet private var needToPayLabel: UILabel!
-    @IBOutlet private var refundDetailsButton: MKButton!
-    @IBOutlet private var docButton: MKButton!
-    @IBOutlet private var returnButton: MKButton!
+    @IBOutlet private var refundDetailsButton: B_MKButton!
+    @IBOutlet private var docButton: B_MKButton!
+    @IBOutlet private var returnButton: B_MKButton!
     
     @IBOutlet private var rightRoundView: UIView!
     @IBOutlet private var leftRoundView: UIView!

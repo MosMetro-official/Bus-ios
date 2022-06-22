@@ -54,7 +54,7 @@ class BusDestinationSearchController: BaseSearchController {
         var onSelect: () -> ()
     }
     
-    struct SearchItem: _DefaultCellSubtitleCell {
+    struct SearchItem: _B_DefaultCellSubtitleCell {
         var subtitle: String
         var title: String
         var backgroundColor: UIColor
@@ -63,7 +63,7 @@ class BusDestinationSearchController: BaseSearchController {
         var accesoryType: UITableViewCell.AccessoryType?
     }
     
-    struct TitleHeader: _TitleHeaderView {
+    struct TitleHeader: _B_TitleHeaderView {
         var title: String
         var style: HeaderTitleStyle
         var backgroundColor: UIColor
@@ -155,8 +155,8 @@ extension BusDestinationSearchController {
     private func setup() {
         mainView.backgroundColor = .baseIOS
         mainView.tableView.backgroundColor = .baseIOS
-        mainView.tableView.register(StandartSubtitleCell.nib, forCellReuseIdentifier: StandartSubtitleCell.identifire)
-        mainView.tableView.register(ImagePlaceholderTableCell.nib, forCellReuseIdentifier: ImagePlaceholderTableCell.identifire)
+        mainView.tableView.register(B_StandartSubtitleCell.nib, forCellReuseIdentifier: B_StandartSubtitleCell.identifire)
+        mainView.tableView.register(B_ImagePlaceholderTableCell.nib, forCellReuseIdentifier: B_ImagePlaceholderTableCell.identifire)
         mainView.tableView.estimatedRowHeight = 44
         mainView.tableView.estimatedSectionHeaderHeight = 44
         mainView.tableView.estimatedSectionFooterHeight = 44

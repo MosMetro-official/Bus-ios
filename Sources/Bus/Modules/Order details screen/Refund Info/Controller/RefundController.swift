@@ -10,7 +10,7 @@ import Foundation
 
 class RefundController: BaseController {
     
-    let mainView = RefundView.loadFromNib()
+    let mainView = B_RefundView.loadFromNib()
     
     var model: BusOrder.OrderTicket? {
         didSet {

@@ -1,5 +1,5 @@
 //
-//  ImagePlaceholderTableCell.swift
+//  B_ImagePlaceholderTableCell.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 09.09.2020.
@@ -8,24 +8,24 @@
 
 import UIKit
 
-protocol _ImagePlaceholderTableCell: OldCellData {
+protocol _B_ImagePlaceholderTableCell: OldCellData {
     var title: String { get set }
     var subtitle: String { get set }
     var image: UIImage { get set }
 }
 
-extension _ImagePlaceholderTableCell {
+extension _B_ImagePlaceholderTableCell {
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(ImagePlaceholderTableCell.nib, forCellReuseIdentifier: ImagePlaceholderTableCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ImagePlaceholderTableCell.identifire, for: indexPath) as? ImagePlaceholderTableCell else { return .init() }
+        tableView.register(B_ImagePlaceholderTableCell.nib, forCellReuseIdentifier: B_ImagePlaceholderTableCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_ImagePlaceholderTableCell.identifire, for: indexPath) as? B_ImagePlaceholderTableCell else { return .init() }
         cell.configure(data: self)
         return cell
     }
 }
 
-class ImagePlaceholderTableCell: UITableViewCell {
+class B_ImagePlaceholderTableCell : UITableViewCell {
 
-    static let reuseID = "ImagePlaceholderTableCell"
+    static let reuseID = "B_ImagePlaceholderTableCell"
 
     @IBOutlet weak var placeholderSubtitleLabel : UILabel!
     @IBOutlet weak var placeholderTitleLabel    : UILabel!
@@ -36,7 +36,7 @@ class ImagePlaceholderTableCell: UITableViewCell {
         
     }
     
-    public func configure(data: _ImagePlaceholderTableCell) {
+    public func configure(data: _B_ImagePlaceholderTableCell) {
         self.placeholderTitleLabel.text = data.title
         self.placeholderSubtitleLabel.text = data.subtitle
         self.placeholderImageView.image = data.image

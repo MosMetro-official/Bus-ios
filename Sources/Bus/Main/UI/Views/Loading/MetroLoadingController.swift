@@ -10,7 +10,7 @@ import UIKit
 
 class MetroLoadingController: UIViewController {
     
-    let loadingView = MetroLoadingView.loadFromNib()
+    let loadingView = B_MetroLoadingView.loadFromNib()
     
     override func loadView() {
         super.loadView()

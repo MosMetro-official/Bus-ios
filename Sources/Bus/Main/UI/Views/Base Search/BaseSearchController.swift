@@ -10,7 +10,7 @@ import UIKit
 
 class BaseSearchController: BaseController {
     
-    let mainView = BaseSearchView.loadFromNib()
+    let mainView = B_BaseSearchView.loadFromNib()
     
     override func loadView() {
         super.loadView()

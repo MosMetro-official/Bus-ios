@@ -1,5 +1,5 @@
 //
-//  MKDatePicker.swift
+//  B_MKDatePicker.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 26.11.2020.
@@ -18,7 +18,7 @@ protocol _LimitedDatePicker {
     func setMaximumDate(_ date: Date)
 }
 
-class MKDatePicker: UIView {
+class B_MKDatePicker : UIView {
     
     var onDateChange: ((Date) -> ())?
     var onDoneSelect: ((Date) -> ())?
@@ -52,7 +52,7 @@ class MKDatePicker: UIView {
     }
 }
 
-extension MKDatePicker: _LimitedDatePicker {
+extension B_MKDatePicker: _LimitedDatePicker {
     func setMinimumDate(_ date: Date) {
         datePicker.minimumDate = date
     }

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -127,7 +125,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QD6-aH-mI0">
                                 <rect key="frame" x="16" y="170" width="292" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoa-mO-HSk" customClass="MKButton" customModule="MosmetroNew" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoa-mO-HSk" customClass="B_MKButton" customModule="MosmetroNew" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="69.5" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
@@ -142,7 +140,7 @@
                                             <action selector="handleRefund:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iCZ-dD-mPw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dn-HE-X5r" customClass="MKButton" customModule="MosmetroNew" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dn-HE-X5r" customClass="B_MKButton" customModule="MosmetroNew" customModuleProvider="target">
                                         <rect key="frame" x="74.5" y="0.0" width="69" height="44"/>
                                         <color key="backgroundColor" name="ButtonTertiary"/>
                                         <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
@@ -154,7 +152,7 @@
                                             <action selector="handleDownload:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZU9-um-y6l"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6E-Zg-H7o" customClass="MKButton" customModule="MosmetroNew" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6E-Zg-H7o" customClass="B_MKButton" customModule="MosmetroNew" customModuleProvider="target">
                                         <rect key="frame" x="148.5" y="0.0" width="69.5" height="44"/>
                                         <color key="backgroundColor" name="ButtonTertiary"/>
                                         <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
@@ -242,17 +240,6 @@
             <point key="canvasLocation" x="163.768115942029" y="235.04464285714283"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="7dn-HE-X5r">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="U6E-Zg-H7o">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="aoa-mO-HSk">
-            <size key="intrinsicContentSize" width="46" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <namedColor name="ButtonSecondary">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

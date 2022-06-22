@@ -22,7 +22,7 @@ class PassengerView: UIView {
             let onSelect: () -> ()
         }
         
-        struct TitleHeader: _TitleHeaderView {
+        struct TitleHeader: _B_TitleHeaderView {
             var title: String
             var style: HeaderTitleStyle
             var backgroundColor: UIColor
@@ -43,7 +43,7 @@ class PassengerView: UIView {
             var accesoryType: UITableViewCell.AccessoryType?
         }
         
-        struct ChooseField: _DefaultSelectionCell {
+        struct ChooseField: _B_DefaultSelectionCell {
             var title: String
             var leftImage: UIImage?
             var leftImageURL: String?
@@ -53,7 +53,7 @@ class PassengerView: UIView {
             var onSelect: () -> ()
         }
         
-        struct Field: _DefaultTableViewCell {
+        struct Field: _B_DefaultTableViewCell {
             var title: String
             var backgroundColor: UIColor
             var isSeparatorHidden: Bool
@@ -75,7 +75,7 @@ class PassengerView: UIView {
         }
     }
     
-    @IBOutlet weak var saveButton: MKButton!
+    @IBOutlet weak var saveButton: B_MKButton!
     
     @IBOutlet weak var buttonsEffectView: UIVisualEffectView!
     
@@ -90,7 +90,7 @@ class PassengerView: UIView {
         setup()
     }
     
-    @IBAction func handleSave(_ sender: MKButton) {
+    @IBAction func handleSave(_ sender: B_MKButton) {
         viewState.onSave?()
     }
     

@@ -6,10 +6,9 @@
 //  Copyright © 2022 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class RideInfoView: UIView {
+class RideInfoView : UIView {
     
     var onClose: (() -> Void)?
     

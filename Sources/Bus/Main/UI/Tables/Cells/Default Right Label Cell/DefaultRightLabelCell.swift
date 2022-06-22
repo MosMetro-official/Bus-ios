@@ -1,5 +1,5 @@
 //
-//  DefaultRightLabelCell.swift
+//  B_DefaultRightLabelCell.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 15.07.2020.
@@ -17,16 +17,16 @@ protocol _DefaultRightLabel: OldCellData {
 
 extension _DefaultRightLabel {
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(DefaultRightLabelCell.nib, forCellReuseIdentifier: DefaultRightLabelCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DefaultRightLabelCell.identifire, for: indexPath) as? DefaultRightLabelCell else { return .init() }
+        tableView.register(B_DefaultRightLabelCell.nib, forCellReuseIdentifier: B_DefaultRightLabelCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_DefaultRightLabelCell.identifire, for: indexPath) as? B_DefaultRightLabelCell else { return .init() }
         cell.configure(with: self)
         return cell
     }
 }
 
-class DefaultRightLabelCell: UITableViewCell {
+class B_DefaultRightLabelCell : UITableViewCell {
     
-    static let reuseID = "DefaultRightLabelCell"
+    static let reuseID = "B_DefaultRightLabelCell"
     
     private var onTap: (()->())?
     

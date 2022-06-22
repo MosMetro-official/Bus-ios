@@ -1,5 +1,5 @@
 //
-//  BaseSearchView.swift
+//  B_BaseSearchView.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 11.11.2021.
@@ -26,7 +26,7 @@ class BaseTextField: UITextField {
     }
 }
 
-class BaseSearchView: UIView {
+class B_BaseSearchView: UIView {
     
     struct ViewState {
         var sectionsState: [OldState]
@@ -62,7 +62,7 @@ class BaseSearchView: UIView {
     }
 }
 
-extension BaseSearchView {
+extension B_BaseSearchView {
     
     @objc private func render() {
         self.searchTextField.placeholder = self.viewState.placeholder

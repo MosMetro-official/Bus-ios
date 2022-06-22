@@ -8,15 +8,15 @@
 
 import UIKit
 
-class OrderDetailsView: UIView {
-        
+class OrderDetailsView : UIView {
+    
     struct ViewState {
         
         var dataState: DataState
         var onClose: () -> ()
         
         enum DataState {
-            case loading(MetroLoadingView.ViewState)
+            case loading(B_MetroLoadingView.ViewState)
             case loaded([OldState])
             case error(FutureNetworkError)
         }
@@ -34,7 +34,7 @@ class OrderDetailsView: UIView {
             var title: String
             var subtitle: String
         }
- 
+        
         struct Start: _TicketStartCell {
             var title: String
             var subtitle: String
@@ -58,7 +58,7 @@ class OrderDetailsView: UIView {
             var onDownload: () -> ()
         }
         
-        struct Title: _TitleHeaderView {
+        struct Title: _B_TitleHeaderView {
             var title: String
             var style: HeaderTitleStyle
             var backgroundColor: UIColor

@@ -1,5 +1,5 @@
 //
-//  StandartSubtitleCell.swift
+//  B_StandartSubtitleCell.swift
 //  MetroTest
 //
 //  Created by Сеня Римиханов on 15.12.2019.
@@ -23,14 +23,14 @@ extension _StandartSubtitle {
     var isSeparatorHidden: Bool { return true }
     
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(StandartSubtitleCell.nib, forCellReuseIdentifier: StandartSubtitleCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: StandartSubtitleCell.identifire, for: indexPath) as? StandartSubtitleCell else { return .init() }
+        tableView.register(B_StandartSubtitleCell.nib, forCellReuseIdentifier: B_StandartSubtitleCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_StandartSubtitleCell.identifire, for: indexPath) as? B_StandartSubtitleCell else { return .init() }
         cell.configure(with: self)
         return cell
     }
 }
 
-class StandartSubtitleCell: UITableViewCell {
+class B_StandartSubtitleCell : UITableViewCell {
     
     @IBOutlet weak private var leftImage : UIImageView!
     @IBOutlet weak private var title     : UILabel!

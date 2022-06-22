@@ -25,7 +25,7 @@ class DocumentView: UIView {
         let items: [OldState]
         let onClose: () -> ()
         
-        struct DocData: _DefaultSelectionCell {
+        struct DocData: _B_DefaultSelectionCell {
             var title: String
             var leftImage: UIImage?
             var leftImageURL: String?

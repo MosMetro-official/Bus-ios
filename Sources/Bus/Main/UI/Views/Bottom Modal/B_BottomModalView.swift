@@ -1,5 +1,5 @@
 //
-//  BottomModalView.swift
+//  B_BottomModalView.swift
 //  MosmetroNew
 //
 //  Created by Гусейн on 29.07.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BottomModalViewable {
+protocol B_BottomModalViewable {
     var image: UIImage { get set }
     var title: String { get set }
     var subtitle: String { get set }
@@ -17,14 +17,14 @@ protocol BottomModalViewable {
     var buttonText: String { get set }
 }
 
-class BottomModalView: UIView {
+class B_BottomModalView : UIView {
     
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var actionButton: MKButton!
+    @IBOutlet weak var actionButton: B_MKButton!
     @IBOutlet weak var contentView: UIVisualEffectView!
     
     private var onClose: (() -> ())?
@@ -34,7 +34,7 @@ class BottomModalView: UIView {
         onClose?()
     }
     
-    @IBAction func handleAction(_ sender: MKButton) {
+    @IBAction func handleAction(_ sender: B_MKButton) {
         onAction?()
     }
     
@@ -45,7 +45,7 @@ class BottomModalView: UIView {
     
 }
 
-extension BottomModalView {
+extension B_BottomModalView {
     private func setup() {
         if #available(iOS 13.0, *) {
             let effect        = UIBlurEffect(style: .systemMaterial)
@@ -61,7 +61,7 @@ extension BottomModalView {
         layer.shadowOpacity = 0.2
     }
     
-    public func configure(with data: BottomModalViewable) {
+    public func configure(with data: B_BottomModalViewable) {
         imageView.image = data.image
         titleLabel.text = data.title
         subtitleLabel.text = data.subtitle

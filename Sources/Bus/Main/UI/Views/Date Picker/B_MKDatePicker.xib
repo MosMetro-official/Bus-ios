@@ -15,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="kCy-hy-Et4" customClass="MKDatePicker" customModule="Bus">
+        <view contentMode="scaleToFill" id="kCy-hy-Et4" customClass="B_MKDatePicker" customModule="Bus">
             <rect key="frame" x="0.0" y="0.0" width="414" height="297"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -28,9 +28,6 @@
                     <state key="normal" title="Готово">
                         <color key="titleColor" name="main"/>
                     </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Done1"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="handleDoneTap:" destination="kCy-hy-Et4" eventType="touchUpInside" id="dmF-ma-FyJ"/>
                     </connections>

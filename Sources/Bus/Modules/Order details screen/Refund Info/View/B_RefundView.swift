@@ -1,5 +1,5 @@
 //
-//  RefundView.swift
+//  B_RefundView.swift
 //  MosmetroNew
 //
 //  Created by Гусейн on 22.12.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RefundView: UIView {
+class B_RefundView : UIView {
     
     @IBOutlet var successView: UIView!
     @IBOutlet var ticketPriceLabel: UILabel!
@@ -49,11 +49,12 @@ class RefundView: UIView {
     }
 }
 
-extension RefundView {
+extension B_RefundView {
+    
     private func render() {
+        self.refundLabel.text = viewState.refund
+        self.comissionLabel.text = viewState.comission
         self.successView.isHidden = viewState.isSuccessHidden
         self.ticketPriceLabel.text = viewState.price
-        self.comissionLabel.text = viewState.comission
-        self.refundLabel.text = viewState.refund
     }
 }

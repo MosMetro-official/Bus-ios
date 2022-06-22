@@ -1,5 +1,5 @@
 //
-//  TitleHeaderView.swift
+//  B_TitleHeaderView.swift
 //  MosmetroNew
 //
 //  Created by Гусейн on 10.11.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol _TitleHeaderView {
+protocol _B_TitleHeaderView {
     
     var title: String { get set }
     var style: HeaderTitleStyle { get set }
@@ -16,13 +16,13 @@ protocol _TitleHeaderView {
     var isInsetGrouped: Bool { get set }
 }
 
-class TitleHeaderView: UITableViewHeaderFooterView {
+class B_TitleHeaderView : UITableViewHeaderFooterView {
     
     @IBOutlet private weak var leftLabelConstaint: NSLayoutConstraint!
     @IBOutlet private weak var backView: UIView!
     @IBOutlet private weak var mainTitleLabel: UILabel!
     
-    public func configure(_ data: _TitleHeaderView) {
+    public func configure(_ data: _B_TitleHeaderView) {
         self.mainTitleLabel.font = data.style.font()
         self.mainTitleLabel.text = data.title
         self.backView.backgroundColor = data.backgroundColor

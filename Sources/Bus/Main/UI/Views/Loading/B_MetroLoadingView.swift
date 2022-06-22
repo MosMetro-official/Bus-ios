@@ -1,5 +1,5 @@
 //
-//  MetroLoadingView.swift
+//  B_MetroLoadingView.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 28.10.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MetroLoadingView: UIView {
+class B_MetroLoadingView : UIView {
     
     @IBOutlet private weak var blurView: UIVisualEffectView!
     
@@ -38,7 +38,7 @@ class MetroLoadingView: UIView {
     
 }
 
-extension MetroLoadingView {
+extension B_MetroLoadingView {
     private func setup() {
         if #available(iOS 13.0, *) {
             let effect = UIBlurEffect(style: .systemThinMaterial)
@@ -66,8 +66,8 @@ extension MetroLoadingView {
 
 extension UIView {
     @discardableResult
-    func showLoading(with state: MetroLoadingView.ViewState = MetroLoadingView.ViewState(title: "Loading...".localized(in: .module), subtitle: nil, isUsingBlur: false)) -> MetroLoadingView {
-        let loadingView = MetroLoadingView.loadFromNib()
+    func showLoading(with state: B_MetroLoadingView.ViewState = B_MetroLoadingView.ViewState(title: "Loading...".localized(in: .module), subtitle: nil, isUsingBlur: false)) -> B_MetroLoadingView {
+        let loadingView = B_MetroLoadingView.loadFromNib()
         loadingView.tag = 753
         self.addSubview(loadingView)
         loadingView.pin(on: self) {[
@@ -98,8 +98,8 @@ extension UIView {
     }
     
     @discardableResult
-    func showLoading(above subview: UIView, with state: MetroLoadingView.ViewState = MetroLoadingView.ViewState(title: nil, subtitle: nil, isUsingBlur: false)) -> MetroLoadingView {
-        let loadingView = MetroLoadingView.loadFromNib()
+    func showLoading(above subview: UIView, with state: B_MetroLoadingView.ViewState = B_MetroLoadingView.ViewState(title: nil, subtitle: nil, isUsingBlur: false)) -> B_MetroLoadingView {
+        let loadingView = B_MetroLoadingView.loadFromNib()
         loadingView.tag = 753
         self.insertSubview(loadingView, aboveSubview: subview)
         loadingView.pin(on: self) {[
@@ -113,7 +113,7 @@ extension UIView {
         return loadingView
     }
     
-    func showLoadingController(with transitionDelegate: LKFadeTransition, state: MetroLoadingView.ViewState) {
+    func showLoadingController(with transitionDelegate: LKFadeTransition, state: B_MetroLoadingView.ViewState) {
         DispatchQueue.main.async { [weak self] in
             let controller = MetroLoadingController()
             controller.transitioningDelegate = transitionDelegate

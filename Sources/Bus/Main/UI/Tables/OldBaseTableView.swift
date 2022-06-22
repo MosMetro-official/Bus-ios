@@ -94,14 +94,14 @@ extension OldBaseTableView {
     private func setup() {
         delegate = self
         dataSource = self
-        register(ErrorTableViewCell.nib,   forCellReuseIdentifier: ErrorTableViewCell.identifire)
-        register(LoadingTableViewCell.nib, forCellReuseIdentifier: LoadingTableViewCell.identifire)
-        register(StandartImageCell.nib, forCellReuseIdentifier: StandartImageCell.identifire)
+        register(B_ErrorTableViewCell.nib,   forCellReuseIdentifier: B_ErrorTableViewCell.identifire)
+        register(B_LoadingTableViewCell.nib, forCellReuseIdentifier: B_LoadingTableViewCell.identifire)
+        register(B_StandartImageCell.nib, forCellReuseIdentifier: B_StandartImageCell.identifire)
         // Header register
-        register(TitleHeaderView.nib, forHeaderFooterViewReuseIdentifier: TitleHeaderView.identifire)
+        register(B_TitleHeaderView.nib, forHeaderFooterViewReuseIdentifier: B_TitleHeaderView.identifire)
         
         // Footer register
-        register(BaseFooterView.nib, forHeaderFooterViewReuseIdentifier: BaseFooterView.identifire)
+        register(B_BaseFooterView.nib, forHeaderFooterViewReuseIdentifier: B_BaseFooterView.identifire)
         estimatedRowHeight = 44
         estimatedSectionHeaderHeight = 8
         estimatedSectionFooterHeight = 8
@@ -156,9 +156,9 @@ extension OldBaseTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = self.viewState[section].model.header else { return nil }
         switch header {
-        case is _TitleHeaderView:
-            guard let data = header as? _TitleHeaderView,
-                  let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: TitleHeaderView.identifire) as? TitleHeaderView else { return .init() }
+        case is _B_TitleHeaderView:
+            guard let data = header as? _B_TitleHeaderView,
+                  let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: B_TitleHeaderView.identifire) as? B_TitleHeaderView else { return .init() }
             headerView.configure(data)
             return headerView
         default:
@@ -170,9 +170,9 @@ extension OldBaseTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let footer = self.viewState[section].model.footer else { return nil }
         switch footer {
-        case is _BaseFooterView:
-            guard let data = footer as? _BaseFooterView,
-                  let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: BaseFooterView.identifire) as? BaseFooterView else { return .init() }
+        case is _B_BaseFooterView:
+            guard let data = footer as? _B_BaseFooterView,
+                  let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: B_BaseFooterView.identifire) as? B_BaseFooterView else { return .init() }
             footerView.configure(data)
             return footerView
         default:

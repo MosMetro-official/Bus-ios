@@ -91,7 +91,7 @@ extension BusTicketHomeController {
     }
     
     private func showDatePicker() {
-        let datePicker = MKDatePicker.loadFromNib()
+        let datePicker = B_MKDatePicker.loadFromNib()
         datePicker.datePicker.datePickerMode = .date
         let currentDate = Date()
         datePicker.datePicker.date = self.model?.date ?? currentDate

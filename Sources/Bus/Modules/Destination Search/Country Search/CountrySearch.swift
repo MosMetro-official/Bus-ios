@@ -49,14 +49,14 @@ class CountrySearchController : BaseSearchController {
     
     var isSearching = false
     
-    struct SearchData: _DefaultTableViewCell {
+    struct SearchData: _B_DefaultTableViewCell {
         var title: String
         var backgroundColor: UIColor
         var onSelect: () -> ()
         var isSeparatorHidden: Bool
     }
     
-    struct TitleHeader: _TitleHeaderView {
+    struct TitleHeader: _B_TitleHeaderView {
         var title: String
         var style: HeaderTitleStyle
         var backgroundColor: UIColor
@@ -201,8 +201,8 @@ extension CountrySearchController {
     private func setup() {
         mainView.backgroundColor = .baseIOS
         mainView.tableView.backgroundColor = .baseIOS
-        mainView.tableView.register(StandartSubtitleCell.nib, forCellReuseIdentifier: StandartSubtitleCell.identifire)
-        mainView.tableView.register(ImagePlaceholderTableCell.nib, forCellReuseIdentifier: ImagePlaceholderTableCell.identifire)
+        mainView.tableView.register(B_StandartSubtitleCell.nib, forCellReuseIdentifier: B_StandartSubtitleCell.identifire)
+        mainView.tableView.register(B_ImagePlaceholderTableCell.nib, forCellReuseIdentifier: B_ImagePlaceholderTableCell.identifire)
         mainView.tableView.estimatedRowHeight = 44
         mainView.tableView.estimatedSectionHeaderHeight = 44
         mainView.tableView.estimatedSectionFooterHeight = 44

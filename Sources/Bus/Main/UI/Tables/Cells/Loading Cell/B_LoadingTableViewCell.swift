@@ -1,5 +1,5 @@
 //
-//  LoadingTableViewCell.swift
+//  B_LoadingTableViewCell.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 24.06.2020.
@@ -14,14 +14,14 @@ protocol _Loading: OldCellData {
 
 extension _Loading {
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(LoadingTableViewCell.nib, forCellReuseIdentifier: LoadingTableViewCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.identifire, for: indexPath) as? LoadingTableViewCell else { return .init() }
+        tableView.register(B_LoadingTableViewCell.nib, forCellReuseIdentifier: B_LoadingTableViewCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_LoadingTableViewCell.identifire, for: indexPath) as? B_LoadingTableViewCell else { return .init() }
         cell.configure(with: self)
         return cell
     }
 }
 
-class LoadingTableViewCell: UITableViewCell {
+class B_LoadingTableViewCell : UITableViewCell {
         
     @IBOutlet weak private var loadingSpinner : UIActivityIndicatorView!
     

@@ -1,5 +1,5 @@
 //
-//  DefaultCellSubtitleCell.swift
+//  B_DefaultCellSubtitleCell.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 23.05.2020.
@@ -8,25 +8,25 @@
 
 import UIKit
 
-protocol _DefaultCellSubtitleCell: OldCellData {
+protocol _B_DefaultCellSubtitleCell: OldCellData {
     var title: String { get }
     var subtitle: String { get }
     var backgroundColor: UIColor { get }
     var isSeparatorHidden: Bool { get }
 }
 
-extension _DefaultCellSubtitleCell {
+extension _B_DefaultCellSubtitleCell {
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(DefaultCellSubtitleCell.nib, forCellReuseIdentifier: DefaultCellSubtitleCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DefaultCellSubtitleCell.identifire, for: indexPath) as? DefaultCellSubtitleCell else { return .init() }
+        tableView.register(B_DefaultCellSubtitleCell.nib, forCellReuseIdentifier: B_DefaultCellSubtitleCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_DefaultCellSubtitleCell.identifire, for: indexPath) as? B_DefaultCellSubtitleCell else { return .init() }
         cell.configure(data: self)
         return cell
     }
 }
 
-class DefaultCellSubtitleCell: UITableViewCell {
+class B_DefaultCellSubtitleCell: UITableViewCell {
 
-    static let reuseID = "DefaultCellSubtitleCell"
+    static let reuseID = "B_DefaultCellSubtitleCell"
     
     @IBOutlet var dividerView: UIView!
     @IBOutlet weak var mainTitleLabel: UILabel!
@@ -42,7 +42,7 @@ class DefaultCellSubtitleCell: UITableViewCell {
         
     }
     
-    func configure(data: _DefaultCellSubtitleCell) {
+    func configure(data: _B_DefaultCellSubtitleCell) {
         self.mainTitleLabel.text = data.title
         self.subtTitleLabel.text = data.subtitle
         self.backgroundColor = data.backgroundColor

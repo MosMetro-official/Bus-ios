@@ -1,5 +1,5 @@
 //
-//  MKButton.swift
+//  B_MKButton.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 18.10.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MKButton: UIButton {
+class B_MKButton: UIButton {
     
     override var isEnabled: Bool {
         didSet {

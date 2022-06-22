@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ParkingUnauthorizedModel: BottomModalViewable {
+struct ParkingUnauthorizedModel: B_BottomModalViewable {
     var buttonText: String
     var image: UIImage
     var title: String

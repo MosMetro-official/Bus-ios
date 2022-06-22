@@ -24,7 +24,7 @@ class InputView: UIView {
     
     @IBOutlet var submitButton: UIButton!
     
-    @IBOutlet var backButton: MKButton!
+    @IBOutlet var backButton: B_MKButton!
     
     @IBOutlet var floatingHeightAnchor: NSLayoutConstraint!
     

@@ -1,5 +1,5 @@
 //
-//  ErrorTableViewCell.swift
+//  B_ErrorTableViewCell.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 20.09.2020.
@@ -16,16 +16,16 @@ protocol _ErrorData: OldCellData {
 
 extension _ErrorData {
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        tableView.register(ErrorTableViewCell.nib, forCellReuseIdentifier: ErrorTableViewCell.identifire)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ErrorTableViewCell.identifire, for: indexPath) as? ErrorTableViewCell else { return .init() }
+        tableView.register(B_ErrorTableViewCell.nib, forCellReuseIdentifier: B_ErrorTableViewCell.identifire)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_ErrorTableViewCell.identifire, for: indexPath) as? B_ErrorTableViewCell else { return .init() }
         cell.configure(self)
         return cell
     }
 }
 
-class ErrorTableViewCell: UITableViewCell {
+class B_ErrorTableViewCell : UITableViewCell {
     
-    static let reuseID = "ErrorTableViewCell"
+    static let reuseID = "B_ErrorTableViewCell"
 
     @IBOutlet weak var errorTitle       : UILabel!
     @IBOutlet weak var errorDescLabel   : UILabel!

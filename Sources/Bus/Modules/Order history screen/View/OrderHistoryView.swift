@@ -17,7 +17,7 @@ class OrderHistoryView: UIView {
         var dataState: DataState
         
         enum DataState {
-            case loading(MetroLoadingView.ViewState)
+            case loading(B_MetroLoadingView.ViewState)
             case loaded([OldState])
             case error(ErrorData)
         }
@@ -30,14 +30,14 @@ class OrderHistoryView: UIView {
             var onSelect: () -> ()
         }
         
-        struct TitleHeader: _TitleHeaderView {
+        struct TitleHeader: _B_TitleHeaderView {
             var title: String
             var style: HeaderTitleStyle
             var backgroundColor: UIColor
             var isInsetGrouped: Bool
         }
         
-        private static let loadingState = MetroLoadingView.ViewState.init(title: "main_bus_history_loading".localized(in: .module), subtitle: nil)
+        private static let loadingState = B_MetroLoadingView.ViewState.init(title: "main_bus_history_loading".localized(in: .module), subtitle: nil)
         
         static let initial = ViewState(dataState: .loading(loadingState))
     }

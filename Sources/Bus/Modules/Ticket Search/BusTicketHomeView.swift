@@ -33,7 +33,7 @@ class BusTicketHomeView: UIView {
         
         enum DataState {
             case initial([OldState])
-            case loading(MetroLoadingView.ViewState)
+            case loading(B_MetroLoadingView.ViewState)
             case loaded([OldState])
             case error(FutureNetworkError)
         }
@@ -44,7 +44,7 @@ class BusTicketHomeView: UIView {
             let onSelect: () -> ()
         }
         
-        struct Placeholder: _ImagePlaceholderTableCell {
+        struct Placeholder: _B_ImagePlaceholderTableCell {
             var title: String
             var subtitle: String
             var image: UIImage
@@ -66,7 +66,7 @@ class BusTicketHomeView: UIView {
             var onSelect: () -> ()
         }
         
-        struct TitleHeader: _TitleHeaderView {
+        struct TitleHeader: _B_TitleHeaderView {
             var title: String
             var style: HeaderTitleStyle
             var backgroundColor: UIColor

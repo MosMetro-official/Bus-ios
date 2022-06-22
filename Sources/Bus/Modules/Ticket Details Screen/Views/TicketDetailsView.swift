@@ -17,13 +17,13 @@ class TicketDetailsView: UIView {
     
     @IBOutlet private var priceLabel: UILabel!
     
-    @IBOutlet private var payButton: MKButton!
+    @IBOutlet private var payButton: B_MKButton!
     
     @IBOutlet var effectViewHeightAnchor: NSLayoutConstraint!
     
     @IBOutlet weak var totalPriceLabel: UILabel!
     
-    private var unauthorizedView: BottomModalView?
+    private var unauthorizedView: B_BottomModalView?
     
     lazy var titleStackView: UIStackView = {
         let titleLabel = UILabel()
@@ -53,7 +53,7 @@ class TicketDetailsView: UIView {
         var unauthorized: ParkingUnauthorizedModel?
         
         enum DataState {
-            case loading(MetroLoadingView.ViewState)
+            case loading(B_MetroLoadingView.ViewState)
             case loaded
             case error(FutureNetworkError)
         }
@@ -82,7 +82,7 @@ class TicketDetailsView: UIView {
             var subtitle: String
         }
         
-        struct Header: _TitleHeaderView {
+        struct Header: _B_TitleHeaderView {
             var title: String
             var style: HeaderTitleStyle
             var backgroundColor: UIColor
@@ -103,7 +103,7 @@ class TicketDetailsView: UIView {
         }
     }
     
-    @IBAction func handlePay(_ sender: MKButton) {
+    @IBAction func handlePay(_ sender: B_MKButton) {
         viewState.onPay?()
     }
 }
@@ -122,7 +122,7 @@ extension TicketDetailsView {
             if let unauthView = self.unauthorizedView {
                 unauthView.configure(with: state)
             } else {
-                self.unauthorizedView = BottomModalView.loadFromNib()
+                self.unauthorizedView = B_BottomModalView.loadFromNib()
                 self.addSubview(self.unauthorizedView!)
                 self.unauthorizedView!.pin(on: self, {[
                     $0.bottomAnchor.constraint(equalTo: effectView.topAnchor, constant: -32),

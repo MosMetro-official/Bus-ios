@@ -19,14 +19,14 @@ extension _StandartImage {
     var backgroundColor: UIColor? { return nil }
     
     func cell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: StandartImageCell.identifire, for: indexPath) as? StandartImageCell else { return .init() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: B_StandartImageCell.identifire, for: indexPath) as? B_StandartImageCell else { return .init() }
         cell.configure(with: self)
         return cell
     }
     
 }
 
-class StandartImageCell : UITableViewCell {
+class B_StandartImageCell : UITableViewCell {
         
     @IBOutlet weak private var separator : UIView!
     @IBOutlet weak private var title     : UILabel!

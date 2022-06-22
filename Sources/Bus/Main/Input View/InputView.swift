@@ -1,5 +1,5 @@
 //
-//  InputView.swift
+//  B_InputView.swift
 //  MosmetroNew
 //
 //  Created by Гусейн on 20.12.2021.
@@ -12,7 +12,7 @@ typealias TextEnterData = (text: String, textField: UITextField)
 
 typealias TextValidationData = (text: String, textField: UITextField, replacementString: String)
 
-class InputView: UIView {
+class B_InputView: UIView {
     
     @IBOutlet var backgroundBlurView: UIView!
     
@@ -44,7 +44,7 @@ class InputView: UIView {
     }
     
     struct ViewState: Equatable {
-        static func == (lhs: InputView.ViewState, rhs: InputView.ViewState) -> Bool {
+        static func == (lhs: B_InputView.ViewState, rhs: B_InputView.ViewState) -> Bool {
             return lhs.id == rhs.id
         }
         let id: Int
@@ -70,7 +70,7 @@ class InputView: UIView {
     
 }
 
-extension InputView {
+extension B_InputView {
     
     private func render() {
         DispatchQueue.main.async {
@@ -80,7 +80,7 @@ extension InputView {
             self.textField.text = self.viewState.text
             self.textField.placeholder = self.viewState.placeholder
             self.textField.keyboardType = self.viewState.keyboardType
-            self.textField.reloadInputViews()
+            self.textField.reloadB_InputViews()
         }
     }
     
@@ -158,7 +158,7 @@ extension InputView {
     }
 }
 
-extension InputView: UITextFieldDelegate {
+extension B_InputView: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let validation = self.viewState.validation, let text = textField.text {
@@ -170,8 +170,8 @@ extension InputView: UITextFieldDelegate {
 
 extension UIView {
     
-    func showInputView(error: String) {
-        if let currentView = self.viewWithTag(1337) as? InputView {
+    func showB_InputView(error: String) {
+        if let currentView = self.viewWithTag(1337) as? B_InputView {
             let propertyAnimator = UIViewPropertyAnimator(duration: 0.25, dampingRatio: 0.3) {
                 currentView.descLabel.textColor = .metroRed
                 currentView.descLabel.text = error
@@ -189,26 +189,26 @@ extension UIView {
         }
     }
     
-    func showInput(with state: InputView.ViewState) {
-        if let currentView = self.viewWithTag(1337) as? InputView {
+    func showInput(with state: B_InputView.ViewState) {
+        if let currentView = self.viewWithTag(1337) as? B_InputView {
             currentView.viewState = state
         } else {
-            let inputView = InputView.loadFromNib()
-            inputView.tag = 1337
-            self.addSubview(inputView)
-            inputView.pin(on: self) {[
+            let B_InputView = B_InputView.loadFromNib()
+            B_InputView.tag = 1337
+            self.addSubview(B_InputView)
+            B_InputView.pin(on: self) {[
                 $0.leftAnchor.constraint(equalTo: $1.leftAnchor),
                 $0.rightAnchor.constraint(equalTo: $1.rightAnchor),
                 $0.bottomAnchor.constraint(equalTo: $1.bottomAnchor),
                 $0.topAnchor.constraint(equalTo: $1.topAnchor)
             ]}
             
-            inputView.viewState = state
+            B_InputView.viewState = state
         }
     }
     
     func hideInput() {
-        if let currentView = self.viewWithTag(1337) as? InputView {
+        if let currentView = self.viewWithTag(1337) as? B_InputView {
             currentView.textField.resignFirstResponder()
         }
     }

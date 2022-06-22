@@ -48,7 +48,7 @@ class PassengerController: BaseController {
         }
     }
     
-    private var inputStates = [InputView.ViewState]()
+    private var inputStates = [B_InputView.ViewState]()
     
     var onSave: ((BusPaymentModel) -> ())?
     
@@ -65,7 +65,7 @@ class PassengerController: BaseController {
 
 extension PassengerController {
     
-    private func createInputField(index: Int, text: String?, desc: String, placeholder: String, keyboardType: UIKeyboardType, onTextEnter: @escaping (TextEnterData) -> Void, validation: ((TextValidationData) -> Bool)? = nil) -> InputView.ViewState {
+    private func createInputField(index: Int, text: String?, desc: String, placeholder: String, keyboardType: UIKeyboardType, onTextEnter: @escaping (TextEnterData) -> Void, validation: ((TextValidationData) -> Bool)? = nil) -> B_InputView.ViewState {
         let onNext: () -> () = {
             if let current = self.inputStates.firstIndex(where: {  $0.id == index }), let next = self.inputStates[safe: current + 1] {
                 self.mainView.showInput(with: next)

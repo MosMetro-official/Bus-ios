@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -26,13 +28,13 @@
                     <rect key="frame" x="0.0" y="816" width="414" height="80"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVw-Wo-2UT">
-                            <rect key="frame" x="16" y="12" width="382" height="17.5"/>
+                            <rect key="frame" x="16" y="12" width="382" height="15"/>
                             <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="15"/>
                             <color key="textColor" name="TextSecondary"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aK2-e9-oIW">
-                            <rect key="frame" x="16" y="33.5" width="306" height="40"/>
+                            <rect key="frame" x="16" y="31" width="306" height="40"/>
                             <color key="tintColor" name="TextPrimary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="3DP-RG-7Me"/>
@@ -105,6 +107,11 @@
             <point key="canvasLocation" x="139" y="137"/>
         </view>
     </objects>
+    <designables>
+        <designable name="eIF-JG-P7G">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="back" width="30" height="30"/>
         <image name="submit" width="30" height="30"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol _B_OnboardingCollectionCell: OldCellData {
+protocol _B_OnboardingCollectionCell : OldCellData {
     var items: OldState { get }
 }
 

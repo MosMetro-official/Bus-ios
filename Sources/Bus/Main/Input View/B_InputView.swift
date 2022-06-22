@@ -80,7 +80,7 @@ extension B_InputView {
             self.textField.text = self.viewState.text
             self.textField.placeholder = self.viewState.placeholder
             self.textField.keyboardType = self.viewState.keyboardType
-            self.textField.reloadB_InputViews()
+            self.textField.reloadInputViews()
         }
     }
     

@@ -144,7 +144,7 @@ final class FutureNetworkService {
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                let error = FutureNetworkError(statusCode: nil, kind: .invalidJSON, errorDescription: "No http response".localized(in: .module))
+                let error = FutureNetworkError(statusCode: nil, kind: .invalidJSON, errorDescription: "No http response".localized(in: Bus.shared.bundle))
                 callback(.failure(error))
                 return
             }
@@ -154,7 +154,7 @@ final class FutureNetworkService {
                 if let errMessage = JSON(data)["error"]["message"].string {
                     error = FutureNetworkError(statusCode: httpResponse.statusCode, kind: .serverError  , errorDescription: errMessage)
                 } else {
-                    error = FutureNetworkError(statusCode: httpResponse.statusCode, kind: .serverError  , errorDescription: "Wrong status code".localized(in: .module))
+                    error = FutureNetworkError(statusCode: httpResponse.statusCode, kind: .serverError  , errorDescription: "Wrong status code".localized(in: Bus.shared.bundle))
                 }
                 
                 if includeHeaders {
@@ -173,7 +173,7 @@ final class FutureNetworkService {
                                     }
                                 })
                             case .failure(let refreshError):
-                                let err = FutureNetworkError(statusCode: nil, kind: .refreshFailed, errorDescription: "Couldn't refresh token".localized(in: .module))
+                                let err = FutureNetworkError(statusCode: nil, kind: .refreshFailed, errorDescription: "Couldn't refresh token".localized(in: Bus.shared.bundle))
                                 callback(.failure(err))
                             }
                         }
@@ -282,7 +282,7 @@ struct FutureNetworkError: Error {
     var errorDescription: String
     
     static func jsonParsingError() -> Self {
-        return FutureNetworkError(statusCode: nil, kind: .invalidJSON, errorDescription: "errors_data_parsing_error".localized(in: .module))
+        return FutureNetworkError(statusCode: nil, kind: .invalidJSON, errorDescription: "errors_data_parsing_error".localized(in: Bus.shared.bundle))
     }
 }
 

@@ -42,10 +42,10 @@ class B_LoadingTableViewCell : UITableViewCell {
             self.loadingSpinner  .style = .medium
         }
         self.loadingSpinner.startAnimating()
-        self.loadingLabel.text = "Loading...".localized(in: .module)
+        self.loadingLabel.text = "Loading...".localized(in: Bus.shared.bundle)
     }
     
     public func configure(with data: _Loading) {
-        self.loadingLabel.text = data.loadingTitle == nil ? "Loading...".localized(in: .module) : data.loadingTitle
+        self.loadingLabel.text = data.loadingTitle == nil ? "Loading...".localized(in: Bus.shared.bundle) : data.loadingTitle
     }
 }

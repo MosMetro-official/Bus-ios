@@ -18,11 +18,11 @@ class B_MetroLoadingView : UIView {
     @IBOutlet private weak var loadingLabel: UILabel!
     
     struct ViewState {
-        var title: String? = "Loading...".localized(in: .module)
+        var title: String? = "Loading...".localized(in: Bus.shared.bundle)
         let subtitle: String?
         var isUsingBlur: Bool = false
         
-        static let initial = ViewState(title: "Loading...".localized(in: .module), subtitle: nil, isUsingBlur: false)
+        static let initial = ViewState(title: "Loading...".localized(in: Bus.shared.bundle), subtitle: nil, isUsingBlur: false)
     }
     
     private var viewState: ViewState = .initial {
@@ -66,7 +66,7 @@ extension B_MetroLoadingView {
 
 extension UIView {
     @discardableResult
-    func showLoading(with state: B_MetroLoadingView.ViewState = B_MetroLoadingView.ViewState(title: "Loading...".localized(in: .module), subtitle: nil, isUsingBlur: false)) -> B_MetroLoadingView {
+    func showLoading(with state: B_MetroLoadingView.ViewState = B_MetroLoadingView.ViewState(title: "Loading...".localized(in: Bus.shared.bundle), subtitle: nil, isUsingBlur: false)) -> B_MetroLoadingView {
         let loadingView = B_MetroLoadingView.loadFromNib()
         loadingView.tag = 753
         self.addSubview(loadingView)

@@ -39,8 +39,8 @@ class GenderTableCell : UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.segmentControl.setTitle("main_bus_gender_male".localized(in: .module), forSegmentAt: 0)
-        self.segmentControl.setTitle("main_bus_gender_female".localized(in: .module), forSegmentAt: 1)
+        self.segmentControl.setTitle("main_bus_gender_male".localized(in: Bus.shared.bundle), forSegmentAt: 0)
+        self.segmentControl.setTitle("main_bus_gender_female".localized(in: Bus.shared.bundle), forSegmentAt: 1)
     }
     
     private func setup() {

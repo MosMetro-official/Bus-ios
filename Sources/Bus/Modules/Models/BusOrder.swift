@@ -55,21 +55,21 @@ struct BusOrder {
         func text() -> String {
             switch self {
             case .created:
-                return "main_bus_book_status_created".localized(in: .module)
+                return "main_bus_book_status_created".localized(in: Bus.shared.bundle)
             case .booked:
-                return "main_bus_book_status_booked".localized(in: .module)
+                return "main_bus_book_status_booked".localized(in: Bus.shared.bundle)
             case .paid:
-                return "main_bus_book_status_booked".localized(in: .module)
+                return "main_bus_book_status_booked".localized(in: Bus.shared.bundle)
             case .error:
-                return "main_bus_book_status_error".localized(in: .module)
+                return "main_bus_book_status_error".localized(in: Bus.shared.bundle)
             case .fullyReturned:
-                return "main_bus_book_status_fully_returned".localized(in: .module)
+                return "main_bus_book_status_fully_returned".localized(in: Bus.shared.bundle)
             case .partiallyReturned:
-                return "main_bus_book_status_partially_returned".localized(in: .module)
+                return "main_bus_book_status_partially_returned".localized(in: Bus.shared.bundle)
             case .cancelled:
-                return "main_bus_book_status_cancelled".localized(in: .module)
+                return "main_bus_book_status_cancelled".localized(in: Bus.shared.bundle)
             case .partiallyCancelled:
-                return "main_bus_book_status_partially_cancelled".localized(in: .module)
+                return "main_bus_book_status_partially_cancelled".localized(in: Bus.shared.bundle)
             }
         }
         
@@ -128,7 +128,7 @@ struct BusOrder {
         
         func docPath() -> String {
             let locale = Localize.currentLanguage() == "ru" ? Locales.russianRussia : Locales.english
-            return "main_bus_ticket_save_path".localized(in: .module) + " \(dispatchDate.toFormat("d MMMM HH:mm", locale: locale))" + " \(hash)" + ".pdf"
+            return "main_bus_ticket_save_path".localized(in: Bus.shared.bundle) + " \(dispatchDate.toFormat("d MMMM HH:mm", locale: locale))" + " \(hash)" + ".pdf"
         }
         
         var passengerData: String {
@@ -201,17 +201,17 @@ struct BusOrder {
                 switch self {
                     
                 case .registered:
-                    return "main_bus_payment_status_registered".localized(in: .module)
+                    return "main_bus_payment_status_registered".localized(in: Bus.shared.bundle)
                 case .sumTaken:
-                    return "main_bus_payment_status_sum_tak".localized(in: .module)
+                    return "main_bus_payment_status_sum_tak".localized(in: Bus.shared.bundle)
                 case .succesful:
-                    return "main_bus_payment_status_success".localized(in: .module)
+                    return "main_bus_payment_status_success".localized(in: Bus.shared.bundle)
                 case .cancelled:
-                    return "main_bus_payment_status_cancelled".localized(in: .module)
+                    return "main_bus_payment_status_cancelled".localized(in: Bus.shared.bundle)
                 case .returned:
-                    return "main_bus_payment_status_returned".localized(in: .module)
+                    return "main_bus_payment_status_returned".localized(in: Bus.shared.bundle)
                 case .declined:
-                    return "main_bus_payment_status_declined".localized(in: .module)
+                    return "main_bus_payment_status_declined".localized(in: Bus.shared.bundle)
                 }
             }
         }
@@ -233,9 +233,9 @@ struct BusOrder {
             func text() -> String {
                 switch self {
                 case .card:
-                    return "Bank card".localized(in: .module)
+                    return "Bank card".localized(in: Bus.shared.bundle)
                 case .cardBinding:
-                    return "Bank card".localized(in: .module)
+                    return "Bank card".localized(in: Bus.shared.bundle)
                 case .applePay:
                     return "Apple Pay"
                 case .applePayBinding:
@@ -293,7 +293,7 @@ struct BusOrder {
         if let firstTicket = tickets.first {
             return "\(firstTicket.dispatchStation) – \(firstTicket.arrivalStation)"
         }
-        return "\("main_bus_order".localized(in: .module)) № \(self.gdsID)"
+        return "\("main_bus_order".localized(in: Bus.shared.bundle)) № \(self.gdsID)"
     }
     
     static func map(data: JSON) -> BusOrder? {

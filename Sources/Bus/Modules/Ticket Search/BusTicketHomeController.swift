@@ -43,7 +43,7 @@ class BusTicketHomeController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CURRENT LANGUAGE 🔥🔥🔥 \(Localize.currentLanguage())")
-        self.title = "main_bus_race_find".localized(in: .module)
+        self.title = "main_bus_race_find".localized(in: Bus.shared.bundle)
         self.view.backgroundColor = .baseIOS
         if !BusTicketService.hasSeenOnboarding {
             let onboarding = OnboardingController()
@@ -54,7 +54,7 @@ class BusTicketHomeController: BaseController {
                 onboarding.dismiss(animated: true, completion: nil)
             }
             self.present(onboarding, animated: true) {
-                onboarding.onboardingName = "onboarding_ios_buses".localized(in: .module)
+                onboarding.onboardingName = "onboarding_ios_buses".localized(in: Bus.shared.bundle)
             }
         }
         self.model = .init(from: .init(country: nil, region: nil, from: nil), to: nil, date: nil)
@@ -74,7 +74,7 @@ extension BusTicketHomeController {
     
     private func showError(_ error: FutureNetworkError) {
         DispatchQueue.main.async {
-            self.mainView.tableView.showError(title: "Error".localized(in: .module), desc: error.errorDescription, onRetry: nil)
+            self.mainView.tableView.showError(title: "Error".localized(in: Bus.shared.bundle), desc: error.errorDescription, onRetry: nil)
         }
     }
     
@@ -153,14 +153,14 @@ extension BusTicketHomeController {
     
     private func makeState() {
         if let model = model {
-            let fromField = BusTicketHomeView.ViewState.Field(placeholder: "choose_from".localized(in: .module), text: model.from?.from?.name, onSelect: { [weak self] in
+            let fromField = BusTicketHomeView.ViewState.Field(placeholder: "choose_from".localized(in: Bus.shared.bundle), text: model.from?.from?.name, onSelect: { [weak self] in
                 self?.showSearchController(direction: .from)
             })
-            let toField = BusTicketHomeView.ViewState.Field(placeholder: "choose_where_to".localized(in: .module), text: model.to?.to?.name, onSelect: { [weak self] in
+            let toField = BusTicketHomeView.ViewState.Field(placeholder: "choose_where_to".localized(in: Bus.shared.bundle), text: model.to?.to?.name, onSelect: { [weak self] in
                 self?.showSearchController(direction: .to)
             })
             let dateStr = model.date?.toFormat("dd MMM yyyy", locale: Locales.russian)
-            let dateField = BusTicketHomeView.ViewState.Field(placeholder: "select_a_date".localized(in: .module), text: dateStr, onSelect: { [weak self] in
+            let dateField = BusTicketHomeView.ViewState.Field(placeholder: "select_a_date".localized(in: Bus.shared.bundle), text: dateStr, onSelect: { [weak self] in
                 self?.showDatePicker()
             })
             self.mainView.viewState = .init(dataState: self.mainView.viewState.dataState, from: fromField, to: toField, date: dateField)
@@ -168,28 +168,28 @@ extension BusTicketHomeController {
             case .initial:
                 let img = UIImage.getAssetImage(name: "Bus_illustration")
                 let initialData = Element(content: BusTicketHomeView.ViewState.Placeholder(
-                    title: "main_bus_initial_title".localized(in: .module),
-                    subtitle: "main_bus_initial_subtitle".localized(in: .module),
+                    title: "main_bus_initial_title".localized(in: Bus.shared.bundle),
+                    subtitle: "main_bus_initial_subtitle".localized(in: Bus.shared.bundle),
                     image: img)
                 )
                 let initialSection = SectionState(header: nil, footer: nil)
                 let initialSectionState = OldState(model: initialSection, elements: [initialData])
                 self.mainView.viewState.dataState = .initial([initialSectionState])
             case .loading:
-                self.mainView.viewState.dataState = .loading(.init(title: "Loading...".localized(in: .module), subtitle: nil, isUsingBlur: true))
+                self.mainView.viewState.dataState = .loading(.init(title: "Loading...".localized(in: Bus.shared.bundle), subtitle: nil, isUsingBlur: true))
             case .loaded(let races):
                 var elements = [Element]()
                 if races.isEmpty {
                     let img = UIImage.getAssetImage(name: "No search data")
                     let empty = Element(content: BusTicketHomeView.ViewState.Placeholder(
-                        title: "main_bus_error_empty".localized(in: .module),
-                        subtitle: "main_bus_error_empty_desc".localized(in: .module),
+                        title: "main_bus_error_empty".localized(in: Bus.shared.bundle),
+                        subtitle: "main_bus_error_empty_desc".localized(in: Bus.shared.bundle),
                         image: img)
                     )
                     elements.append(empty)
                 } else {
                     let searchItems: [BusTicketHomeView.ViewState.BusTicketData] = races.map { race in
-                        let freeSeats = String.localizedStringWithFormat("main_bus_seats_free".localized(in: .module), "\(race.freeSeats)")
+                        let freeSeats = String.localizedStringWithFormat("main_bus_seats_free".localized(in: Bus.shared.bundle), "\(race.freeSeats)")
                         var duration = ""
                         if let strDuration = Utils.getTotalTimeString(from: race.duration) {
                             duration = strDuration

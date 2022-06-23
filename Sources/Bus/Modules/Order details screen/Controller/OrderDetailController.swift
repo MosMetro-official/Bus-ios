@@ -57,7 +57,7 @@ extension OrderDetailController {
     
     private func refund(_ ticket: BusOrder.OrderTicket) {
         if let order = order {
-            self.orderView.viewState.dataState = .loading(.init(title: "main_bus_refunding".localized(in: .module), subtitle: "main_bus_please_wait".localized(in: .module), isUsingBlur: true))
+            self.orderView.viewState.dataState = .loading(.init(title: "main_bus_refunding".localized(in: Bus.shared.bundle), subtitle: "main_bus_please_wait".localized(in: Bus.shared.bundle), isUsingBlur: true))
             order.refundTicket(ticket: ticket, callback: { result in
                 switch result {
                 case .success(let ticket):
@@ -124,15 +124,15 @@ extension OrderDetailController {
     }
     
     private func showRefundConfirmation(for ticket: BusOrder.OrderTicket) {
-        let alert = UIAlertController(title: "main_bus_refund_alert_title".localized(in: .module), message: "main_bus_refund_alert_desc".localized(in: .module), preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "main_bus_refund_alert".localized(in: .module), style: .destructive, handler: { _ in
+        let alert = UIAlertController(title: "main_bus_refund_alert_title".localized(in: Bus.shared.bundle), message: "main_bus_refund_alert_desc".localized(in: Bus.shared.bundle), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "main_bus_refund_alert".localized(in: Bus.shared.bundle), style: .destructive, handler: { _ in
             alert.dismiss(animated: true, completion: { [weak self] in
 //                AnalyticsService.reportEvent(with: "newmetro.cabinet.mybustickets.orders.tap.return")
                 self?.refund(ticket)
             })
         })
         
-        let cancelAction = UIAlertAction(title: "parking_missclick".localized(in: .module), style: .default, handler: { _ in
+        let cancelAction = UIAlertAction(title: "parking_missclick".localized(in: Bus.shared.bundle), style: .default, handler: { _ in
             alert.dismiss(animated: true, completion: nil)
         })
         alert.addAction(okAction)
@@ -143,7 +143,7 @@ extension OrderDetailController {
     private func startConfirm() {
         guard let order = order else { return }
         self.paymentWebController?.dismiss(animated: true, completion: nil)
-        self.orderView.viewState.dataState = .loading(.init(title: "main_bus_comfirming_order".localized(in: .module), subtitle: nil, isUsingBlur: true))
+        self.orderView.viewState.dataState = .loading(.init(title: "main_bus_comfirming_order".localized(in: Bus.shared.bundle), subtitle: nil, isUsingBlur: true))
         OrderProcessingService.shared.order = OrderBookingResponse(internalOrderID: order.internalID, sberbankOrderID: order.sberbankID, gdsID: order.gdsID, url: "")
         self.busTicketService.confirmPayment(callback: { result in
             switch result {
@@ -176,11 +176,11 @@ extension OrderDetailController {
     private func attributes(for order: BusOrder) -> OldState {
         let statusImg = UIImage.getAssetImage(name: "loading-checkmark-status-circle")
         let bookStatus = Element(content:
-                                    OrderDetailsView.ViewState.Attribute(image: statusImg, name: "main_bus_book_status".localized(in: .module), value: order.bookingStatus.text())
+                                    OrderDetailsView.ViewState.Attribute(image: statusImg, name: "main_bus_book_status".localized(in: Bus.shared.bundle), value: order.bookingStatus.text())
         )
         
         let paymentStatus = Element(content:
-                                        OrderDetailsView.ViewState.Attribute(image: statusImg, name: "main_bus_payment_status".localized(in: .module), value: order.paymentInfo?.status.text() ?? "")
+                                        OrderDetailsView.ViewState.Attribute(image: statusImg, name: "main_bus_payment_status".localized(in: Bus.shared.bundle), value: order.paymentInfo?.status.text() ?? "")
         )
         
         let moscow  = Region(calendar: Calendars.gregorian, zone: Zones.europeMoscow, locale: Locales.russian)
@@ -188,22 +188,22 @@ extension OrderDetailController {
         //convertTo(region: moscow).toFormat("HH:mm", locale: Locales.russianRussia)
         let dateImg = UIImage.getAssetImage(name: "calendar-schedule")
         let paymentDate = Element(content:
-                                    OrderDetailsView.ViewState.Attribute(image: dateImg, name: "main_bus_payment_date".localized(in: .module), value: order.paymentInfo?.date.convertTo(region: moscow).toFormat("d MMMM yyyy HH:mm", locale: Locales.russianRussia) ?? "")
+                                    OrderDetailsView.ViewState.Attribute(image: dateImg, name: "main_bus_payment_date".localized(in: Bus.shared.bundle), value: order.paymentInfo?.date.convertTo(region: moscow).toFormat("d MMMM yyyy HH:mm", locale: Locales.russianRussia) ?? "")
         )
         let paymentImg = UIImage.getAssetImage(name: "credit-card-add-plus")
         let paymentMethod = Element(content:
-                                        OrderDetailsView.ViewState.Attribute(image: paymentImg, name: "Payment method".localized(in: .module), value: order.paymentInfo?.paymentWay.text() ?? "")
+                                        OrderDetailsView.ViewState.Attribute(image: paymentImg, name: "Payment method".localized(in: Bus.shared.bundle), value: order.paymentInfo?.paymentWay.text() ?? "")
         )
         let codeImg = UIImage.getAssetImage(name: "Barcode")
         let reserveCode = Element(content:
-                                    OrderDetailsView.ViewState.Attribute(image: codeImg, name: "main_bus_reserve_code".localized(in: .module), value: order.reserveCode)
+                                    OrderDetailsView.ViewState.Attribute(image: codeImg, name: "main_bus_reserve_code".localized(in: Bus.shared.bundle), value: order.reserveCode)
         )
         let priceImg = UIImage.getAssetImage(name: "parking_ruble")
         let totalPrice = Element(content:
-                                    OrderDetailsView.ViewState.Attribute(image: priceImg, name: "main_bus_total_price_1".localized(in: .module), value: "\(order.totalPrice) ₽")
+                                    OrderDetailsView.ViewState.Attribute(image: priceImg, name: "main_bus_total_price_1".localized(in: Bus.shared.bundle), value: "\(order.totalPrice) ₽")
         )
         
-        let header = OrderDetailsView.ViewState.Title.init(title: "Detailed info".localized(in: .module), style: .small, backgroundColor: .clear, isInsetGrouped: false)
+        let header = OrderDetailsView.ViewState.Title.init(title: "Detailed info".localized(in: Bus.shared.bundle), style: .small, backgroundColor: .clear, isInsetGrouped: false)
         let secState = SectionState(header: header, footer: nil)
         return OldState(model: secState, elements: [bookStatus,paymentStatus,paymentDate,paymentMethod,reserveCode,totalPrice])
     }
@@ -227,7 +227,7 @@ extension OrderDetailController {
             let firstSec = SectionState(header: nil, footer: nil)
             var firstElements = [Element]()
             let title = Element(content:
-                                    OrderDetailsView.ViewState.OrderTitle(title: "main_bus_order_details".localized(in: .module), subtitle: "№ \(order.gdsID)")
+                                    OrderDetailsView.ViewState.OrderTitle(title: "main_bus_order_details".localized(in: Bus.shared.bundle), subtitle: "№ \(order.gdsID)")
             )
             
             let info = OrderDetailsView.ViewState.RideInfo { [weak self] in
@@ -254,7 +254,7 @@ extension OrderDetailController {
                     
                 }
                 let needToPay = Element(content:
-                                            OrderDetailsView.ViewState.NeedToPay(title: "main_bus_need_to_pay".localized(in: .module), onSelect: onSelect)
+                                            OrderDetailsView.ViewState.NeedToPay(title: "main_bus_need_to_pay".localized(in: Bus.shared.bundle), onSelect: onSelect)
                 )
                 firstElements.append(needToPay)
             }
@@ -265,7 +265,7 @@ extension OrderDetailController {
             sections.append(attributes(for: order))
             
             // MARK: Tickets
-            let ticketHeader = OrderDetailsView.ViewState.Title(title: "Tickets".localized(in: .module), style: .small, backgroundColor: .clear, isInsetGrouped: false)
+            let ticketHeader = OrderDetailsView.ViewState.Title(title: "Tickets".localized(in: Bus.shared.bundle), style: .small, backgroundColor: .clear, isInsetGrouped: false)
             let tickets: [OrderDetailsView.ViewState.Ticket] = order.tickets.map { ticket in
                 
                 let onDownload: () -> () = { [weak self] in
@@ -286,7 +286,7 @@ extension OrderDetailController {
                 
                 return .init(status: ticket.status,
                              onRefundDetails: onRefundDetails,
-                             downloadTitle: ticket.refundDate == nil ? "main_bus_load".localized(in: .module) : "main_bus_refund_doc".localized(in: .module),
+                             downloadTitle: ticket.refundDate == nil ? "main_bus_load".localized(in: Bus.shared.bundle) : "main_bus_refund_doc".localized(in: Bus.shared.bundle),
                              number: "\(ticket.ticketCode)",
                              price: "\(ticket.price) ₽",
                              passenger: ticket.passengerData,

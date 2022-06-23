@@ -33,7 +33,7 @@ class TicketDetailsView: UIView {
         titleLabel.textColor = .textPrimary
         let subtitleLabel = UILabel()
         subtitleLabel.textAlignment = .center
-        subtitleLabel.text = "main_bus_trip_details".localized(in: .module)
+        subtitleLabel.text = "main_bus_trip_details".localized(in: Bus.shared.bundle)
         subtitleLabel.font = UIFont(name: "MoscowSans-Bold", size: 11)
         subtitleLabel.textColor = .textSecondary
         let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
@@ -89,7 +89,7 @@ class TicketDetailsView: UIView {
             var isInsetGrouped: Bool
         }
         
-        static let initial = ViewState.init(title: "", subtitle: "", price: "", onPay: nil, tableItems: [], dataState: .loading(.init(title: "main_bus_loading_race".localized(in: .module), subtitle: "main_bus_please_wait".localized(in: .module))))
+        static let initial = ViewState.init(title: "", subtitle: "", price: "", onPay: nil, tableItems: [], dataState: .loading(.init(title: "main_bus_loading_race".localized(in: Bus.shared.bundle), subtitle: "main_bus_please_wait".localized(in: Bus.shared.bundle))))
     }
     
     override func awakeFromNib() {
@@ -180,8 +180,8 @@ extension TicketDetailsView {
             self.showUnauthorized(state: self.viewState.unauthorized)
             self.priceLabel.text = self.viewState.price
             self.payButton.isEnabled = self.viewState.onPay == nil ? false : true
-            self.payButton.setTitle("Pay".localized(in: .module), for: .normal)
-            self.totalPriceLabel.text = "main_bus_price_total".localized(in: .module)
+            self.payButton.setTitle("Pay".localized(in: Bus.shared.bundle), for: .normal)
+            self.totalPriceLabel.text = "main_bus_price_total".localized(in: Bus.shared.bundle)
         }
     }
 }

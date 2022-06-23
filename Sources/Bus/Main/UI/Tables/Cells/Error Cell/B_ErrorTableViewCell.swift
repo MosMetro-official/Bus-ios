@@ -36,7 +36,7 @@ class B_ErrorTableViewCell : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         errorRetryButton.roundCorners(.all, radius: 8)
-        errorRetryButton.setTitle("Retry again".localized(in: .module), for: .normal)
+        errorRetryButton.setTitle("Retry again".localized(in: Bus.shared.bundle), for: .normal)
     }
     
     public func configure(_ data: _ErrorData) {

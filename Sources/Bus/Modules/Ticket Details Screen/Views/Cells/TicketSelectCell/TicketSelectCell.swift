@@ -46,7 +46,7 @@ class TicketSelectCell : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         changeButton.roundCorners(.all, radius: 15)
-        changeButton.setTitle("Change".localized(in: .module), for: .normal)
+        changeButton.setTitle("Change".localized(in: Bus.shared.bundle), for: .normal)
     }
     
     public func configure(data: _TicketSelectCell) {
@@ -55,7 +55,7 @@ class TicketSelectCell : UITableViewCell {
         self.subtitleLabel.text = data.subtitle
         self.subtitleLabel.textColor = data.subtitleColor
         self.onSelect = data.onSelect
-        let buttonTextSize = "Change".localized(in: .module).width(withConstrainedHeight: 30, font: .Body_15_Medium)
+        let buttonTextSize = "Change".localized(in: Bus.shared.bundle).width(withConstrainedHeight: 30, font: .Body_15_Medium)
         self.buttonWidthAnchor.constant = buttonTextSize + 16
         self.layoutIfNeeded()
     }

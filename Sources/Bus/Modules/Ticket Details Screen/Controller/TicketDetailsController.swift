@@ -67,7 +67,7 @@ extension TicketDetailsController {
     
     private func startConfirm() {
         self.paymentWebController?.dismiss(animated: true, completion: nil)
-        self.mainView.viewState.dataState = .loading(.init(title: "main_bus_comfirming_order".localized(in: .module), subtitle: nil, isUsingBlur: true))
+        self.mainView.viewState.dataState = .loading(.init(title: "main_bus_comfirming_order".localized(in: Bus.shared.bundle), subtitle: nil, isUsingBlur: true))
         self.busTicketService.confirmPayment(callback: { result in
             switch result {
             case .success(let order):
@@ -93,7 +93,7 @@ extension TicketDetailsController {
         if Constants.userAuthorized() {
 //            AnalyticsService.reportEvent(with: "newmetro.city.buybustickets.race.tap.buy")
             guard let body = self.paymentModel?.createPaymentRequestBody() else { return }
-            self.mainView.viewState.dataState = .loading(.init(title: "main_bus_sending_order".localized(in: .module), subtitle: nil, isUsingBlur: true))
+            self.mainView.viewState.dataState = .loading(.init(title: "main_bus_sending_order".localized(in: Bus.shared.bundle), subtitle: nil, isUsingBlur: true))
             busTicketService.initPayment(body: body, callback: { result in
                 switch result {
                 case .success(let orderResponse):
@@ -103,7 +103,7 @@ extension TicketDetailsController {
                 }
             })
         } else {
-            let model = ParkingUnauthorizedModel(buttonText: "log_in".localized(in: .module), image: UIImage.getAssetImage(name: "Bus Illustration"), title: "main_bus_auth_title".localized(in: .module), subtitle: "main_bus_auth_desc".localized(in: .module), onClose: { [weak self] in
+            let model = ParkingUnauthorizedModel(buttonText: "log_in".localized(in: Bus.shared.bundle), image: UIImage.getAssetImage(name: "Bus Illustration"), title: "main_bus_auth_title".localized(in: Bus.shared.bundle), subtitle: "main_bus_auth_desc".localized(in: Bus.shared.bundle), onClose: { [weak self] in
                 self?.mainView.viewState.unauthorized = nil
             }, onAction: { [weak self] in
 //                AnalyticsService.reportEvent(with: "newmetro.city.buybustickets.race.tap.login")
@@ -127,7 +127,7 @@ extension TicketDetailsController {
     }
     
     private func createPaymentModel(from race: RaceSummary) {
-        let paymentMethod = BusPaymentMethod(image: BusPaymentMethod.MethodType.bank.image(), title: "Bank card".localized(in: .module), type: .bank)
+        let paymentMethod = BusPaymentMethod(image: BusPaymentMethod.MethodType.bank.image(), title: "Bank card".localized(in: Bus.shared.bundle), type: .bank)
         self.paymentModel = .init(raceSummary: race, tickets: nil, paymentMethod: paymentMethod)
     }
     
@@ -162,20 +162,20 @@ extension TicketDetailsController {
         var items: [TicketDetailsView.ViewState.Attribute] = []
         if let model = paymentModel {
             let freeSeatsImg = UIImage.getAssetImage(name: "Place")
-            let freeSeatsAttr = TicketDetailsView.ViewState.Attribute(image: freeSeatsImg, name: "main_bus_seats_free1".localized(in: .module), value: "\(model.raceSummary.seats.count)")
+            let freeSeatsAttr = TicketDetailsView.ViewState.Attribute(image: freeSeatsImg, name: "main_bus_seats_free1".localized(in: Bus.shared.bundle), value: "\(model.raceSummary.seats.count)")
             let timeOnTheWayImg = UIImage.getAssetImage(name: "clock-time-menu")
-            let timeOnTheWay = TicketDetailsView.ViewState.Attribute(image: timeOnTheWayImg, name: "main_bus_time".localized(in: .module), value: Utils.getTotalTimeString(from: model.raceSummary.race.duration) ?? "")
+            let timeOnTheWay = TicketDetailsView.ViewState.Attribute(image: timeOnTheWayImg, name: "main_bus_time".localized(in: Bus.shared.bundle), value: Utils.getTotalTimeString(from: model.raceSummary.race.duration) ?? "")
             let carrierImg = UIImage.getAssetImage(name: "steering-wheel")
-            let carrier = TicketDetailsView.ViewState.Attribute(image: carrierImg, name: "main_bus_driver".localized(in: .module), value: model.raceSummary.race.carrier.name)
+            let carrier = TicketDetailsView.ViewState.Attribute(image: carrierImg, name: "main_bus_driver".localized(in: Bus.shared.bundle), value: model.raceSummary.race.carrier.name)
             let ticketsImg = UIImage.getAssetImage(name: "airline-ticket")
             let tickets = model.raceSummary.ticketTypes.map { ticket in
-                TicketDetailsView.ViewState.Attribute(image: ticketsImg, name: "\("main_bus_ticket".localized(in: .module)) \(ticket.name)", value: "\(ticket.price) ₽")
+                TicketDetailsView.ViewState.Attribute(image: ticketsImg, name: "\("main_bus_ticket".localized(in: Bus.shared.bundle)) \(ticket.name)", value: "\(ticket.price) ₽")
             }
             items.append(contentsOf: [freeSeatsAttr,timeOnTheWay,carrier])
             items.append(contentsOf: tickets)
         }
         let header = TicketDetailsView.ViewState.Header(
-            title: "Detailed info".localized(in: .module),
+            title: "Detailed info".localized(in: Bus.shared.bundle),
             style: .medium,
             backgroundColor: .clear,
             isInsetGrouped: false
@@ -189,13 +189,13 @@ extension TicketDetailsController {
             let locale = Localize.currentLanguage() == "ru" ? Locales.russianRussia : Locales.english
             let startPointSubtitle = model.raceSummary.race.dispatchDate.toFormat("d MMMM HH:mm", locale: locale)
             let startPoint = TicketDetailsView.ViewState.StartPoint(title: model.raceSummary.race.dispatchStationName, subtitle: startPointSubtitle)
-            let passengerSelectTitle = model.tickets == nil ? "Not selected".localized(in: .module) : "Выбрано \(model.tickets!.count)"
-            let select1 = TicketDetailsView.ViewState.SelectRow(image: UIImage.getAssetImage(name: "UserProfile"), title: "main_bus_passengers".localized(in: .module), subtitle: passengerSelectTitle, subtitleColor: .textSecondary, onSelect: {
+            let passengerSelectTitle = model.tickets == nil ? "Not selected".localized(in: Bus.shared.bundle) : "Выбрано \(model.tickets!.count)"
+            let select1 = TicketDetailsView.ViewState.SelectRow(image: UIImage.getAssetImage(name: "UserProfile"), title: "main_bus_passengers".localized(in: Bus.shared.bundle), subtitle: passengerSelectTitle, subtitleColor: .textSecondary, onSelect: {
                 self.showPassengerController()
             })
-            let select2 = TicketDetailsView.ViewState.SelectRow(image: UIImage.getAssetImage(name: "credit-card-add-plus"), title: "Payment method".localized(in: .module), subtitle: model.paymentMethod.title, subtitleColor: .main, onSelect: {
+            let select2 = TicketDetailsView.ViewState.SelectRow(image: UIImage.getAssetImage(name: "credit-card-add-plus"), title: "Payment method".localized(in: Bus.shared.bundle), subtitle: model.paymentMethod.title, subtitleColor: .main, onSelect: {
                 let alert = UIAlertController(title: "Пока только карты", message: "Мы принимаем оплату только банковскими картами. Скоро тут появится Apple Pay", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Got it".localized(in: .module), style: .cancel, handler: { _ in
+                let okAction = UIAlertAction(title: "Got it".localized(in: Bus.shared.bundle), style: .cancel, handler: { _ in
                     alert.dismiss(animated: true, completion: nil)
                 })
                 
@@ -206,7 +206,7 @@ extension TicketDetailsController {
             let endPoint = TicketDetailsView.ViewState.EndPoint(title: model.raceSummary.race.arrivalStationName, subtitle: endPointSubtitle)
             let elements = [startPoint,select1,select2,endPoint].enumerated().map { Element(content: $0.element) }
             let header = TicketDetailsView.ViewState.Header(
-                title: "Route details".localized(in: .module),
+                title: "Route details".localized(in: Bus.shared.bundle),
                 style: .medium,
                 backgroundColor: .clear,
                 isInsetGrouped: false

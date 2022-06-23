@@ -10,7 +10,7 @@ import UIKit
 extension UITableViewCell {
     
     static var nib  : UINib {
-        return UINib(nibName: identifire, bundle: .module)
+        return UINib(nibName: identifire, bundle: Bus.shared.bundle)
     }
     
     static var identifire : String {
@@ -21,7 +21,7 @@ extension UITableViewCell {
 extension UICollectionViewCell {
     
     static var nib  : UINib {
-        return UINib(nibName: identifire, bundle: .module)
+        return UINib(nibName: identifire, bundle: Bus.shared.bundle)
     }
     
     static var identifire : String {
@@ -32,7 +32,7 @@ extension UICollectionViewCell {
 extension UITableViewHeaderFooterView {
     
     static var nib  : UINib {
-        return UINib(nibName: identifire, bundle: .module)
+        return UINib(nibName: identifire, bundle: Bus.shared.bundle)
     }
     
     static var identifire : String {

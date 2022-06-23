@@ -161,7 +161,7 @@ extension PassengerController {
         let titleElement = Element(content:
                                     PassengerView.ViewState.TitleCell(
                                         onRemove: index == 0 ? nil : onRemove,
-                                        title: "\("main_bus_passenger".localized(in: .module)) \(index+1)")
+                                        title: "\("main_bus_passenger".localized(in: Bus.shared.bundle)) \(index+1)")
         )
         let sec = SectionState(header: nil, footer: nil)
         sections.append(OldState(model: sec, elements: [titleElement]))
@@ -191,7 +191,7 @@ extension PassengerController {
             return Element(content: ticketSelectionData)
         }
         
-        let ticketTypeHeader =  PassengerView.ViewState.TitleHeader(title: "main_bus_ticket_type".localized(in: .module), style: .small, backgroundColor: .clear, isInsetGrouped: true)
+        let ticketTypeHeader =  PassengerView.ViewState.TitleHeader(title: "main_bus_ticket_type".localized(in: Bus.shared.bundle), style: .small, backgroundColor: .clear, isInsetGrouped: true)
         let ticketTypeSectionState = SectionState(header: ticketTypeHeader, footer: nil)
         sections.append(OldState(model: ticketTypeSectionState, elements: ticketTypes))
         
@@ -205,14 +205,14 @@ extension PassengerController {
         
         let nameState = self.createInputField(index: (index * 10) + 1,
                                               text: passenger.name,
-                                              desc: "main_bus_name".localized(in: .module),
-                                              placeholder: "main_bus_name_placeholder".localized(in: .module),
+                                              desc: "main_bus_name".localized(in: Bus.shared.bundle),
+                                              placeholder: "main_bus_name_placeholder".localized(in: Bus.shared.bundle),
                                               keyboardType: .default,
                                               onTextEnter: onNameEnter)
         
         self.inputStates.append(nameState)
         
-        let nameField = Element(content: PassengerView.ViewState.Field(title: passenger.name == nil ? "main_bus_name".localized(in: .module) : passenger.name!,
+        let nameField = Element(content: PassengerView.ViewState.Field(title: passenger.name == nil ? "main_bus_name".localized(in: Bus.shared.bundle) : passenger.name!,
                                                                        backgroundColor: .contentIOS,
                                                                        isSeparatorHidden: true,
                                                                        textColor: passenger.name == nil ? .textSecondary : .textPrimary, onSelect: {
@@ -229,15 +229,15 @@ extension PassengerController {
         
         let surnameState = self.createInputField(index: (index * 10) + 2,
                                                  text: passenger.surname,
-                                                 desc: "main_bus_last_name".localized(in: .module),
-                                                 placeholder: "main_bus_last_name_placeholder".localized(in: .module),
+                                                 desc: "main_bus_last_name".localized(in: Bus.shared.bundle),
+                                                 placeholder: "main_bus_last_name_placeholder".localized(in: Bus.shared.bundle),
                                                  keyboardType: .default,
                                                  onTextEnter: onSurnameEnter)
         
         self.inputStates.append(surnameState)
         
         let surnameField = Element(content:
-                                    PassengerView.ViewState.Field(title: passenger.surname == nil ? "main_bus_last_name".localized(in: .module) : passenger.surname!,
+                                    PassengerView.ViewState.Field(title: passenger.surname == nil ? "main_bus_last_name".localized(in: Bus.shared.bundle) : passenger.surname!,
                                                                   backgroundColor: .contentIOS,
                                                                   isSeparatorHidden: true,
                                                                   textColor: passenger.surname == nil ? .textSecondary : .textPrimary, onSelect: {
@@ -254,8 +254,8 @@ extension PassengerController {
         
         let middleNameState = self.createInputField(index: (index * 10) + 3,
                                                     text: passenger.middleName,
-                                                    desc: "main_bus_middle_name".localized(in: .module),
-                                                    placeholder: "main_bus_middle_name_placeholder".localized(in: .module),
+                                                    desc: "main_bus_middle_name".localized(in: Bus.shared.bundle),
+                                                    placeholder: "main_bus_middle_name_placeholder".localized(in: Bus.shared.bundle),
                                                     keyboardType: .default,
                                                     onTextEnter: onMiddleNameEnter)
         
@@ -267,14 +267,14 @@ extension PassengerController {
         }
         
         let middleNameField = Element(content:
-                                        PassengerView.ViewState.Field(title: passenger.middleName == nil ? "main_bus_middle_name".localized(in: .module) : passenger.middleName!,
+                                        PassengerView.ViewState.Field(title: passenger.middleName == nil ? "main_bus_middle_name".localized(in: Bus.shared.bundle) : passenger.middleName!,
                                                                       backgroundColor: .contentIOS,
                                                                       isSeparatorHidden: true,
                                                                       textColor: passenger.surname == nil ? .textSecondary : .textPrimary, onSelect: onMiddleNameSelect
                                                                      )
         )
         
-        let personalDataHeader =  PassengerView.ViewState.TitleHeader(title: "main_bus_personal_data".localized(in: .module), style: .small, backgroundColor: .clear, isInsetGrouped: true)
+        let personalDataHeader =  PassengerView.ViewState.TitleHeader(title: "main_bus_personal_data".localized(in: Bus.shared.bundle), style: .small, backgroundColor: .clear, isInsetGrouped: true)
         let personalDataSectionState = SectionState(header: personalDataHeader, footer: nil)
         
         personalItems.append(contentsOf: [nameField,surnameField,middleNameField])
@@ -294,7 +294,7 @@ extension PassengerController {
             
             let birthdayState = self.createInputField(index: (index * 10) + 4,
                                                       text: passenger.birthday,
-                                                      desc: "main_bus_birthday".localized(in: .module),
+                                                      desc: "main_bus_birthday".localized(in: Bus.shared.bundle),
                                                       placeholder: "01.01.2000",
                                                       keyboardType: .numberPad,
                                                       onTextEnter: onBirthdayEnter,
@@ -307,7 +307,7 @@ extension PassengerController {
             }
             
             let birthdayField = Element(content:
-                                            PassengerView.ViewState.Field(title: passenger.birthday == nil ? "main_bus_birthday".localized(in: .module) : passenger.birthday!,
+                                            PassengerView.ViewState.Field(title: passenger.birthday == nil ? "main_bus_birthday".localized(in: Bus.shared.bundle) : passenger.birthday!,
                                                                           backgroundColor: .contentIOS,
                                                                           isSeparatorHidden: true,
                                                                           textColor: passenger.birthday == nil ? .textSecondary : .textPrimary, onSelect: onBirthdaySelect
@@ -332,7 +332,7 @@ extension PassengerController {
             
             let phoneState = self.createInputField(index: (index * 10) + 5,
                                                    text: passenger.phone == nil ? "+7" : passenger.phone!,
-                                                   desc: "main_bus_phone".localized(in: .module),
+                                                   desc: "main_bus_phone".localized(in: Bus.shared.bundle),
                                                    placeholder: "+7 900 000 00 00",
                                                    keyboardType: .numberPad,
                                                    onTextEnter: onPhoneEnter,
@@ -346,7 +346,7 @@ extension PassengerController {
             }
             
             let phoneField = Element(content:
-                                        PassengerView.ViewState.Field(title: passenger.phone == nil ? "main_bus_phone".localized(in: .module) : passenger.phone!,
+                                        PassengerView.ViewState.Field(title: passenger.phone == nil ? "main_bus_phone".localized(in: Bus.shared.bundle) : passenger.phone!,
                                                                       backgroundColor: .contentIOS,
                                                                       isSeparatorHidden: true,
                                                                       textColor: passenger.phone == nil ? .textSecondary : .textPrimary, onSelect: onPhoneSelect
@@ -368,7 +368,7 @@ extension PassengerController {
                 }
             }))
             
-            let genderHeader =  PassengerView.ViewState.TitleHeader(title: "main_bus_gender".localized(in: .module), style: .small, backgroundColor: .clear, isInsetGrouped: true)
+            let genderHeader =  PassengerView.ViewState.TitleHeader(title: "main_bus_gender".localized(in: Bus.shared.bundle), style: .small, backgroundColor: .clear, isInsetGrouped: true)
             let genderSectionState = SectionState(isCollapsed: false, header: genderHeader, footer: nil)
             sections.append(OldState(model: genderSectionState, elements: [genderField]))
             
@@ -389,7 +389,7 @@ extension PassengerController {
             }
             
             let countryImage = UIImage.getAssetImage(name: "parking_location")
-            let countryTitle = passenger.citizenship == nil ? "main_bus_citizenship".localized(in: .module) : passenger.citizenship!.name
+            let countryTitle = passenger.citizenship == nil ? "main_bus_citizenship".localized(in: Bus.shared.bundle) : passenger.citizenship!.name
             let countrySelection = Element(id: 0, content: PassengerView.ViewState.SelectField(title: countryTitle, leftImage: countryImage, separator: false, onSelect: onCountrySelect, backgroundColor: .contentIOS, accesoryType: .disclosureIndicator))
             documentItems.append(countrySelection)
         }
@@ -421,7 +421,7 @@ extension PassengerController {
         
         let seriesState = self.createInputField(index: (index * 10) + 6,
                                                 text: passenger.document.series,
-                                                desc: "main_bus_series".localized(in: .module),
+                                                desc: "main_bus_series".localized(in: Bus.shared.bundle),
                                                 placeholder: "0000",
                                                 keyboardType: .default,
                                                 onTextEnter: onSeriesEnter)
@@ -448,7 +448,7 @@ extension PassengerController {
         
         let docNumberState = self.createInputField(index: (index * 10) + 7,
                                                    text: passenger.document.number,
-                                                   desc: "main_bus_number".localized(in: .module),
+                                                   desc: "main_bus_number".localized(in: Bus.shared.bundle),
                                                    placeholder: "000000",
                                                    keyboardType: .default,
                                                    onTextEnter: onDocNumberEnter)
@@ -470,13 +470,13 @@ extension PassengerController {
         
         documentItems.append(contentsOf: [docSelection,docSeriesField,docNumberField])
         
-        let docHeader =  PassengerView.ViewState.TitleHeader(title: "main_bus_docs".localized(in: .module), style: .small, backgroundColor: .clear, isInsetGrouped: true)
+        let docHeader =  PassengerView.ViewState.TitleHeader(title: "main_bus_docs".localized(in: Bus.shared.bundle), style: .small, backgroundColor: .clear, isInsetGrouped: true)
         let docSectionState = SectionState(isCollapsed: false, header: docHeader, footer: nil)
         
         sections.append(OldState(model: docSectionState, elements: documentItems))
         
         if currentTicket.ticketClass != .luggage {
-            let placeHeader = PassengerView.ViewState.TitleHeader(title: "main_bus_place".localized(in: .module), style: .small, backgroundColor: .clear, isInsetGrouped: true)
+            let placeHeader = PassengerView.ViewState.TitleHeader(title: "main_bus_place".localized(in: Bus.shared.bundle), style: .small, backgroundColor: .clear, isInsetGrouped: true)
             let onPlaceSelect: () -> () = {
                 //                AnalyticsService.reportEvent(with: "newmetro.city.buybustickets.race.passenger.tap.seat")
                 let placeController = BusPlaceController()
@@ -490,7 +490,7 @@ extension PassengerController {
                 }
                 self.present(placeController, animated: true, completion: nil)
             }
-            let placeTitle = passenger.place == nil ? "Not selected".localized(in: .module) : "\("main_bus_place".localized(in: .module)) \(passenger.place!.name)"
+            let placeTitle = passenger.place == nil ? "Not selected".localized(in: Bus.shared.bundle) : "\("main_bus_place".localized(in: Bus.shared.bundle)) \(passenger.place!.name)"
             let placeImage = UIImage.getAssetImage(name: "Place")
             let place = Element(content:
                                     PassengerView.ViewState.SelectField(title: placeTitle,
@@ -563,7 +563,7 @@ extension PassengerController {
             let onAdd: () -> () = { [weak self] in
                 self?.handleAdd()
             }
-            var menuItems: [PassengerView.ViewState.MenuItem] = [.init(title: "main_bus_add_passenger".localized(in: .module), image: UIImage.getAssetImage(name: "Plus"), onSelect: { self.addPassenger()  })]
+            var menuItems: [PassengerView.ViewState.MenuItem] = [.init(title: "main_bus_add_passenger".localized(in: Bus.shared.bundle), image: UIImage.getAssetImage(name: "Plus"), onSelect: { self.addPassenger()  })]
             let img = UIImage.getAssetImage(name: "UserProfile")
             let recent: [PassengerView.ViewState.MenuItem] = recentPassengers.map { passenger in
                 let title = createMenuTitle(for: passenger)

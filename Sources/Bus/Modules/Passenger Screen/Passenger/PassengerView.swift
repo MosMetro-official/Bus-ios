@@ -129,7 +129,7 @@ extension PassengerView {
                         menuItem.onSelect()
                     })
                 }
-            let menu = UIMenu(title: "Passengers".localized(in: .module), image: nil, identifier: nil, options: [], children: items)
+            let menu = UIMenu(title: "Passengers".localized(in: Bus.shared.bundle), image: nil, identifier: nil, options: [], children: items)
                 if #available(iOS 14.0, *) {
                     self.addButton.menu = menu
                     self.addButton.showsMenuAsPrimaryAction = true

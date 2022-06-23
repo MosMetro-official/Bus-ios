@@ -46,8 +46,8 @@ class B_DefaultRightLabelCell : UITableViewCell {
     }
     
     public func parkingConfigure(with data: _DefaultRightLabel) {
-        mainTitleLabel.text = data.leftTitle.localized(in: .module)
-        rightLabel.text     = getNumberParking(from: data.rightTitle)?.localized(in: .module)
+        mainTitleLabel.text = data.leftTitle.localized(in: Bus.shared.bundle)
+        rightLabel.text     = getNumberParking(from: data.rightTitle)?.localized(in: Bus.shared.bundle)
     }
     
     private func getNumberParking(from text: String) -> String? {

@@ -89,7 +89,7 @@ final class BusTicketService {
     
     static public func checkAvailability() {
         let network = FutureNetworkService()
-        let req = Request(httpMethod: .GET, httpProtocol: .HTTPS, contentType: .json, endpoint: .modulesAvailability, body: nil, baseURL: Constants.metro_api, lastComponent: nil)
+        let req = Request(httpMethod: .GET, httpProtocol: .HTTPS, contentType: .json, endpoint: Bus.shared.bundlesAvailability, body: nil, baseURL: Constants.metro_api, lastComponent: nil)
         network.request(req, callback: { result in
             switch result {
             case .success(let response):

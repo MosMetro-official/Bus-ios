@@ -28,7 +28,7 @@ class MetroAlertView: UIView {
     private let retryButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .textPrimary
-        let image = UIImage(named: "alert_retry", in: .module, with: nil)
+        let image = UIImage(named: "alert_retry", in: Bus.shared.bundle, with: nil)
         button.setImage(image, for: .normal)
         return button
     }()
@@ -185,7 +185,7 @@ extension MetroAlertView {
             self.backView.visualEffectView.layer.borderColor = UIColor.metroRed.cgColor
             self.retryButton.isHidden = viewState.onRetry == nil ? true : false
             self.leftImageView.tintColor = .metroRed
-            self.leftImageView.image = UIImage(named: "Warning", in: .module, with: nil)
+            self.leftImageView.image = UIImage(named: "Warning", in: Bus.shared.bundle, with: nil)
         case .success:
             self.backView.visualEffectView.layer.borderWidth = 1
             self.backView.visualEffectView.layer.borderColor = UIColor.metroGreen.cgColor

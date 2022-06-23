@@ -97,7 +97,7 @@ struct BusPaymentMethod {
             case .applePay:
                 return UIImage.getAssetImage(name: "icon.maas.applepay")
             case .bank:
-                return UIImage(named: "icon.maas.backcard", in: .module, with: nil) ?? UIImage()
+                return UIImage(named: "icon.maas.backcard", in: Bus.shared.bundle, with: nil) ?? UIImage()
             }
         }
     }

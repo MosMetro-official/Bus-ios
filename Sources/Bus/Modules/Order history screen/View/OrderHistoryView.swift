@@ -37,7 +37,7 @@ class OrderHistoryView: UIView {
             var isInsetGrouped: Bool
         }
         
-        private static let loadingState = B_MetroLoadingView.ViewState.init(title: "main_bus_history_loading".localized(in: .module), subtitle: nil)
+        private static let loadingState = B_MetroLoadingView.ViewState.init(title: "main_bus_history_loading".localized(in: Bus.shared.bundle), subtitle: nil)
         
         static let initial = ViewState(dataState: .loading(loadingState))
     }

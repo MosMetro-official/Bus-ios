@@ -112,6 +112,6 @@ extension UIImage {
     }
     
     static func getAssetImage(name: String) -> UIImage {
-        return UIImage(named: name, in: .module, with: nil) ?? UIImage()
+        return UIImage(named: name, in: Bus.shared.bundle, with: nil) ?? UIImage()
     }
 }

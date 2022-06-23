@@ -170,7 +170,7 @@ extension BusTicketHomeView {
             case .error(let error):
                 self.removeLoading { [weak self] in
                     self?.parentViewController?.navigationController?.setNavigationBarHidden(false, animated: true)
-                    self?.tableView.showError(title: "Error".localized(in: .module), desc: error.errorDescription, onRetry: nil)
+                    self?.tableView.showError(title: "Error".localized(in: Bus.shared.bundle), desc: error.errorDescription, onRetry: nil)
                 }
             case .initial(let state):
                 self.tableView.viewStateInput = state

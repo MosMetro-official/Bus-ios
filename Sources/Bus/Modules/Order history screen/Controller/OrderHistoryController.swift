@@ -46,7 +46,7 @@ class OrderHistoryController : BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "main_bus_history".localized(in: .module)
+        self.title = "main_bus_history".localized(in: Bus.shared.bundle)
         self.navigationController?.navigationBar.prefersLargeTitles = false
         mainView.onWillDisplay = { [weak self] displayData in
             guard let self = self else { return }

@@ -70,7 +70,7 @@ class OrderDetailsView : UIView {
             var subtitle: String
         }
         
-        static let initial = ViewState(dataState: .loading(.init(title: "main_bus_loading_order_data".localized(in: .module), subtitle: nil)), onClose: {})
+        static let initial = ViewState(dataState: .loading(.init(title: "main_bus_loading_order_data".localized(in: Bus.shared.bundle), subtitle: nil)), onClose: {})
     }
     
     var viewState: ViewState = .initial {

@@ -175,7 +175,7 @@ extension BusDestinationSearchController {
                 return SearchItem(subtitle: item.region, title: item.name, backgroundColor: .contentIOS, isSeparatorHidden: index == (items.endIndex - 1), onSelect: onSelect, accesoryType: .disclosureIndicator)
             }
             let elements = resultsData.map { Element(content: $0) }
-            let header = TitleHeader(title: "Search results".localized(in: .module), style: .medium, backgroundColor: .clear, isInsetGrouped: true)
+            let header = TitleHeader(title: "Search results".localized(in: Bus.shared.bundle), style: .medium, backgroundColor: .clear, isInsetGrouped: true)
             let sectionState = SectionState(header: header, footer: nil)
             let searchedState = OldState(model: sectionState, elements: elements)
             DispatchQueue.main.async {

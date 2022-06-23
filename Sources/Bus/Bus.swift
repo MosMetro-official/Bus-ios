@@ -11,8 +11,16 @@ public class Bus {
     public static let shared = Bus()
     
     public var token: String?
-        
-    public var language: Language = .ru {
+    
+    public var bundle : Bundle {
+        let podBundle = Bundle(for: type(of: self))
+        guard let url = podBundle.url(forResource: "MetroRechka", withExtension: "bundle") else {
+            return podBundle
+        }
+        return Bundle(url: url) ?? podBundle
+    }
+    
+    public var language : Language = .ru {
         didSet {
             setInitialLanguage(language)
         }
@@ -25,11 +33,11 @@ public class Bus {
     private init() { }
     
     public static func registerFonts() {
-        _ = UIFont.registerFont(bundle: .module, fontName: "MoscowSans-Bold", fontExtension: "otf")
-        _ = UIFont.registerFont(bundle: .module, fontName: "MoscowSans-Regular", fontExtension: "otf")
-        _ = UIFont.registerFont(bundle: .module, fontName: "MoscowSans-Medium", fontExtension: "otf")
-        _ = UIFont.registerFont(bundle: .module, fontName: "MoscowSans-Extrabold", fontExtension: "otf")
-        _ = UIFont.registerFont(bundle: .module, fontName: "MoscowSans-Light", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: Bus.shared.bundle, fontName: "MoscowSans-Bold", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: Bus.shared.bundle, fontName: "MoscowSans-Regular", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: Bus.shared.bundle, fontName: "MoscowSans-Medium", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: Bus.shared.bundle, fontName: "MoscowSans-Extrabold", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: Bus.shared.bundle, fontName: "MoscowSans-Light", fontExtension: "otf")
     }
     
     public func showBusFlow() -> UINavigationController {

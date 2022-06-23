@@ -37,7 +37,7 @@ extension UIView {
      - none
      */
     static func loadFromNib() -> Self {
-        let nib = UINib(nibName: String(describing: self), bundle: .module)
+        let nib = UINib(nibName: String(describing: self), bundle: Bus.shared.bundle)
         return nib.instantiate(withOwner: nil, options: nil).first as! Self
     }
     

@@ -105,7 +105,7 @@ Pod::Spec.new do |spec|
     #  non-essential files like tests, examples and documentation.
     #
   
-    spec.resources = "Sources/Bus/**/*.{png,jpeg,jpg,pdf,storyboard,xib,xcassets}"
+    spec.resource_bundles = { "Bus_ios_bundle" => ['Sources/Bus/**/*.{png,jpeg,jpg,pdf,storyboard,xib,xcassets}'] }
   
     # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
   

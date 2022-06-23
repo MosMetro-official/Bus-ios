@@ -48,15 +48,18 @@ public class Bus {
         _ = UIFont.registerFont(bundle: Bus.shared.bundle, fontName: "MoscowSans-Light", fontExtension: "otf")
     }
     
+    @objc
     public func showBusFlow() -> UINavigationController {
         return UINavigationController(rootViewController: BusTicketHomeController())
     }
     
+    @objc
     public func showHistory() -> UIViewController {
         let controller = OrderHistoryController()
         return controller
     }
     
+    @objc
     public func showOnboarding() -> UIViewController {
         let controller = OnboardingController()
         return controller

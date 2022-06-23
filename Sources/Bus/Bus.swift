@@ -6,7 +6,8 @@ public enum Language: String {
     case en = "en"
 }
 
-public class Bus {
+@objc
+public class Bus : NSObject {
             
     public static let shared = Bus()
     
@@ -30,7 +31,7 @@ public class Bus {
     
     public weak var refreshDelegate: B_RefreshTokenDelegate?
     
-    private init() { }
+    private override init() { }
     
     public func isBusesAvailable() -> Bool {
         return Constants.isBusesAvailable

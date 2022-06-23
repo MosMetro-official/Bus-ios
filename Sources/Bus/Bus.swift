@@ -8,7 +8,8 @@ public enum Language: String {
 
 @objc
 public class Bus : NSObject {
-            
+    
+    @objc
     public static let shared = Bus()
     
     public var token: String?

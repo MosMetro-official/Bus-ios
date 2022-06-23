@@ -113,7 +113,6 @@ Pod::Spec.new do |spec|
     spec.dependency 'FloatingPanel'
     spec.dependency 'Fuse'
     spec.dependency 'Localize-Swift'
-    spec.dependency 'MMCoreNetwork'
     spec.dependency 'MMCoreNetworkCallbacks'
     spec.dependency 'Realm', '= 3.19' 
     spec.dependency 'RealmSwift', '= 3.19' 

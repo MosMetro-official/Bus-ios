@@ -32,6 +32,10 @@ public class Bus {
     
     private init() { }
     
+    public func isBusesAvailable() -> Bool {
+        return Constants.isBusesAvailable
+    }
+    
     public func checkAvailability() {
         BusTicketService.checkAvailability()
     }

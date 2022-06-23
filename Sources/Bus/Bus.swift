@@ -32,6 +32,10 @@ public class Bus {
     
     private init() { }
     
+    public func checkAvailability() {
+        BusTicketService.checkAvailability()
+    }
+    
     public static func registerFonts() {
         _ = UIFont.registerFont(bundle: Bus.shared.bundle, fontName: "MoscowSans-Bold", fontExtension: "otf")
         _ = UIFont.registerFont(bundle: Bus.shared.bundle, fontName: "MoscowSans-Regular", fontExtension: "otf")

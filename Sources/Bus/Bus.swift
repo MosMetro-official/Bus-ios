@@ -14,13 +14,7 @@ public class Bus : NSObject {
     
     public var token: String?
     
-    public var bundle : Bundle {
-        let podBundle = Bundle(for: type(of: self))
-        guard let url = podBundle.url(forResource: "MetroRechka", withExtension: "bundle") else {
-            return podBundle
-        }
-        return Bundle(url: url) ?? podBundle
-    }
+    public var bundle = Bundle.b_Bundle
     
     public var language : Language = .ru {
         didSet {

@@ -12,7 +12,7 @@ private class BundleFinder {}
 public extension Bundle {
     
     static var b_Bundle : Bundle = {
-        let bundleName = "Bus_Bus"
+        let bundleName = "Bus"
         let candidates = [
             Bundle.main.resourceURL,
             Bundle(for: BundleFinder.self).resourceURL,

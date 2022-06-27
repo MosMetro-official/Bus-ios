@@ -8,21 +8,27 @@
 
 import UIKit
 
-class BusTicketHomeView: UIView {
+class BusTicketHomeView : UIView {
     
-    @IBOutlet private weak var effectView: UIVisualEffectView!
     @IBOutlet weak var tableView: OldBaseTableView!
     
-    @IBOutlet private weak var stackView: UIStackView!
-    @IBOutlet private weak var fromView: UIView!
     @IBOutlet private weak var toView: UIView!
     
     @IBOutlet private weak var toLabel: UILabel!
-    @IBOutlet private weak var fromLabel: UILabel!
-    @IBOutlet private weak var dateView: UIView!
     
-    @IBOutlet private weak var dateLabel: UILabel!
-    @IBOutlet private weak var stackViewBottomAnchor: NSLayoutConstraint!
+    @IBOutlet private weak var dateView : UIView!
+    
+    @IBOutlet private weak var fromView : UIView!
+    
+    @IBOutlet private weak var dateLabel : UILabel!
+    
+    @IBOutlet private weak var fromLabel : UILabel!
+    
+    @IBOutlet private weak var stackView : UIStackView!
+    
+    @IBOutlet private weak var effectView : UIVisualEffectView!
+
+    @IBOutlet private weak var stackViewBottomAnchor : NSLayoutConstraint!
     
     struct ViewState {
         
@@ -129,16 +135,6 @@ extension BusTicketHomeView {
                 return cell
             default:
                 return .init()
-            }
-        }
-        
-        tableView.onScroll = { scrollView in
-            print(scrollView.contentOffset)
-            if scrollView.contentOffset.y > 5 {
-                // scrolling down
-                
-            } else if scrollView.contentOffset.y < -150 {
-                
             }
         }
         

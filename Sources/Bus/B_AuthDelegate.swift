@@ -7,6 +7,7 @@
 
 import UIKit
 
+@objc
 public protocol B_AuthDelegate: AnyObject {
     
     /// Метод необходим для авторизации пользователя

@@ -25,7 +25,6 @@ struct BusPaymentModel {
     }
     
     func createPaymentRequestBody() -> [String: Any]? {
-        
         guard let tickets = tickets else { return nil }
         let sales: [[String: Any]] = tickets.compactMap { ticket in
             guard let passenger = ticket.passenger else { return nil }
@@ -37,7 +36,6 @@ struct BusPaymentModel {
                     birthday = "\(year)-\(month)-\(day)"
                 }
             }
-            
             if self.raceSummary.dataRequirments.phoneRequired {
                 if let _phone = passenger.phone {
                     var temp = _phone.replacingOccurrences(of: " ", with: "")
@@ -45,25 +43,26 @@ struct BusPaymentModel {
                     phone = temp
                 }
             }
-            
-            return ["lastName": passenger.surname ?? "",
-                    "firstName": passenger.name ?? "",
-                    "middleName": passenger.middleName ?? "",
-                    "docTypeCode": "\(passenger.document.code)",
-                    "docSeries": passenger.document.series ?? 0,
-                    "docNum": passenger.document.number ?? 0,
-                    "gender": passenger.gender == .male ? "M" : "F",
-                    "citizenship": passenger.citizenship?.code ?? "",
-                    "birthday": birthday,
-                    "phone": phone,
-                    "email": "",
-                    "seatCode": passenger.place?.code ?? "",
-                    "ticketTypeCode": ticket.ticket.code ]
+            return [
+                "lastName": passenger.surname ?? "",
+                "firstName": passenger.name ?? "",
+                "middleName": passenger.middleName ?? "",
+                "docTypeCode": "\(passenger.document.code)",
+                "docSeries": passenger.document.series ?? 0,
+                "docNum": passenger.document.number ?? 0,
+                "gender": passenger.gender == .male ? "M" : "F",
+                "citizenship": passenger.citizenship?.code ?? "",
+                "birthday": birthday,
+                "phone": phone,
+                "email": "",
+                "seatCode": passenger.place?.code ?? "",
+                "ticketTypeCode": ticket.ticket.code
+            ]
         }
-        
-        let final: [String: Any] = ["uid": self.raceSummary.race.id,
-                                    "returnUrl": "mosmetro://main/busPaymentSuccess",
-                                    "sales": sales
+        let final: [String: Any] = [
+            "uid": self.raceSummary.race.id,
+            "returnUrl": "mosmetro://main/busPaymentSuccess",
+            "sales": sales
         ]
         return final
     }

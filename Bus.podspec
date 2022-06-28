@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
     #  summary should be tweet-length, and the description more in depth.
     #
   
-    spec.name         = "Bus-ios"
+    spec.name         = "Bus"
     spec.version      = "0.0.1"
     spec.summary      = "A short description of Bus-ios library."
   
@@ -105,7 +105,7 @@ Pod::Spec.new do |spec|
     #  non-essential files like tests, examples and documentation.
     #
   
-    spec.resource_bundles = { "Bus" => ['Sources/Bus/**/*.{png,jpeg,jpg,pdf,storyboard,xib,xcassets,otf}'] }
+    spec.resource_bundles = { "Bus" => ['Sources/Bus/**/*.{png,jpeg,jpg,pdf,storyboard,xib,xcassets,otf,lproj}'] }
   
     # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
   

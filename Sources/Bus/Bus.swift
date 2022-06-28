@@ -12,6 +12,7 @@ public class Bus : NSObject {
     @objc
     public static let shared = Bus()
     
+    @objc
     public var token: String?
     
     public var bundle : Bundle {
@@ -28,8 +29,10 @@ public class Bus : NSObject {
         }
     }
     
+    @objc
     public weak var authDelegate: B_AuthDelegate?
     
+    @objc
     public weak var refreshDelegate: B_RefreshTokenDelegate?
     
     private override init() { }
@@ -51,8 +54,8 @@ public class Bus : NSObject {
     }
     
     @objc
-    public func showBusFlow() -> UINavigationController {
-        return UINavigationController(rootViewController: BusTicketHomeController())
+    public func showBusFlow() -> UIViewController {
+        return BusTicketHomeController()
     }
     
     @objc

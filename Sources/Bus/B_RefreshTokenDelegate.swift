@@ -7,6 +7,7 @@
 
 import Foundation
 
+@objc
 public protocol B_RefreshTokenDelegate : AnyObject {
     
     /// Метод необходим для обновления авторизационного токена. Вы должны реализовать его на своей стороне

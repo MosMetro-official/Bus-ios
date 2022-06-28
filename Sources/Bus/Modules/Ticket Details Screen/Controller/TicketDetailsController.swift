@@ -106,7 +106,6 @@ extension TicketDetailsController {
             let model = ParkingUnauthorizedModel(buttonText: "log_in".localized(in: Bus.shared.bundle), image: UIImage.getAssetImage(name: "Bus Illustration"), title: "main_bus_auth_title".localized(in: Bus.shared.bundle), subtitle: "main_bus_auth_desc".localized(in: Bus.shared.bundle), onClose: { [weak self] in
                 self?.mainView.viewState.unauthorized = nil
             }, onAction: { [weak self] in
-//                AnalyticsService.reportEvent(with: "newmetro.city.buybustickets.race.tap.login")
 //                self?.showAuthScreen()
                 Bus.shared.authDelegate?.showAuthScreen(completion: { authScreen in
                     self?.present(authScreen, animated: true)
@@ -114,16 +113,6 @@ extension TicketDetailsController {
             })
             self.mainView.viewState.unauthorized = model
         }
-    }
-    
-    public func showAuthScreen() {
-//        let configurator = LKAuthModuleConfigurator()
-//        let controller = configurator.setup()
-//        let navigation = LKProfileNavigationController(rootViewController: controller)
-//        //navigation.profileDelegate = self
-//        navigation.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-//        navigation.modalPresentationCapturesStatusBarAppearance = true
-//        self.present(navigation, animated: true, completion: nil)
     }
     
     private func createPaymentModel(from race: RaceSummary) {

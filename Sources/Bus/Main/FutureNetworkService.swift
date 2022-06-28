@@ -79,28 +79,40 @@ final class FutureNetworkService {
     }
     
     private func refresh(_ callback: @escaping (Result<Bool,FutureNetworkError>) -> ()) {
-        if let tokenData = UserDefaults.standard.object(forKey: "auth.token") as? [String: String], let refreshToken = tokenData["refresh"] {
-            let bodyDict = [
-                "grant_type": "refresh_token",
-                "refresh_token": refreshToken
-            ]
-            let body = Request.Body(parameters: nil, body: bodyDict)
-            let req = Request(httpMethod: .POST, httpProtocol: .HTTPS, contentType: .json, endpoint: .refreshToken, body: nil, baseURL: "lk.mosmetro.ru", lastComponent: nil)
-            self.request(req, includeHeaders: true, callback: { result in
-                switch result {
-                case .success(let response):
-                    let json = JSON(response.data)
-                    let err = FutureNetworkError(statusCode: nil, kind: .refreshFailed, errorDescription: "")
-                    self.saveToken(data: json) ? callback(.success(true)) : callback(.failure(err))
-                    return
-                case .failure(let err):
-                    callback(.failure(err))
-                    return
-                }
-            })
+        guard let networkDelegate = Bus.shared.refreshDelegate else {
+            fatalError("Вы не реализовали делегат работы с авторизацией")
         }
-        let error = FutureNetworkError(statusCode: nil, kind: .refreshFailed, errorDescription: "")
-        callback(.failure(error))
+        networkDelegate.refreshToken { result in
+            if result {
+                callback(.success(true))
+                return
+            } else {
+                callback(.failure(.jsonParsingError()))
+                return
+            }
+        }
+//        if let tokenData = UserDefaults.standard.object(forKey: "auth.token") as? [String: String], let refreshToken = tokenData["refresh"] {
+//            let bodyDict = [
+//                "grant_type": "refresh_token",
+//                "refresh_token": refreshToken
+//            ]
+//            let body = Request.Body(parameters: nil, body: bodyDict)
+//            let req = Request(httpMethod: .POST, httpProtocol: .HTTPS, contentType: .json, endpoint: .refreshToken, body: nil, baseURL: "lk.mosmetro.ru", lastComponent: nil)
+//            self.request(req, includeHeaders: true, callback: { result in
+//                switch result {
+//                case .success(let response):
+//                    let json = JSON(response.data)
+//                    let err = FutureNetworkError(statusCode: nil, kind: .refreshFailed, errorDescription: "")
+//                    self.saveToken(data: json) ? callback(.success(true)) : callback(.failure(err))
+//                    return
+//                case .failure(let err):
+//                    callback(.failure(err))
+//                    return
+//                }
+//            })
+//        }
+//        let error = FutureNetworkError(statusCode: nil, kind: .refreshFailed, errorDescription: "")
+//        callback(.failure(error))
     }
     
     func request(_ request: Request, includeHeaders: Bool = false, includeClipHeaders: Bool = false, callback: @escaping (Result<Response,FutureNetworkError>) -> () ) {

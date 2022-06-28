@@ -9,7 +9,7 @@
 "RageTextView" = "Напишите, в чем мы можем стать лучше и что Вам не понравилось";
 "Not selected" = "Не выбрано";
 
-
+"parking_missclick" = "Нет";
 // MARK: - Билеты на автобусы
 "main_bus_price_for_one" = "Цена за 1 билет";
 "main_bus_price_ticket" = "Стоимость билета";
